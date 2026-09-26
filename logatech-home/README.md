@@ -37,20 +37,22 @@ Notas técnicas:
 - Precios: `price: null` muestra "Precio por cotización"; con un número muestra `$1,234.00 MXN + IVA`.
 - Verificado en Chromium (escritorio 1366 px y móvil 390 px) sin errores de JavaScript ni scroll horizontal.
 
-## Paleta oficial (espectro lima → turquesa)
+## Paleta oficial (tomada del logotipo)
 
-Aplicada en las propuestas 1, 3 y 4 mediante variables al inicio de cada `<style>`:
+Colores medidos sobre el isotipo (cruz con cuatro pétalos): azul `#1842C0→#4A9EDA`, naranja `#D88A30`, verde `#6CA236`, rojo `#BA2418`. Azul es el color principal y naranja el secundario. Aplicada en las propuestas 1, 3 y 4 mediante variables al inicio de cada `<style>`:
 
 | Token | Hex | Uso |
 |-------|-----|-----|
-| `--brand-lime` | `#C4DC5C` | acentos, badges, barras de progreso, palabras destacadas sobre fondo oscuro |
-| `--brand-green` | `#7CCB8B` | punto medio del gradiente, iconos |
-| `--brand-teal` | `#2FB2B5` | gradientes, brillos, fondos |
-| `--brand-teal-d` | `#1F8F94` | botones y enlaces sobre blanco (contraste AA) |
-| `--brand-ink` | `#0E3A43` | texto, fondos profundos, footer |
-| `--brand-grad` | lima → verde → turquesa | CTAs principales, franjas y pestañas activas |
+| `--brand-blue` | `#2F7FD3` | color principal: enlaces, iconos, ilustraciones, gradientes |
+| `--brand-blue-d` | `#1F5FBF` | botones primarios y texto sobre blanco (contraste AA) |
+| `--brand-blue-l` | `#4A9EDA` | brillos y gradientes sobre fondo oscuro (propuesta 4) |
+| `--brand-orange` | `#E08A2E` | secundario: badges, acentos, palabras destacadas, barras de progreso |
+| `--brand-orange-d` | `#C46F1C` | CTAs secundarios con texto blanco (cotizar, WhatsApp) |
+| `--brand-green` | `#5FA33A` | solo señales positivas: disponibilidad, checks, COFEPRIS |
+| `--brand-ink` | `#12305E` | texto, franjas oscuras, footer |
+| `--brand-grad` | azul → azul claro → naranja | líneas finas de acento y pestañas activas |
 
-Las propuestas 2 y 5 conservan la paleta anterior (azul/verde) hasta que se pida el cambio.
+El isotipo real va incrustado (base64) en el logotipo de respaldo de cada propuesta; `CFG.logoUrl` sigue disponible para el archivo completo con wordmark. Las propuestas 2 y 5 conservan la paleta anterior hasta que se pida el cambio.
 
 ## Fotografías
 
