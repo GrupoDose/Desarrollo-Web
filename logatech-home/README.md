@@ -37,8 +37,27 @@ Notas técnicas:
 - Precios: `price: null` muestra "Precio por cotización"; con un número muestra `$1,234.00 MXN + IVA`.
 - Verificado en Chromium (escritorio 1366 px y móvil 390 px) sin errores de JavaScript ni scroll horizontal.
 
+## Paleta oficial (espectro lima → turquesa)
+
+Aplicada en las propuestas 1, 3 y 4 mediante variables al inicio de cada `<style>`:
+
+| Token | Hex | Uso |
+|-------|-----|-----|
+| `--brand-lime` | `#C4DC5C` | acentos, badges, barras de progreso, palabras destacadas sobre fondo oscuro |
+| `--brand-green` | `#7CCB8B` | punto medio del gradiente, iconos |
+| `--brand-teal` | `#2FB2B5` | gradientes, brillos, fondos |
+| `--brand-teal-d` | `#1F8F94` | botones y enlaces sobre blanco (contraste AA) |
+| `--brand-ink` | `#0E3A43` | texto, fondos profundos, footer |
+| `--brand-grad` | lima → verde → turquesa | CTAs principales, franjas y pestañas activas |
+
+Las propuestas 2 y 5 conservan la paleta anterior (azul/verde) hasta que se pida el cambio.
+
+## Fotografías
+
+Propuestas 1, 3 y 4 usan fotos de **Pexels** (licencia libre, sin atribución) por audiencia (hospital, laboratorio, reclutamiento, industria), por categoría y por producto. Cada `<img>` trae respaldo: si la URL no carga, se muestra la ilustración SVG. Los IDs están en `PHOTOS` y en el campo `img` de `PRODUCTS`; para fotos propias súbelas a Medios y cambia la función `px()` o los IDs. Recomendado antes de publicar: descargar las fotos elegidas y servirlas desde el propio WordPress.
+
 ## Pendientes que dependen del cliente
 
 - **Logo oficial**: el entorno no pudo descargar `logatech.mx` (bloqueado por la red), así que cada propuesta trae un logotipo SVG de respaldo y un campo `CFG.logoUrl` para el archivo real.
-- Colores y tipografía se aproximaron a la marca (azul marino, azul, verde); se ajustan en las variables si el manual de marca indica otros valores.
+- Tipografía: se usaron familias de Google Fonts afines; se cambian en `--font-h`/`--font-b` si el manual indica otras.
 - Fotos de producto, catálogos PDF y logos de marcas: sustituir los SVG cuando llegue el Drive del cliente.

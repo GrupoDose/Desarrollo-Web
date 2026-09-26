@@ -19,8 +19,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 #lg3,#lg3-modal{
-  --navy:#0A2E4F; --blue:#1A73B5; --blue-d:#135A8F; --teal:#0E8C8C; --green:#3DB54A; --green-d:#2E9A3B;
-  --ink:#16202B; --muted:#5B6874; --line:#DCE3EA; --bg:#F3F6F9; --bg2:#E9EFF4; --white:#fff;
+  /* === COLORES DE MARCA LOGATECH (espectro lima → turquesa). Cámbialos aquí; todo el bloque los hereda === */
+  --brand-lime:#C4DC5C; --brand-green:#7CCB8B; --brand-teal:#2FB2B5; --brand-teal-d:#1F8F94; --brand-ink:#0E3A43;
+  --brand-grad:linear-gradient(90deg,#C4DC5C 0%,#7CCB8B 50%,#2FB2B5 100%);
+  --navy:var(--brand-ink); --blue:var(--brand-teal-d); --blue-d:#15686C; --teal:var(--brand-teal-d); --green:var(--brand-green); --green-d:#5FB36E; --lime:var(--brand-lime); --grad:var(--brand-grad);
+  --ink:#16202B; --muted:#5B6874; --line:#DDE8E4; --bg:#F3F8F6; --bg2:#E6F1EE; --white:#fff;
   --font-h:'Manrope',Arial,sans-serif; --font-b:'Source Sans 3',Arial,sans-serif; --r:6px;
 }
 #lg3 *,#lg3 *::before,#lg3 *::after,#lg3-modal *,#lg3-modal *::before,#lg3-modal *::after{box-sizing:border-box}
@@ -30,7 +33,7 @@
 #lg3 .wrap{max-width:1280px;margin:0 auto;padding:0 24px}
 #lg3 .btn{display:inline-flex;align-items:center;gap:8px;border:2px solid transparent;border-radius:var(--r);padding:12px 22px;font:700 15px var(--font-h);transition:.2s;white-space:nowrap}
 #lg3 .btn-p{background:var(--blue);color:#fff}#lg3 .btn-p:hover{background:var(--blue-d)}
-#lg3 .btn-g{background:var(--green);color:#fff}#lg3 .btn-g:hover{background:var(--green-d)}
+#lg3 .btn-g{background:var(--grad);color:var(--navy)}#lg3 .btn-g:hover{filter:brightness(1.06);box-shadow:0 8px 20px rgba(47,178,181,.3)}
 #lg3 .btn-o{border-color:var(--navy);color:var(--navy);background:transparent}#lg3 .btn-o:hover{background:var(--navy);color:#fff}
 #lg3 .btn-w{border-color:#fff;color:#fff;background:transparent}#lg3 .btn-w:hover{background:#fff;color:var(--navy)}
 #lg3 .btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2}
@@ -43,7 +46,7 @@
 #lg3 .head .more:hover{text-decoration:underline}
 
 /* ---------- Utility bar + header ---------- */
-#lg3 .util{background:var(--navy);color:#C9D9E8;font-size:13px}
+#lg3 .util{background:var(--navy);color:#C9E3DF;font-size:13px}
 #lg3 .util .wrap{display:flex;justify-content:space-between;align-items:center;min-height:36px;flex-wrap:wrap;gap:10px}
 #lg3 .util ul{display:flex;gap:20px}#lg3 .util a:hover{color:#fff}
 #lg3 .util .r{display:flex;gap:18px;align-items:center}
@@ -65,7 +68,7 @@
 #lg3 .srch svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:2.4}
 #lg3 .hdr .q{position:relative;border:1px solid var(--line);background:#fff;border-radius:var(--r);height:44px;padding:0 14px;font:700 13px var(--font-h);color:var(--navy);display:flex;align-items:center;gap:8px}
 #lg3 .hdr .q svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2}
-#lg3 .hdr .q i{background:var(--green);color:#fff;border-radius:99px;min-width:20px;height:20px;font:700 11px/20px var(--font-h);text-align:center;padding:0 5px;font-style:normal}
+#lg3 .hdr .q i{background:var(--lime);color:var(--navy);border-radius:99px;min-width:20px;height:20px;font:700 11px/20px var(--font-h);text-align:center;padding:0 5px;font-style:normal}
 
 /* ---------- HERO con pestañas de audiencia ---------- */
 #lg3 .hero{background:linear-gradient(180deg,#fff 0,var(--bg) 100%);padding:34px 0 0;position:relative;overflow:hidden}
@@ -74,7 +77,7 @@
 #lg3 .tabs button svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8}
 #lg3 .tabs button::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3px;background:var(--line);transform:scaleX(0);transform-origin:left;transition:.3s}
 #lg3 .tabs button.on{color:var(--navy)}
-#lg3 .tabs button.on::after{transform:scaleX(1);background:linear-gradient(90deg,var(--blue),var(--green))}
+#lg3 .tabs button.on::after{transform:scaleX(1);background:var(--grad)}
 #lg3 .tabs button.on i{position:absolute;left:0;bottom:-1px;height:3px;background:var(--navy);width:100%;transform:scaleX(0);transform-origin:left;animation:lg3prog 7s linear forwards}
 @keyframes lg3prog{to{transform:scaleX(1)}}
 #lg3 .stage{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:stretch;min-height:480px;position:relative}
@@ -88,13 +91,18 @@
 #lg3 .panel p{font-size:19px;color:var(--muted);max-width:560px;margin-bottom:24px}
 #lg3 .panel .ctas{display:flex;gap:12px;flex-wrap:wrap}
 #lg3 .panel .facts{display:flex;gap:28px;margin-top:30px;flex-wrap:wrap}
-#lg3 .panel .facts div{border-left:2px solid var(--green);padding-left:12px}
+#lg3 .panel .facts div{border-left:2px solid var(--brand-teal);padding-left:12px}
 #lg3 .panel .facts b{display:block;font:800 22px/1 var(--font-h);color:var(--navy)}
 #lg3 .panel .facts span{font-size:13px;color:var(--muted)}
 #lg3 .vis{position:relative;border-radius:18px 18px 0 0;overflow:hidden;min-height:440px;background:var(--navy)}
 #lg3 .vis .v{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--g);clip-path:circle(0% at 70% 60%);transition:clip-path .9s cubic-bezier(.7,0,.3,1);z-index:1}
 #lg3 .vis .v.on{clip-path:circle(140% at 70% 60%);z-index:2}
 #lg3 .vis .v svg{width:76%;max-width:520px;filter:drop-shadow(0 24px 30px rgba(0,0,0,.25))}
+#lg3 .vis .v>[data-art]{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+#lg3 .vis .v img.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#lg3 .vis .v .fb{display:flex;align-items:center;justify-content:center;width:100%;height:100%}
+#lg3 .vis .v::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,58,67,0) 40%,rgba(14,58,67,.7) 100%);pointer-events:none}
+#lg3 .vis .v .lbl{z-index:2}
 #lg3 .vis .v .lbl{position:absolute;left:24px;bottom:24px;background:rgba(255,255,255,.95);border-radius:8px;padding:12px 16px;font:700 14px var(--font-h);color:var(--navy);box-shadow:0 10px 24px rgba(0,0,0,.15)}
 #lg3 .vis .v .lbl small{display:block;font:500 12px var(--font-b);color:var(--muted)}
 #lg3 .vis .v .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
@@ -105,19 +113,23 @@
 #lg3 .ctrl span{font:700 13px var(--font-h);color:var(--muted);margin-left:8px}
 
 /* ---------- Bar de confianza ---------- */
-#lg3 .bar{background:var(--navy);color:#fff}
+#lg3 .bar{background:var(--navy);color:#fff;border-top:4px solid transparent;border-image:var(--grad) 1}
 #lg3 .bar .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
 #lg3 .bar .wrap>div{padding:22px 18px;border-left:1px solid rgba(255,255,255,.12);display:flex;gap:14px;align-items:center}
 #lg3 .bar .wrap>div:first-child{border-left:0}
-#lg3 .bar svg{width:30px;height:30px;flex:none;fill:none;stroke:var(--green);stroke-width:1.8}
-#lg3 .bar b{display:block;font:700 15px var(--font-h)}#lg3 .bar span{font-size:13px;color:#B9CFE3}
+#lg3 .bar svg{width:30px;height:30px;flex:none;fill:none;stroke:var(--lime);stroke-width:1.8}
+#lg3 .bar b{display:block;font:700 15px var(--font-h)}#lg3 .bar span{font-size:13px;color:#B5D6D1}
 
 /* ---------- Categorías (catálogo) ---------- */
 #lg3 .cats{padding:80px 0 60px}
 #lg3 .cgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 #lg3 .cc{border:1px solid var(--line);border-radius:var(--r);background:#fff;overflow:hidden;transition:.25s;display:flex;flex-direction:column}
-#lg3 .cc:hover{box-shadow:0 18px 40px rgba(10,46,79,.12);transform:translateY(-3px);border-color:#BFD0E0}
-#lg3 .cc .im{height:160px;background:var(--bg2);display:flex;align-items:center;justify-content:center;position:relative}
+#lg3 .cc:hover{box-shadow:0 18px 40px rgba(14,58,67,.12);transform:translateY(-3px);border-color:#BFDAD5}
+#lg3 .cc .im{height:160px;background:var(--bg2);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+#lg3 .cc .im img.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.5s}
+#lg3 .cc:hover .im img.ph{transform:scale(1.05)}
+#lg3 .cc .im .fb{display:flex;align-items:center;justify-content:center}
+#lg3 .cc .im .n{z-index:2}
 #lg3 .cc .im svg{width:110px;height:110px}
 #lg3 .cc .im .n{position:absolute;top:12px;left:12px;font:700 11px var(--font-h);color:var(--navy);background:#fff;border-radius:4px;padding:4px 8px;letter-spacing:.08em}
 #lg3 .cc .bd{padding:18px 18px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
@@ -136,11 +148,14 @@
 #lg3 .prod{padding:60px 0 80px;background:var(--bg)}
 #lg3 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 #lg3 .pc{background:#fff;border:1px solid var(--line);border-radius:var(--r);display:grid;grid-template-columns:150px 1fr;overflow:hidden;transition:.25s;cursor:pointer}
-#lg3 .pc:hover{box-shadow:0 18px 40px rgba(10,46,79,.12);border-color:#BFD0E0}
-#lg3 .pc .im{background:var(--bg2);display:flex;align-items:center;justify-content:center;padding:16px;position:relative}
+#lg3 .pc:hover{box-shadow:0 18px 40px rgba(14,58,67,.12);border-color:#BFDAD5}
+#lg3 .pc .im{background:var(--bg2);display:flex;align-items:center;justify-content:center;padding:16px;position:relative;overflow:hidden;min-height:170px}
 #lg3 .pc .im svg{width:100%;height:auto;transition:.3s}
+#lg3 .pc .im img.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.4s}
+#lg3 .pc:hover .im img.ph{transform:scale(1.05)}
+#lg3 .pc .im .bd{z-index:2}
 #lg3 .pc:hover .im svg{transform:scale(1.06)}
-#lg3 .pc .im .bd{position:absolute;top:10px;left:10px;background:var(--green);color:#fff;font:700 10px var(--font-h);letter-spacing:.08em;text-transform:uppercase;padding:4px 7px;border-radius:3px}
+#lg3 .pc .im .bd{position:absolute;top:10px;left:10px;background:var(--lime);color:var(--navy);font:700 10px var(--font-h);letter-spacing:.08em;text-transform:uppercase;padding:4px 7px;border-radius:3px}
 #lg3 .pc .im .bd.o{background:#E8862D}
 #lg3 .pc .tx{padding:16px 18px;display:flex;flex-direction:column;gap:5px}
 #lg3 .pc .ct{font:700 11px var(--font-h);color:var(--teal);letter-spacing:.1em;text-transform:uppercase}
@@ -164,18 +179,21 @@
 #lg3 .svc{background:var(--navy);color:#fff;padding:80px 0;position:relative;overflow:hidden}
 #lg3 .svc::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:48px 48px}
 #lg3 .svc .wrap{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-#lg3 .svc .kicker{color:#8FD69A}#lg3 .svc .kicker::before{background:#8FD69A}
+#lg3 .svc .pic{border-radius:var(--r);overflow:hidden;height:220px;margin-bottom:22px;position:relative;border:1px solid rgba(255,255,255,.15)}
+#lg3 .svc .pic img.ph{width:100%;height:100%;object-fit:cover}
+#lg3 .svc .pic.nophoto{display:none}
+#lg3 .svc .kicker{color:#C4DC5C}#lg3 .svc .kicker::before{background:#C4DC5C}
 #lg3 .svc h2{font:800 clamp(28px,3.4vw,42px)/1.12 var(--font-h);margin:14px 0 16px}
-#lg3 .svc p{color:#C9D9E8;font-size:17px;margin-bottom:22px}
+#lg3 .svc p{color:#C9E3DF;font-size:17px;margin-bottom:22px}
 #lg3 .svc .steps{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 #lg3 .svc .st{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:18px}
 #lg3 .svc .st b{display:flex;align-items:center;gap:10px;font:800 15px var(--font-h);margin-bottom:6px}
-#lg3 .svc .st b i{width:26px;height:26px;border-radius:50%;background:var(--green);color:#fff;font:800 12px/26px var(--font-h);text-align:center;font-style:normal}
-#lg3 .svc .st span{font-size:13.5px;color:#C9D9E8}
+#lg3 .svc .st b i{width:26px;height:26px;border-radius:50%;background:var(--lime);color:var(--navy);font:800 12px/26px var(--font-h);text-align:center;font-style:normal}
+#lg3 .svc .st span{font-size:13.5px;color:#C9E3DF}
 #lg3 .res{padding:80px 0}
 #lg3 .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 #lg3 .rc{border:1px solid var(--line);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:10px;transition:.2s}
-#lg3 .rc:hover{border-color:var(--blue);box-shadow:0 14px 30px rgba(10,46,79,.08)}
+#lg3 .rc:hover{border-color:var(--blue);box-shadow:0 14px 30px rgba(14,58,67,.08)}
 #lg3 .rc .ic{width:48px;height:48px;border-radius:var(--r);background:var(--bg);display:flex;align-items:center;justify-content:center}
 #lg3 .rc .ic svg{width:24px;height:24px;fill:none;stroke:var(--blue);stroke-width:1.8}
 #lg3 .rc h3{font:800 18px var(--font-h);color:var(--navy)}
@@ -200,11 +218,11 @@
 #lg3 .contact small{grid-column:1/-1;font-size:12px;color:var(--muted)}
 
 /* ---------- Footer ---------- */
-#lg3 .foot{background:#0B1F33;color:#B9CFE3;padding:56px 0 0;font-size:14px}
+#lg3 .foot{background:#0A2A31;color:#B5D6D1;padding:56px 0 0;font-size:14px}
 #lg3 .foot .cols{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1.3fr;gap:32px;padding-bottom:36px}
 #lg3 .foot h4{font:800 13px var(--font-h);color:#fff;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
 #lg3 .foot li{margin-bottom:8px}#lg3 .foot a:hover{color:#fff}
-#lg3 .foot .logo-fb .wm{color:#fff}#lg3 .foot .logo-fb small{color:#B9CFE3}
+#lg3 .foot .logo-fb .wm{color:#fff}#lg3 .foot .logo-fb small{color:#B5D6D1}
 #lg3 .foot .ab{margin:14px 0;max-width:360px}
 #lg3 .foot .legal{border-top:1px solid rgba(255,255,255,.12);padding:18px 0;font-size:12.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 .lg3-wa{position:fixed;right:22px;bottom:22px;z-index:60;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(0,0,0,.25)}
@@ -224,9 +242,11 @@
 #lg3-modal .top{display:grid;grid-template-columns:70px 1fr 1.1fr .85fr;gap:24px;padding:24px}
 #lg3-modal .thumbs{display:flex;flex-direction:column;gap:8px}
 #lg3-modal .thumbs button{border:1px solid var(--line);border-radius:var(--r);background:#fff;padding:5px;cursor:pointer;aspect-ratio:1;display:flex}
-#lg3-modal .thumbs button.on{border-color:var(--blue);box-shadow:0 0 0 2px rgba(26,115,181,.2)}
+#lg3-modal .thumbs button.on{border-color:var(--blue);box-shadow:0 0 0 2px rgba(31,143,148,.2)}
 #lg3-modal .thumbs svg{width:100%;height:auto}
-#lg3-modal .main{background:var(--bg2);border-radius:var(--r);display:flex;align-items:center;justify-content:center;min-height:380px}
+#lg3-modal .main{background:var(--bg2);border-radius:var(--r);display:flex;align-items:center;justify-content:center;min-height:380px;position:relative;overflow:hidden}
+#lg3-modal .main img.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#lg3-modal .thumbs img.ph{width:100%;height:100%;object-fit:cover;aspect-ratio:1;border-radius:4px}
 #lg3-modal .main svg{width:70%;height:auto;animation:lg3fade .3s}
 #lg3-modal .info .ct{font:700 11px var(--font-h);color:var(--teal);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
 #lg3-modal .info h2{font:800 25px/1.2 var(--font-h);color:var(--navy);margin:0 0 8px}
@@ -251,7 +271,7 @@
 #lg3-modal .buy .qty input{width:50px;text-align:center;border:0;font:700 14px var(--font-b)}
 #lg3-modal .buy input.t{width:100%;border:1px solid var(--line);border-radius:var(--r);padding:9px 10px;font:400 14px var(--font-b);background:var(--bg)}
 #lg3-modal .buy .btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;border:0;border-radius:var(--r);padding:12px;font:700 14px var(--font-h);cursor:pointer;margin-top:8px;transition:.2s}
-#lg3-modal .buy .b1{background:var(--green);color:#fff}#lg3-modal .buy .b1:hover{background:var(--green-d)}
+#lg3-modal .buy .b1{background:var(--grad);color:var(--navy)}#lg3-modal .buy .b1:hover{filter:brightness(1.06)}
 #lg3-modal .buy .b2{background:var(--navy);color:#fff}#lg3-modal .buy .b2:hover{background:var(--blue)}
 #lg3-modal .buy .b3{background:#fff;color:var(--navy);border:1px solid var(--line)}#lg3-modal .buy .b3:hover{border-color:var(--navy)}
 #lg3-modal .buy .btn svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2.2}
@@ -336,10 +356,10 @@
         <div class="ctrl"><button type="button" aria-label="Anterior" data-prev><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><button type="button" aria-label="Siguiente" data-next><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button><span data-counter>01 / 04</span></div>
       </div>
       <div class="vis">
-        <div class="v on" style="--g:linear-gradient(135deg,#1A73B5,#0A2E4F)"><div class="grid"></div><div data-art="hospital"></div><div class="lbl">Cuidados críticos<small>gasometría · electrolitos · cardio</small></div></div>
-        <div class="v" style="--g:linear-gradient(135deg,#0E8C8C,#0A2E4F)"><div class="grid"></div><div data-art="lab"></div><div class="lbl">Química · Hematología<small>equipos nuevos de fábrica</small></div></div>
-        <div class="v" style="--g:linear-gradient(135deg,#3DB54A,#0E8C8C)"><div class="grid"></div><div data-art="empresa"></div><div class="lbl">Paneles multidrogas<small>CERTUM · ARTRON</small></div></div>
-        <div class="v" style="--g:linear-gradient(135deg,#135A8F,#16202B)"><div class="grid"></div><div data-art="industria"></div><div class="lbl">Reactivos ACS<small>solventes · sales · buffers</small></div></div>
+        <div class="v on" style="--g:linear-gradient(135deg,#2FB2B5,#0E3A43)"><div class="grid"></div><div data-art="hospital"></div><div class="lbl">Cuidados críticos<small>gasometría · electrolitos · cardio</small></div></div>
+        <div class="v" style="--g:linear-gradient(135deg,#2FB2B5,#0E3A43)"><div class="grid"></div><div data-art="lab"></div><div class="lbl">Química · Hematología<small>equipos nuevos de fábrica</small></div></div>
+        <div class="v" style="--g:linear-gradient(135deg,#C4DC5C,#2FB2B5)"><div class="grid"></div><div data-art="empresa"></div><div class="lbl">Paneles multidrogas<small>CERTUM · ARTRON</small></div></div>
+        <div class="v" style="--g:linear-gradient(135deg,#1F8F94,#16202B)"><div class="grid"></div><div data-art="industria"></div><div class="lbl">Reactivos ACS<small>solventes · sales · buffers</small></div></div>
       </div>
     </div>
   </div></section>
@@ -355,10 +375,10 @@
   <section class="cats" id="lg3-cats"><div class="wrap">
     <div class="head"><div><span class="kicker">Catálogo</span><h2 class="t2" style="margin-top:10px">Explora por categoría</h2></div><a class="more" href="#">Ver catálogo completo →</a></div>
     <div class="cgrid">
-      <a class="cc" href="#"><div class="im"><span class="n">01</span><div data-art="cassette"></div></div><div class="bd"><h3>Pruebas rápidas</h3><p>Diagnóstico inmunocromatográfico en minutos.</p><ul><li>Infecciosas</li><li>Hepáticas</li><li>Tumorales</li><li>Fertilidad</li><li>Vectoriales</li><li>Sepsis</li></ul><span class="lk">Ver productos →</span></div></a>
-      <a class="cc" href="#"><div class="im"><span class="n">02</span><div data-art="cup"></div></div><div class="bd"><h3>Antidoping</h3><p>Pruebas de drogas en orina y saliva.</p><ul><li>Individuales</li><li>Cassette</li><li>Frasco integrado</li><li>Paneles</li><li>Saliva</li></ul><span class="lk">Ver productos →</span></div></a>
-      <a class="cc" href="#"><div class="im"><span class="n">03</span><div data-art="bottle"></div></div><div class="bd"><h3>Reactivos</h3><p>Química analítica y tinciones.</p><ul><li>Buffers</li><li>Colorantes</li><li>Solventes</li><li>Sales</li><li>Aguas</li><li>Patrones AA</li></ul><span class="lk">Ver productos →</span></div></a>
-      <a class="cc" href="#"><div class="im"><span class="n">04</span><div data-art="kit"></div></div><div class="bd"><h3>Equipos de diagnóstico</h3><p>Analizadores nuevos, de fábrica.</p><ul><li>Química</li><li>Hematología</li><li>Coagulación</li><li>Electrolitos</li><li>Uroanálisis</li></ul><span class="lk">Ver equipos →</span></div></a>
+      <a class="cc" href="#"><div class="im"><span class="n">01</span><div data-art="cassette" data-photo="cat_pr"></div></div><div class="bd"><h3>Pruebas rápidas</h3><p>Diagnóstico inmunocromatográfico en minutos.</p><ul><li>Infecciosas</li><li>Hepáticas</li><li>Tumorales</li><li>Fertilidad</li><li>Vectoriales</li><li>Sepsis</li></ul><span class="lk">Ver productos →</span></div></a>
+      <a class="cc" href="#"><div class="im"><span class="n">02</span><div data-art="cup" data-photo="cat_ad"></div></div><div class="bd"><h3>Antidoping</h3><p>Pruebas de drogas en orina y saliva.</p><ul><li>Individuales</li><li>Cassette</li><li>Frasco integrado</li><li>Paneles</li><li>Saliva</li></ul><span class="lk">Ver productos →</span></div></a>
+      <a class="cc" href="#"><div class="im"><span class="n">03</span><div data-art="bottle" data-photo="cat_re"></div></div><div class="bd"><h3>Reactivos</h3><p>Química analítica y tinciones.</p><ul><li>Buffers</li><li>Colorantes</li><li>Solventes</li><li>Sales</li><li>Aguas</li><li>Patrones AA</li></ul><span class="lk">Ver productos →</span></div></a>
+      <a class="cc" href="#"><div class="im"><span class="n">04</span><div data-art="kit" data-photo="cat_eq"></div></div><div class="bd"><h3>Equipos de diagnóstico</h3><p>Analizadores nuevos, de fábrica.</p><ul><li>Química</li><li>Hematología</li><li>Coagulación</li><li>Electrolitos</li><li>Uroanálisis</li></ul><span class="lk">Ver equipos →</span></div></a>
     </div>
     <div class="cmini"><a href="#">Point of care</a><a href="#">Cuidados críticos</a><a href="#">Detección de alcohol</a><a href="#">Diagnóstico molecular</a><a href="#">Microbiología</a></div>
   </div></section>
@@ -378,7 +398,7 @@
 
   <!-- SERVICIO -->
   <section class="svc" id="lg3-svc"><div class="wrap">
-    <div><span class="kicker">Servicio técnico y postventa</span><h2>Equipos nuevos, de fábrica.<br>Con nuestro propio laboratorio de servicio.</h2><p>No vendemos equipos usados ni reconstruidos. Cada analizador incluye instalación, capacitación del personal y mantenimiento, con garantía de 1 año del fabricante.</p><div class="ctas" style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-g" href="#lg3-contact">Agendar servicio</a><a class="btn btn-w" href="#lg3-cats">Ver equipos</a></div></div>
+    <div><div class="pic" data-art="lab" data-photo="service"></div><span class="kicker">Servicio técnico y postventa</span><h2>Equipos nuevos, de fábrica.<br>Con nuestro propio laboratorio de servicio.</h2><p>No vendemos equipos usados ni reconstruidos. Cada analizador incluye instalación, capacitación del personal y mantenimiento, con garantía de 1 año del fabricante.</p><div class="ctas" style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-g" href="#lg3-contact">Agendar servicio</a><a class="btn btn-w" href="#lg3-cats">Ver equipos</a></div></div>
     <div class="steps">
       <div class="st"><b><i>1</i>Cotización</b><span>Respuesta en minutos por WhatsApp, correo o llamada en horario hábil.</span></div>
       <div class="st"><b><i>2</i>Entrega</b><span>Local sin costo; foránea gratis desde $5,000. Refrigerados con cadena de frío.</span></div>
@@ -430,25 +450,31 @@
 (function(){
   var CFG={logoUrl:'',whatsapp:'528113638885',currency:'MXN'};
   var ART={
-    cassette:function(c){c=c||'#1A73B5';return '<svg viewBox="0 0 200 200"><rect x="42" y="18" width="116" height="164" rx="16" fill="#fff" stroke="'+c+'" stroke-width="5"/><rect x="70" y="42" width="60" height="72" rx="7" fill="#EAF3FA" stroke="'+c+'" stroke-width="3"/><line x1="82" y1="62" x2="118" y2="62" stroke="#D93B3B" stroke-width="5"/><line x1="82" y1="88" x2="118" y2="88" stroke="#D93B3B" stroke-width="5" opacity=".35"/><text x="136" y="66" font-size="13" font-family="Arial" font-weight="700" fill="'+c+'">C</text><text x="136" y="92" font-size="13" font-family="Arial" font-weight="700" fill="'+c+'">T</text><circle cx="100" cy="146" r="13" fill="#EAF3FA" stroke="'+c+'" stroke-width="3"/></svg>';},
-    tube:function(){return '<svg viewBox="0 0 200 200"><rect x="76" y="12" width="48" height="28" rx="7" fill="#8E5BC7"/><path d="M82 40h36v112a18 18 0 0 1-36 0z" fill="#fff" stroke="#1A73B5" stroke-width="5"/><path d="M85 98h30v54a15 15 0 0 1-30 0z" fill="#C43B3B" opacity=".85"/><rect x="70" y="58" width="60" height="30" fill="#fff" stroke="#1A73B5" stroke-width="2"/><line x1="76" y1="68" x2="124" y2="68" stroke="#1A73B5" stroke-width="2"/><line x1="76" y1="78" x2="112" y2="78" stroke="#1A73B5" stroke-width="2"/></svg>';},
-    bottle:function(){return '<svg viewBox="0 0 200 200"><rect x="80" y="16" width="40" height="24" rx="5" fill="#1A73B5"/><path d="M84 40h32v20l22 18v92a12 12 0 0 1-12 12H74a12 12 0 0 1-12-12V78l22-18z" fill="#fff" stroke="#1A73B5" stroke-width="5"/><path d="M62 148h76v22a12 12 0 0 1-12 12H74a12 12 0 0 1-12-12z" fill="#D9A066" opacity=".75"/><rect x="72" y="98" width="56" height="44" rx="4" fill="#EAF3FA" stroke="#3DB54A" stroke-width="3"/><line x1="80" y1="112" x2="120" y2="112" stroke="#3DB54A" stroke-width="3"/><line x1="80" y1="124" x2="110" y2="124" stroke="#3DB54A" stroke-width="3"/></svg>';},
-    kit:function(){return '<svg viewBox="0 0 200 200"><rect x="28" y="72" width="144" height="102" rx="12" fill="#fff" stroke="#1A73B5" stroke-width="5"/><rect x="28" y="72" width="144" height="28" rx="12" fill="#1A73B5"/><rect x="52" y="38" width="24" height="72" rx="6" fill="#EAF3FA" stroke="#1A73B5" stroke-width="3"/><rect x="88" y="38" width="24" height="72" rx="6" fill="#EAF3FA" stroke="#3DB54A" stroke-width="3"/><rect x="124" y="38" width="24" height="72" rx="6" fill="#EAF3FA" stroke="#E0A33B" stroke-width="3"/><rect x="56" y="62" width="16" height="40" fill="#6A4C93" opacity=".6"/><rect x="92" y="62" width="16" height="40" fill="#3DB54A" opacity=".6"/><rect x="128" y="62" width="16" height="40" fill="#E0A33B" opacity=".6"/><text x="100" y="146" text-anchor="middle" font-size="12" font-family="Arial" font-weight="700" fill="#1A73B5">KIT</text></svg>';},
-    cup:function(){return '<svg viewBox="0 0 200 200"><rect x="52" y="22" width="96" height="20" rx="6" fill="#1A73B5"/><path d="M60 42h80l-8 128a10 10 0 0 1-10 10H78a10 10 0 0 1-10-10z" fill="#fff" stroke="#1A73B5" stroke-width="5"/><rect x="72" y="66" width="56" height="78" rx="6" fill="#EAF3FA" stroke="#1A73B5" stroke-width="3"/><g stroke="#D93B3B" stroke-width="4"><line x1="82" y1="82" x2="118" y2="82"/><line x1="82" y1="96" x2="118" y2="96" opacity=".5"/><line x1="82" y1="110" x2="118" y2="110" opacity=".3"/><line x1="82" y1="124" x2="118" y2="124" opacity=".6"/></g><path d="M74 150h52" stroke="#E0A33B" stroke-width="10" opacity=".6"/></svg>';},
-    hospital:function(){return '<svg viewBox="0 0 240 240"><rect x="30" y="70" width="180" height="140" rx="14" fill="#fff" opacity=".95"/><rect x="95" y="40" width="50" height="50" rx="10" fill="#3DB54A"/><path d="M120 52v26M107 65h26" stroke="#fff" stroke-width="7" stroke-linecap="round"/><g fill="#1A73B5" opacity=".85"><rect x="50" y="95" width="30" height="26" rx="4"/><rect x="105" y="95" width="30" height="26" rx="4"/><rect x="160" y="95" width="30" height="26" rx="4"/><rect x="50" y="135" width="30" height="26" rx="4"/><rect x="160" y="135" width="30" height="26" rx="4"/></g><rect x="100" y="140" width="40" height="70" rx="6" fill="#0A2E4F"/></svg>';},
-    lab:function(){return '<svg viewBox="0 0 240 240"><path d="M90 30h60v20h-8v60l48 84a12 12 0 0 1-10 18H60a12 12 0 0 1-10-18l48-84V50h-8z" fill="#fff" opacity=".95"/><path d="M78 150h84l30 50H48z" fill="#3DB54A" opacity=".85"/><circle cx="110" cy="176" r="7" fill="#fff"/><circle cx="140" cy="190" r="5" fill="#fff"/><circle cx="125" cy="165" r="4" fill="#fff"/><rect x="170" y="40" width="40" height="70" rx="8" fill="#1A73B5" opacity=".9"/><rect x="178" y="52" width="24" height="20" rx="3" fill="#fff"/></svg>';},
-    empresa:function(){return '<svg viewBox="0 0 240 240"><rect x="60" y="30" width="120" height="180" rx="16" fill="#fff" opacity=".95"/><rect x="80" y="60" width="80" height="90" rx="8" fill="#EAF3FA"/><g stroke="#D93B3B" stroke-width="5"><line x1="92" y1="80" x2="148" y2="80"/><line x1="92" y1="98" x2="148" y2="98" opacity=".5"/><line x1="92" y1="116" x2="148" y2="116"/><line x1="92" y1="134" x2="148" y2="134" opacity=".4"/></g><circle cx="120" cy="178" r="14" fill="#3DB54A"/><path d="m112 178 6 6 11-12" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/><rect x="20" y="150" width="40" height="60" rx="8" fill="#1A73B5" opacity=".9"/><rect x="180" y="120" width="40" height="90" rx="8" fill="#1A73B5" opacity=".9"/></svg>';},
-    industria:function(){return '<svg viewBox="0 0 240 240"><path d="M30 210V110l50 40v-40l50 40v-40l50 40v-40l30 20v80z" fill="#fff" opacity=".95"/><rect x="40" y="40" width="26" height="80" rx="4" fill="#1A73B5"/><rect x="150" y="150" width="30" height="40" rx="4" fill="#3DB54A"/><rect x="100" y="150" width="30" height="40" rx="4" fill="#3DB54A"/><rect x="50" y="160" width="30" height="30" rx="4" fill="#3DB54A"/><circle cx="53" cy="30" r="10" fill="#fff" opacity=".5"/><circle cx="60" cy="16" r="6" fill="#fff" opacity=".35"/></svg>';}
+    cassette:function(c){c=c||'#2FB2B5';return '<svg viewBox="0 0 200 200"><rect x="42" y="18" width="116" height="164" rx="16" fill="#fff" stroke="'+c+'" stroke-width="5"/><rect x="70" y="42" width="60" height="72" rx="7" fill="#E8F6F2" stroke="'+c+'" stroke-width="3"/><line x1="82" y1="62" x2="118" y2="62" stroke="#D93B3B" stroke-width="5"/><line x1="82" y1="88" x2="118" y2="88" stroke="#D93B3B" stroke-width="5" opacity=".35"/><text x="136" y="66" font-size="13" font-family="Arial" font-weight="700" fill="'+c+'">C</text><text x="136" y="92" font-size="13" font-family="Arial" font-weight="700" fill="'+c+'">T</text><circle cx="100" cy="146" r="13" fill="#E8F6F2" stroke="'+c+'" stroke-width="3"/></svg>';},
+    tube:function(){return '<svg viewBox="0 0 200 200"><rect x="76" y="12" width="48" height="28" rx="7" fill="#8E5BC7"/><path d="M82 40h36v112a18 18 0 0 1-36 0z" fill="#fff" stroke="#2FB2B5" stroke-width="5"/><path d="M85 98h30v54a15 15 0 0 1-30 0z" fill="#C43B3B" opacity=".85"/><rect x="70" y="58" width="60" height="30" fill="#fff" stroke="#2FB2B5" stroke-width="2"/><line x1="76" y1="68" x2="124" y2="68" stroke="#2FB2B5" stroke-width="2"/><line x1="76" y1="78" x2="112" y2="78" stroke="#2FB2B5" stroke-width="2"/></svg>';},
+    bottle:function(){return '<svg viewBox="0 0 200 200"><rect x="80" y="16" width="40" height="24" rx="5" fill="#2FB2B5"/><path d="M84 40h32v20l22 18v92a12 12 0 0 1-12 12H74a12 12 0 0 1-12-12V78l22-18z" fill="#fff" stroke="#2FB2B5" stroke-width="5"/><path d="M62 148h76v22a12 12 0 0 1-12 12H74a12 12 0 0 1-12-12z" fill="#D9A066" opacity=".75"/><rect x="72" y="98" width="56" height="44" rx="4" fill="#E8F6F2" stroke="#7CCB8B" stroke-width="3"/><line x1="80" y1="112" x2="120" y2="112" stroke="#7CCB8B" stroke-width="3"/><line x1="80" y1="124" x2="110" y2="124" stroke="#7CCB8B" stroke-width="3"/></svg>';},
+    kit:function(){return '<svg viewBox="0 0 200 200"><rect x="28" y="72" width="144" height="102" rx="12" fill="#fff" stroke="#2FB2B5" stroke-width="5"/><rect x="28" y="72" width="144" height="28" rx="12" fill="#2FB2B5"/><rect x="52" y="38" width="24" height="72" rx="6" fill="#E8F6F2" stroke="#2FB2B5" stroke-width="3"/><rect x="88" y="38" width="24" height="72" rx="6" fill="#E8F6F2" stroke="#7CCB8B" stroke-width="3"/><rect x="124" y="38" width="24" height="72" rx="6" fill="#E8F6F2" stroke="#E0A33B" stroke-width="3"/><rect x="56" y="62" width="16" height="40" fill="#6A4C93" opacity=".6"/><rect x="92" y="62" width="16" height="40" fill="#7CCB8B" opacity=".6"/><rect x="128" y="62" width="16" height="40" fill="#E0A33B" opacity=".6"/><text x="100" y="146" text-anchor="middle" font-size="12" font-family="Arial" font-weight="700" fill="#2FB2B5">KIT</text></svg>';},
+    cup:function(){return '<svg viewBox="0 0 200 200"><rect x="52" y="22" width="96" height="20" rx="6" fill="#2FB2B5"/><path d="M60 42h80l-8 128a10 10 0 0 1-10 10H78a10 10 0 0 1-10-10z" fill="#fff" stroke="#2FB2B5" stroke-width="5"/><rect x="72" y="66" width="56" height="78" rx="6" fill="#E8F6F2" stroke="#2FB2B5" stroke-width="3"/><g stroke="#D93B3B" stroke-width="4"><line x1="82" y1="82" x2="118" y2="82"/><line x1="82" y1="96" x2="118" y2="96" opacity=".5"/><line x1="82" y1="110" x2="118" y2="110" opacity=".3"/><line x1="82" y1="124" x2="118" y2="124" opacity=".6"/></g><path d="M74 150h52" stroke="#E0A33B" stroke-width="10" opacity=".6"/></svg>';},
+    hospital:function(){return '<svg viewBox="0 0 240 240"><rect x="30" y="70" width="180" height="140" rx="14" fill="#fff" opacity=".95"/><rect x="95" y="40" width="50" height="50" rx="10" fill="#7CCB8B"/><path d="M120 52v26M107 65h26" stroke="#fff" stroke-width="7" stroke-linecap="round"/><g fill="#2FB2B5" opacity=".85"><rect x="50" y="95" width="30" height="26" rx="4"/><rect x="105" y="95" width="30" height="26" rx="4"/><rect x="160" y="95" width="30" height="26" rx="4"/><rect x="50" y="135" width="30" height="26" rx="4"/><rect x="160" y="135" width="30" height="26" rx="4"/></g><rect x="100" y="140" width="40" height="70" rx="6" fill="#0E3A43"/></svg>';},
+    lab:function(){return '<svg viewBox="0 0 240 240"><path d="M90 30h60v20h-8v60l48 84a12 12 0 0 1-10 18H60a12 12 0 0 1-10-18l48-84V50h-8z" fill="#fff" opacity=".95"/><path d="M78 150h84l30 50H48z" fill="#7CCB8B" opacity=".85"/><circle cx="110" cy="176" r="7" fill="#fff"/><circle cx="140" cy="190" r="5" fill="#fff"/><circle cx="125" cy="165" r="4" fill="#fff"/><rect x="170" y="40" width="40" height="70" rx="8" fill="#2FB2B5" opacity=".9"/><rect x="178" y="52" width="24" height="20" rx="3" fill="#fff"/></svg>';},
+    empresa:function(){return '<svg viewBox="0 0 240 240"><rect x="60" y="30" width="120" height="180" rx="16" fill="#fff" opacity=".95"/><rect x="80" y="60" width="80" height="90" rx="8" fill="#E8F6F2"/><g stroke="#D93B3B" stroke-width="5"><line x1="92" y1="80" x2="148" y2="80"/><line x1="92" y1="98" x2="148" y2="98" opacity=".5"/><line x1="92" y1="116" x2="148" y2="116"/><line x1="92" y1="134" x2="148" y2="134" opacity=".4"/></g><circle cx="120" cy="178" r="14" fill="#7CCB8B"/><path d="m112 178 6 6 11-12" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/><rect x="20" y="150" width="40" height="60" rx="8" fill="#2FB2B5" opacity=".9"/><rect x="180" y="120" width="40" height="90" rx="8" fill="#2FB2B5" opacity=".9"/></svg>';},
+    industria:function(){return '<svg viewBox="0 0 240 240"><path d="M30 210V110l50 40v-40l50 40v-40l50 40v-40l30 20v80z" fill="#fff" opacity=".95"/><rect x="40" y="40" width="26" height="80" rx="4" fill="#2FB2B5"/><rect x="150" y="150" width="30" height="40" rx="4" fill="#7CCB8B"/><rect x="100" y="150" width="30" height="40" rx="4" fill="#7CCB8B"/><rect x="50" y="160" width="30" height="30" rx="4" fill="#7CCB8B"/><circle cx="53" cy="30" r="10" fill="#fff" opacity=".5"/><circle cx="60" cy="16" r="6" fill="#fff" opacity=".35"/></svg>';}
   };
   var PRODUCTS=[
-    {id:'DOA164',name:'Panel multidrogas 6 parámetros en cassette',brand:'CERTUM',sku:'DOA164',cat:'Antidoping',art:'cup',badge:'Más vendido',pres:'Caja con 25 pruebas',price:null,cold:false,bullets:['Detecta THC, COC, AMP, MET, OPI y BZO en orina en un solo paso.','Resultado visual en 5 minutos; válido hasta 10 minutos.','Ideal para reclutamiento y selección de personal, clínicas y hospitales.','Sensibilidad de corte conforme a lineamientos SAMHSA.','Registro sanitario COFEPRIS vigente.'],specs:{'Muestra':'Orina','Parámetros':'THC 50 · COC 300 · AMP 1000 · MET 1000 · OPI 2000 · BZO 300 ng/mL','Tiempo de lectura':'5 minutos','Presentación':'Caja con 25 cassettes + pipetas','Almacenamiento':'2–30 °C','Vida de anaquel':'24 meses'},desc:'El panel multidrogas CERTUM de 6 parámetros es una prueba inmunocromatográfica rápida para la detección cualitativa simultánea de seis drogas de abuso en orina humana. Es la prueba más solicitada por empresas con procesos de reclutamiento, clínicas de salud ocupacional y hospitales.'},
-    {id:'368171',name:'Tubo Vacutainer® EDTA K2, tapa lila, 4 ml',brand:'BD',sku:'368171',cat:'Toma de muestra',art:'tube',badge:'Pedido recurrente',pres:'Caja con 100 tubos',price:null,cold:false,bullets:['Anticoagulante EDTA K2 en aerosol para hematología.','Tubo de plástico PET con tapa Hemogard™ de seguridad.','Volumen de extracción 4 ml, 13 × 75 mm.','Compatible con todos los analizadores de hematología.','Original BD, distribuidor autorizado.'],specs:{'Aditivo':'EDTA K2 7.2 mg','Volumen':'4 ml','Dimensiones':'13 × 75 mm','Material':'PET','Presentación':'Caja con 100 · Empaque con 1,000'},desc:'Los tubos BD Vacutainer® con EDTA K2 son el estándar para toma de muestra en hematología y banco de sangre. Uno de los consumibles de compra recurrente más frecuentes entre hospitales y cadenas de laboratorio.'},
-    {id:'CAGD025E',name:'SGTi-flex COVID-19 / Influenza A+B Ag Duo',brand:'Sugentech',sku:'CAGD025E',cat:'Pruebas rápidas',art:'cassette',badge:'',pres:'Caja con 25 pruebas',price:null,cold:false,bullets:['Detección simultánea de antígeno SARS-CoV-2 e Influenza A/B en un solo cassette.','Muestra nasofaríngea; resultado en 15 minutos.','Alta sensibilidad y especificidad validada clínicamente.','Incluye hisopos, tubos de extracción y tapas gotero.'],specs:{'Muestra':'Hisopado nasofaríngeo','Tiempo':'15 minutos','Presentación':'25 pruebas + accesorios','Almacenamiento':'2–30 °C','Registro':'COFEPRIS'},desc:'Prueba combinada para diferenciar COVID-19 de Influenza A y B en una sola corrida, reduciendo el costo por paciente y el tiempo de respuesta en urgencias y consulta externa.'},
-    {id:'PT7114',name:'Agar MacConkey',brand:'MCD LAB',sku:'PT7114',cat:'Microbiología',art:'bottle',badge:'',pres:'Frasco de 450 g',price:null,cold:false,bullets:['Medio selectivo y diferencial para enterobacterias.','Fabricación nacional con control de calidad por lote.','Rinde aproximadamente 9 litros de medio.','Certificado de análisis disponible.'],specs:{'Presentación':'Frasco 450 g','Rendimiento':'~9 L','pH final':'7.1 ± 0.2','Almacenamiento':'10–30 °C, lugar seco','Uso':'Aislamiento de Gram negativos'},desc:'El Agar MacConkey MCD LAB es el medio de cultivo de mayor rotación en microbiología clínica para aislamiento y diferenciación de bacilos entéricos Gram negativos.'},
-    {id:'64840',name:'Kit Wright, equipo de tinción con buffer',brand:'HYCEL',sku:'64840',cat:'Reactivos',art:'kit',badge:'',pres:'Kit completo',price:null,cold:false,bullets:['Colorante Wright + buffer de fosfatos listo para usar.','Tinción de frotis sanguíneos y médula ósea.','Coloración nítida de núcleos y granulaciones.','Fabricado en México por HYCEL.'],specs:{'Contenido':'Colorante Wright 500 ml + Buffer 500 ml','Uso':'Hematología · Citología','Almacenamiento':'15–30 °C','Presentación':'Kit'},desc:'Equipo de tinción Wright HYCEL para la evaluación morfológica de células sanguíneas. El kit de tinción más pedido por laboratorios clínicos en toda la República.'},
-    {id:'IDEC-425',name:'Dengue Combo Duo IgG/IgM + NS1 en cassette',brand:'CERTUM',sku:'IDEC-425',cat:'Pruebas rápidas',art:'cassette',badge:'Temporada',pres:'Caja con 25 pruebas',price:null,cold:false,bullets:['Antígeno NS1 y anticuerpos IgG/IgM en el mismo cassette.','Muestra de sangre total, suero o plasma.','Resultado en 15 minutos.','Cobertura desde el día 1 de síntomas hasta fase tardía.'],specs:{'Muestra':'Sangre total / suero / plasma','Tiempo':'15 minutos','Presentación':'25 cassettes + buffer','Almacenamiento':'2–30 °C','Registro':'COFEPRIS'},desc:'La prueba Dengue Combo Duo CERTUM permite diagnosticar dengue en cualquier fase de la infección con una sola muestra, ideal para hospitales y laboratorios en zonas endémicas.'}
+    {id:'DOA164',name:'Panel multidrogas 6 parámetros en cassette',brand:'CERTUM',sku:'DOA164',cat:'Antidoping',art:'cup',img:8670147,badge:'Más vendido',pres:'Caja con 25 pruebas',price:null,cold:false,bullets:['Detecta THC, COC, AMP, MET, OPI y BZO en orina en un solo paso.','Resultado visual en 5 minutos; válido hasta 10 minutos.','Ideal para reclutamiento y selección de personal, clínicas y hospitales.','Sensibilidad de corte conforme a lineamientos SAMHSA.','Registro sanitario COFEPRIS vigente.'],specs:{'Muestra':'Orina','Parámetros':'THC 50 · COC 300 · AMP 1000 · MET 1000 · OPI 2000 · BZO 300 ng/mL','Tiempo de lectura':'5 minutos','Presentación':'Caja con 25 cassettes + pipetas','Almacenamiento':'2–30 °C','Vida de anaquel':'24 meses'},desc:'El panel multidrogas CERTUM de 6 parámetros es una prueba inmunocromatográfica rápida para la detección cualitativa simultánea de seis drogas de abuso en orina humana. Es la prueba más solicitada por empresas con procesos de reclutamiento, clínicas de salud ocupacional y hospitales.'},
+    {id:'368171',name:'Tubo Vacutainer® EDTA K2, tapa lila, 4 ml',brand:'BD',sku:'368171',cat:'Toma de muestra',art:'tube',img:4047146,badge:'Pedido recurrente',pres:'Caja con 100 tubos',price:null,cold:false,bullets:['Anticoagulante EDTA K2 en aerosol para hematología.','Tubo de plástico PET con tapa Hemogard™ de seguridad.','Volumen de extracción 4 ml, 13 × 75 mm.','Compatible con todos los analizadores de hematología.','Original BD, distribuidor autorizado.'],specs:{'Aditivo':'EDTA K2 7.2 mg','Volumen':'4 ml','Dimensiones':'13 × 75 mm','Material':'PET','Presentación':'Caja con 100 · Empaque con 1,000'},desc:'Los tubos BD Vacutainer® con EDTA K2 son el estándar para toma de muestra en hematología y banco de sangre. Uno de los consumibles de compra recurrente más frecuentes entre hospitales y cadenas de laboratorio.'},
+    {id:'CAGD025E',name:'SGTi-flex COVID-19 / Influenza A+B Ag Duo',brand:'Sugentech',sku:'CAGD025E',cat:'Pruebas rápidas',art:'cassette',img:7867251,badge:'',pres:'Caja con 25 pruebas',price:null,cold:false,bullets:['Detección simultánea de antígeno SARS-CoV-2 e Influenza A/B en un solo cassette.','Muestra nasofaríngea; resultado en 15 minutos.','Alta sensibilidad y especificidad validada clínicamente.','Incluye hisopos, tubos de extracción y tapas gotero.'],specs:{'Muestra':'Hisopado nasofaríngeo','Tiempo':'15 minutos','Presentación':'25 pruebas + accesorios','Almacenamiento':'2–30 °C','Registro':'COFEPRIS'},desc:'Prueba combinada para diferenciar COVID-19 de Influenza A y B en una sola corrida, reduciendo el costo por paciente y el tiempo de respuesta en urgencias y consulta externa.'},
+    {id:'PT7114',name:'Agar MacConkey',brand:'MCD LAB',sku:'PT7114',cat:'Microbiología',art:'bottle',img:3786246,badge:'',pres:'Frasco de 450 g',price:null,cold:false,bullets:['Medio selectivo y diferencial para enterobacterias.','Fabricación nacional con control de calidad por lote.','Rinde aproximadamente 9 litros de medio.','Certificado de análisis disponible.'],specs:{'Presentación':'Frasco 450 g','Rendimiento':'~9 L','pH final':'7.1 ± 0.2','Almacenamiento':'10–30 °C, lugar seco','Uso':'Aislamiento de Gram negativos'},desc:'El Agar MacConkey MCD LAB es el medio de cultivo de mayor rotación en microbiología clínica para aislamiento y diferenciación de bacilos entéricos Gram negativos.'},
+    {id:'64840',name:'Kit Wright, equipo de tinción con buffer',brand:'HYCEL',sku:'64840',cat:'Reactivos',art:'kit',img:8539753,badge:'',pres:'Kit completo',price:null,cold:false,bullets:['Colorante Wright + buffer de fosfatos listo para usar.','Tinción de frotis sanguíneos y médula ósea.','Coloración nítida de núcleos y granulaciones.','Fabricado en México por HYCEL.'],specs:{'Contenido':'Colorante Wright 500 ml + Buffer 500 ml','Uso':'Hematología · Citología','Almacenamiento':'15–30 °C','Presentación':'Kit'},desc:'Equipo de tinción Wright HYCEL para la evaluación morfológica de células sanguíneas. El kit de tinción más pedido por laboratorios clínicos en toda la República.'},
+    {id:'IDEC-425',name:'Dengue Combo Duo IgG/IgM + NS1 en cassette',brand:'CERTUM',sku:'IDEC-425',cat:'Pruebas rápidas',art:'cassette',img:7280977,badge:'Temporada',pres:'Caja con 25 pruebas',price:null,cold:false,bullets:['Antígeno NS1 y anticuerpos IgG/IgM en el mismo cassette.','Muestra de sangre total, suero o plasma.','Resultado en 15 minutos.','Cobertura desde el día 1 de síntomas hasta fase tardía.'],specs:{'Muestra':'Sangre total / suero / plasma','Tiempo':'15 minutos','Presentación':'25 cassettes + buffer','Almacenamiento':'2–30 °C','Registro':'COFEPRIS'},desc:'La prueba Dengue Combo Duo CERTUM permite diagnosticar dengue en cualquier fase de la infección con una sola muestra, ideal para hospitales y laboratorios en zonas endémicas.'}
   ];
   var BRANDS=['BD','Thermo Scientific','Eppendorf','Corning','Bio-Rad','Leica','Dräger','bioMérieux','MCD LAB','HYCEL','JALMEK','COPAN','CERTUM','SD Biosensor','ARTRON','Spinreact','Wiener Lab','QuidelOrtho'];
+  /* ===== FOTOGRAFÍAS (Pexels, licencia libre) con respaldo SVG si la URL no carga ===== */
+  var PHOTOS={hospital:10827916,lab:3938022,empresa:5989931,industria:2760241,cat_pr:7867251,cat_ad:8670147,cat_re:11703173,cat_eq:18471457,delivery:5025665,service:9574330,scientist:4031692};
+  function px(id,w,h){return 'https://images.pexels.com/photos/'+id+'/pexels-photo-'+id+'.jpeg?auto=compress&cs=tinysrgb&w='+(w||1200)+(h?'&h='+h+'&fit=crop':'')}
+  function photo(id,alt,fallback,w,h){return '<img class="ph" src="'+px(id,w,h)+'" alt="'+alt.replace(/"/g,'&quot;')+'" loading="lazy" decoding="async"><div class="fb" style="display:none">'+(fallback||'')+'</div>'}
+  function bindPhotos(scope){Array.prototype.slice.call((scope||document).querySelectorAll('img.ph')).forEach(function(im){if(im.__b)return;im.__b=1;im.addEventListener('error',function(){im.style.display='none';var f=im.nextElementSibling;if(f&&f.className==='fb')f.style.display='';im.parentNode&&im.parentNode.classList&&im.parentNode.classList.add('nophoto')})})}
+
 
   var root=document.getElementById('lg3'),modal=document.getElementById('lg3-modal');
   if(modal.parentNode!==document.body)document.body.appendChild(modal);
@@ -457,9 +483,9 @@
   function esc(s){return String(s).replace(/[&<>"]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]})}
   function money(n){return '$'+n.toLocaleString('es-MX',{minimumFractionDigits:2})+' '+CFG.currency}
   function waLink(t){return 'https://wa.me/'+CFG.whatsapp+'?text='+encodeURIComponent(t)}
-  function logoHTML(){if(CFG.logoUrl)return '<img src="'+esc(CFG.logoUrl)+'" alt="Loga Soluciones Científicas para Laboratorio">';return '<div class="logo-fb"><svg viewBox="0 0 48 48"><path d="M17 4h14v6h-3v10l13 20a5 5 0 0 1-4 8H11a5 5 0 0 1-4-8l13-20V10h-3z" fill="#1A73B5"/><path d="M13 36h22l4 6H9z" fill="#3DB54A"/><circle cx="20" cy="32" r="2.5" fill="#fff"/><circle cx="28" cy="35" r="1.8" fill="#fff"/></svg><div><div class="wm">LOGA<span>TECH</span></div><small>SOLUCIONES CIENTÍFICAS PARA LABORATORIO</small></div></div>'}
+  function logoHTML(){if(CFG.logoUrl)return '<img src="'+esc(CFG.logoUrl)+'" alt="Loga Soluciones Científicas para Laboratorio">';return '<div class="logo-fb"><svg viewBox="0 0 48 48"><path d="M17 4h14v6h-3v10l13 20a5 5 0 0 1-4 8H11a5 5 0 0 1-4-8l13-20V10h-3z" fill="#2FB2B5"/><path d="M13 36h22l4 6H9z" fill="#7CCB8B"/><circle cx="20" cy="32" r="2.5" fill="#fff"/><circle cx="28" cy="35" r="1.8" fill="#fff"/></svg><div><div class="wm">LOGA<span>TECH</span></div><small>SOLUCIONES CIENTÍFICAS PARA LABORATORIO</small></div></div>'}
   $$('[data-logo]').forEach(function(el){el.innerHTML=logoHTML()});
-  $$('[data-art]').forEach(function(el){var f=ART[el.getAttribute('data-art')];if(f)el.innerHTML=f()});
+  $$('[data-art]').forEach(function(el){var k=el.getAttribute('data-art'),f=ART[k];var fb=f?f():'';var pk=el.getAttribute('data-photo')||k;el.innerHTML=PHOTOS[pk]?photo(PHOTOS[pk],'Loga · '+pk,fb,1400):fb});bindPhotos(root);
 
   /* Hero por pestañas con reveal circular */
   (function(){
@@ -473,7 +499,7 @@
   $('[data-brands]').innerHTML=BRANDS.map(function(b){return '<div>'+esc(b)+'</div>'}).join('');
 
   var quote=[];
-  $('[data-products]').innerHTML=PRODUCTS.map(function(p){return '<article class="pc" data-id="'+p.id+'"><div class="im">'+ART[p.art]()+(p.badge?'<span class="bd'+(p.badge==='Temporada'?' o':'')+'">'+esc(p.badge)+'</span>':'')+'</div><div class="tx"><span class="ct">'+esc(p.cat)+'</span><h3>'+esc(p.name)+'</h3><div class="mt"><b>'+esc(p.brand)+'</b> · '+esc(p.sku)+'<br>'+esc(p.pres)+'</div><div class="ft"><span class="pr">'+(p.price?money(p.price):'Cotización')+'<small>'+(p.price?'+ IVA':'respuesta en minutos')+'</small></span><button type="button" data-add>+ Solicitud</button></div></div></article>'}).join('');
+  $('[data-products]').innerHTML=PRODUCTS.map(function(p){return '<article class="pc" data-id="'+p.id+'"><div class="im">'+(p.img?photo(p.img,p.name,ART[p.art](),600,600):ART[p.art]())+(p.badge?'<span class="bd'+(p.badge==='Temporada'?' o':'')+'">'+esc(p.badge)+'</span>':'')+'</div><div class="tx"><span class="ct">'+esc(p.cat)+'</span><h3>'+esc(p.name)+'</h3><div class="mt"><b>'+esc(p.brand)+'</b> · '+esc(p.sku)+'<br>'+esc(p.pres)+'</div><div class="ft"><span class="pr">'+(p.price?money(p.price):'Cotización')+'<small>'+(p.price?'+ IVA':'respuesta en minutos')+'</small></span><button type="button" data-add>+ Solicitud</button></div></div></article>'}).join('');bindPhotos(root);
   root.addEventListener('click',function(e){var c=e.target.closest('.pc');if(!c)return;var p=PRODUCTS.filter(function(x){return x.id===c.getAttribute('data-id')})[0];if(e.target.closest('[data-add]')){addQuote(p,1);return}openModal(p)});
   function addQuote(p,q){var f=quote.filter(function(x){return x.id===p.id})[0];if(f)f.qty+=q;else quote.push({id:p.id,name:p.name,sku:p.sku,qty:q});var n=0;quote.forEach(function(x){n+=x.qty});$('[data-quote-count]').textContent=n;toast('Agregado a tu solicitud: '+p.name)}
   $('[data-quote-open]').addEventListener('click',function(){if(!quote.length){toast('Tu solicitud está vacía. Agrega productos con “+ Solicitud”.');return}window.open(waLink('Hola Loga, solicito cotización de:\n'+quote.map(function(x){return '• '+x.qty+' × '+x.name+' (clave '+x.sku+')'}).join('\n')),'_blank')});
@@ -481,12 +507,12 @@
 
   function openModal(p){
     var dlg=$('[data-dlg]',modal);
-    var thumbs=[undefined,'#3DB54A','#0A2E4F'].map(function(c,k){return '<button type="button" class="'+(k?'':'on')+'" data-th="'+k+'">'+ART[p.art](c)+'</button>'}).join('');
+    var thumbs=[undefined,'#7CCB8B','#0E3A43'].map(function(c,k){var inner=p.img?photo(p.img,p.name,ART[p.art](),k===0?900:k===1?800:700,k===0?900:k===1?800:700):ART[p.art](c);return '<button type="button" class="'+(k?'':'on')+'" data-th="'+k+'">'+inner+'</button>'}).join('');
     var specs='',specs2='';Object.keys(p.specs).forEach(function(k){specs+='<tr><td>'+esc(k)+'</td><td>'+esc(p.specs[k])+'</td></tr>';specs2+='<div><b>'+esc(k)+'</b><span>'+esc(p.specs[k])+'</span></div>'});
     var related=PRODUCTS.filter(function(x){return x.id!==p.id}).slice(0,5).map(function(x){return '<div class="r" data-rel="'+x.id+'">'+ART[x.art]()+'<div><b>'+esc(x.name)+'</b>'+esc(x.brand)+' · '+esc(x.sku)+'</div></div>'}).join('');
     var doc='<svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6zM14 2v6h6"/></svg>';
     dlg.innerHTML='<div class="hd"><span>Catálogo › <b>'+esc(p.cat)+'</b> › '+esc(p.name)+'</span><button class="close" type="button" aria-label="Cerrar" data-close>×</button></div>'
-      +'<div class="top"><div class="thumbs">'+thumbs+'</div><div class="main"><div data-main>'+ART[p.art]()+'</div></div>'
+      +'<div class="top"><div class="thumbs">'+thumbs+'</div><div class="main"><div data-main>'+(p.img?photo(p.img,p.name,ART[p.art](),1200,900):ART[p.art]())+'</div></div>'
       +'<div class="info"><div class="ct">'+esc(p.cat)+'</div><h2>'+esc(p.name)+'</h2><div class="mt">Marca <b>'+esc(p.brand)+'</b> · Clave <b>'+esc(p.sku)+'</b> · '+esc(p.pres)+'</div><div class="fl"><span>Registro COFEPRIS</span><span>Distribuidor autorizado</span><span>Garantía de fábrica</span>'+(p.badge?'<span>'+esc(p.badge)+'</span>':'')+'</div>'
       +'<h4>Acerca de este producto</h4><ul>'+p.bullets.map(function(b){return '<li>'+esc(b)+'</li>'}).join('')+'</ul><h4>Especificaciones técnicas</h4><table>'+specs+'</table></div>'
       +'<aside class="buy">'+(p.price?'<div class="pr">'+money(p.price)+'<small>+ IVA · Precio por volumen</small></div>':'<div class="pr q">Precio por cotización<small>Respuesta en minutos en horario hábil</small></div>')
@@ -501,11 +527,11 @@
       +'<div class="pane"><div class="docs"><a href="#">'+doc+'<span>Ficha técnica<small>PDF · español</small></span></a><a href="#">'+doc+'<span>Hoja de seguridad<small>PDF</small></span></a><a href="#">'+doc+'<span>Certificado de análisis<small>por lote, a solicitud</small></span></a></div></div>'
       +'<div class="pane"><p><b>Envíos:</b> locales sin costo; foráneos gratis desde $5,000. Importación especial: 4 a 6 semanas.</p><p><b>Cadena de frío:</b> refrigerados salen lunes y miércoles en hielera con geles; cambio físico si llegan dañados.</p><p><b>Garantía:</b> 1 año del fabricante. Equipos con instalación, capacitación y mantenimiento.</p><p><b>Crédito:</b> a 15 o 30 días tras 3 compras de contado y solicitud aprobada.</p></div></div>'
       +'<div class="related"><h4>Productos relacionados</h4><div class="row">'+related+'</div></div>';
-    modal.style.display='block';modal.classList.add('open');document.body.style.overflow='hidden';
+    modal.style.display='block';modal.classList.add('open');document.body.style.overflow='hidden';bindPhotos(dlg);
     var qty=$('[data-qty]',dlg),co=$('[data-co]',dlg);
     function upd(){var q=Math.max(1,parseInt(qty.value)||1);qty.value=q;$('[data-mwa]',dlg).href=waLink('Hola Loga, solicito cotización de '+q+' × '+p.name+' (clave '+p.sku+', '+p.brand+')'+(co.value?' para '+co.value:'')+'.')}upd();
     dlg.onclick=function(e){
-      var th=e.target.closest('[data-th]');if(th){$$('[data-th]',dlg).forEach(function(b){b.classList.remove('on')});th.classList.add('on');$('[data-main]',dlg).innerHTML=th.innerHTML;return}
+      var th=e.target.closest('[data-th]');if(th){$$('[data-th]',dlg).forEach(function(b){b.classList.remove('on')});th.classList.add('on');$('[data-main]',dlg).innerHTML=th.innerHTML;bindPhotos(dlg);return}
       var q=e.target.closest('[data-q]');if(q){qty.value=(parseInt(qty.value)||1)+parseInt(q.getAttribute('data-q'));upd();return}
       var tb=e.target.closest('[data-tab]');if(tb){var n=+tb.getAttribute('data-tab');$$('[data-tab]',dlg).forEach(function(b,k){b.classList.toggle('on',k===n)});$$('.pane',dlg).forEach(function(b,k){b.classList.toggle('on',k===n)});return}
       if(e.target.closest('[data-madd]')){addQuote(p,parseInt(qty.value)||1);return}
