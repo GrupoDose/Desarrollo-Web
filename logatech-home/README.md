@@ -1,4 +1,49 @@
-# Logatech · Página de inicio · 5 propuestas
+# Logatech · Sitio web
+
+## Sitio completo (carpeta `sitio/`)
+
+El cliente eligió la propuesta 1 (Catálogo Pro). A partir de ella está construido el sitio completo, con el mismo sistema de diseño, la paleta del logotipo y fotografía real:
+
+| Página | Archivo | Qué hace |
+|--------|---------|----------|
+| Inicio | `sitio/inicio.html` | Hero por audiencia, marcas, "Más pedidos" (productos con `home:true`), categorías, por qué Loga, CTA. |
+| Catálogo | `sitio/catalogo.html` | Filtros por categoría, subcategoría y marca; búsqueda (`?q=`); orden; paginación; estado vacío con cotización. Parámetros: `?cat=antidoping&sub=…&marca=…&q=…&orden=az&p=2`. |
+| Producto | `sitio/producto.html?sku=DOA164` | Ficha completa estilo Amazon adaptado: galería, viñetas, especificaciones, caja de cotización, pestañas, documentos (ficha técnica, hoja de seguridad, certificado por WhatsApp) y relacionados. |
+| Nosotros | `sitio/nosotros.html` | Historia, cifras, diferenciadores, lo que no hacemos, a quién atendemos, razón social. |
+| Marcas | `sitio/marcas.html` | Las 43 marcas del cuestionario con buscador y filtro por letra; enlaza al catálogo filtrado por marca o a cotización con asesor. |
+| Servicio técnico | `sitio/servicio-tecnico.html` | Qué incluye, proceso en 4 pasos, equipos atendidos, formulario "Agendar servicio". |
+| Envíos y crédito | `sitio/envios-y-credito.html` | Políticas de envío, cadena de frío, crédito, garantía y pagos; preguntas frecuentes. |
+| Contacto | `sitio/contacto.html` | Vías de contacto, los 8 teléfonos, horario, mapa, formulario de cotización (se prellena con la cotización guardada). |
+
+Funciones compartidas en todas las páginas:
+
+- **Cotización persistente**: el botón "Cotización" guarda productos en el navegador (`localStorage`); el cajón "Mi cotización" permite ajustar cantidades, agregar notas y enviar por WhatsApp o correo con el mensaje armado.
+- **Vista rápida** (modal) desde cualquier tarjeta y enlace a la ficha completa.
+- **Buscador del header** que lleva al catálogo con la categoría seleccionada.
+- **Menú móvil**, navegación de categorías y listas del footer generadas desde los datos.
+- **Formularios sin backend**: arman el mensaje y abren WhatsApp o el correo. Se pueden sustituir por Elementor Forms cuando se quiera guardar leads.
+
+### Cómo se construye
+
+Los archivos de `sitio/` se generan con `python3 build.py` a partir de `src/`:
+
+- `src/data.js`: configuración (`CFG`, incluidos los slugs de cada página), categorías, marcas y los 33 productos del cuestionario. **Aquí se agregan productos**: cada uno con categoría, subcategoría, marca, clave, presentación, viñetas, especificaciones, descripción y foto.
+- `src/core.js`: cotización, modal, enlaces, formularios, menú.
+- `src/base.css` + `src/extra.css`: estilos; `src/header.html`, `src/footer.html`, `src/overlays.html`: partes comunes.
+- `src/pages/*.html`: cada página (CSS propio, HTML y JS separados por marcadores).
+
+Cada archivo generado es autónomo: se pega completo en un widget HTML de Elementor, una página de WordPress por archivo. Antes de publicar, en `src/data.js` cambia `CFG.pages` por los slugs reales (por ejemplo `catalogo:'/catalogo/'`) y vuelve a construir; todos los enlaces internos se actualizan. La ficha de producto es una sola página de WordPress que lee `?sku=`.
+
+### Decisiones a confirmar con el cliente
+
+- Se agregó una décima categoría, **Consumibles y toma de muestra**, para los tubos BD, vasos de orina, cajas Petri, portaobjetos y medios de transporte del listado de más vendidos, que no caben en las 9 categorías del cuestionario.
+- El tubo rojo BD de 6 ml trae la misma clave que el amarillo en el cuestionario; quedó como "Por confirmar".
+- Especificaciones de producto escritas como referencia: validar contra las fichas técnicas del fabricante.
+- Point of care, cuidados críticos, detección de alcohol y equipos no tienen SKUs en el cuestionario; el catálogo muestra un estado "se cotiza con asesor" hasta que lleguen los productos.
+
+---
+
+# Propuestas de diseño (fase 1) · 5 propuestas
 
 Propuestas de diseño para la nueva web de **Loga Soluciones Científicas para Laboratorio** (razón social: Logatech Corporation Industrial S.A. de C.V.), construidas a partir del cuestionario de rediseño y del boceto de la página de inicio.
 

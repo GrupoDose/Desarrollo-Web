@@ -1,0 +1,41 @@
+===CSS===
+===HTML===
+  <section class="phero sm" data-photo="hospital" data-alt="Contacto Loga">
+    <div class="wrap">
+      <div class="crumbs"><a href="#" data-page="inicio">Inicio</a> › Contacto</div>
+      <h1>Cotiza <em>en minutos</em></h1>
+      <p>Asignamos una persona para atenderte en horario hábil. WhatsApp primero; también correo y llamada.</p>
+    </div>
+  </section>
+  <section class="sec alt"><div class="wrap">
+    <div class="split" style="align-items:start">
+      <div>
+        <div class="ways" style="margin-bottom:22px">
+          <a class="way" href="https://wa.me/528113638885?text=Hola%20Loga%2C%20quiero%20cotizar" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-13 8l-5 1 1-5a9 9 0 1 1 17-4z"/></svg><div><b>WhatsApp</b><span>81 1363 8885 · respuesta en minutos</span></div></a>
+          <a class="way" href="tel:+528133760911"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><b>Llamada</b><span>81 3376 0911 · conmutador</span></div></a>
+          <a class="way" href="mailto:ventas@logatech.com.mx"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><div><b>Correo</b><span>ventas@logatech.com.mx</span></div></a>
+          <a class="way" href="https://maps.app.goo.gl/edKh68XSe5Ziowa68" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 22s7-7 7-13a7 7 0 0 0-14 0c0 6 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg><div><b>Visítanos</b><span>Abril en Portugal 345, Col. Roble, San Nicolás de los Garza, N.L.</span></div></a>
+        </div>
+        <div class="card" style="padding:20px 22px;margin-bottom:22px"><h3 style="font:800 16px var(--font-h);color:var(--navy);margin-bottom:10px">Teléfonos directos</h3>
+          <ul class="phones"><li><a href="tel:+528133760911">81 3376 0911</a></li><li><a href="tel:+528133760929">81 3376 0929</a></li><li><a href="tel:+528113638885">81 1363 8885</a> · WhatsApp</li><li><a href="tel:+528133760939">81 3376 0939</a></li><li><a href="tel:+528133760944">81 3376 0944</a></li><li><a href="tel:+528129680596">81 2968 0596</a></li><li><a href="tel:+528133760957">81 3376 0957</a></li><li><a href="tel:+528129680597">81 2968 0597</a></li></ul>
+          <p style="font-size:13px;color:var(--muted);margin-top:10px">Horario: lunes a viernes de 8:30 a 17:30 h.</p></div>
+        <div class="map"><iframe title="Mapa Loga" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Abril+en+Portugal+345,+Roble,+San+Nicol%C3%A1s+de+los+Garza,+N.L.&output=embed"></iframe></div>
+      </div>
+      <form class="form" data-waform="Solicitud de cotización desde la web">
+        <h3>Solicitar cotización</h3>
+        <label>Nombre<input name="nombre" data-label="Nombre" required></label>
+        <label>Empresa / Laboratorio<input name="empresa" data-label="Empresa" required></label>
+        <label>Correo<input name="correo" data-label="Correo" type="email"></label>
+        <label>WhatsApp<input name="whatsapp" data-label="WhatsApp" type="tel" required></label>
+        <label>Tipo de cliente<select name="tipo" data-label="Tipo de cliente"><option>Hospital</option><option>Laboratorio clínico</option><option>Empresa (reclutamiento)</option><option>Industria</option><option>Universidad / investigación</option><option>Otro</option></select></label>
+        <label>Ciudad / Estado<input name="ciudad" data-label="Ciudad"></label>
+        <label class="full">¿Qué necesitas cotizar?<textarea name="detalle" data-label="Necesito" placeholder="Producto, marca, clave, cantidad y frecuencia de pedido" required></textarea></label>
+        <label class="full via">Enviar por <span><input type="radio" name="via" value="whatsapp" checked> WhatsApp</span><span><input type="radio" name="via" value="correo"> Correo</span></label>
+        <button class="btn btn-green full" type="submit">Enviar solicitud</button>
+        <div class="ok" data-ok>Listo: se abrió tu WhatsApp o correo con la solicitud. Te respondemos en horario hábil.</div>
+        <small>Al enviar aceptas nuestro aviso de privacidad. Pedido mínimo $5,000 MXN · Envío gratis desde $5,000 a toda la República.</small>
+      </form>
+    </div>
+  </div></section>
+===JS===
+  (function(){var d=$('[data-qlist]',drawer);if(quote.length){var ta=$('textarea[name=detalle]');if(ta&&!ta.value)ta.value=quote.map(function(x){return x.qty+' × '+x.name+' ('+x.sku+')'}).join('\n')}})();

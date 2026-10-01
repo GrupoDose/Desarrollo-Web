@@ -1,0 +1,54 @@
+===CSS===
+===HTML===
+  <section class="phero" data-photo="service" data-alt="Servicio técnico">
+    <div class="wrap">
+      <div class="crumbs"><a href="#" data-page="inicio">Inicio</a> › Servicio técnico</div>
+      <h1>Servicio técnico propio, <em>en nuestras instalaciones</em></h1>
+      <p>Laboratorio certificado para mantenimiento, reparaciones y atención de garantías. Los equipos que vendemos son nuevos, de fábrica, e incluyen instalación, capacitación y mantenimiento.</p>
+      <div class="ctas"><a class="btn btn-green" href="#agendar">Agendar servicio</a><a class="btn btn-line" href="#" data-page="catalogo" data-params="cat=equipos">Ver equipos</a></div>
+    </div>
+  </section>
+  <section class="sec"><div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">Qué incluye</span><h2 class="sec-title">Compra de equipos con respaldo completo</h2></div></div>
+    <div class="vals">
+      <div class="val"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 20h16M6 20V9l6-5 6 5v11M10 20v-6h4v6"/></svg></div><h3>Instalación</h3><p>Puesta en marcha en tu laboratorio o clínica, con verificación de funcionamiento y calibración inicial.</p></div>
+      <div class="val o"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 6h16v10H4zM8 20h8M12 16v4"/></svg></div><h3>Capacitación</h3><p>Entrenamiento al personal en operación, mantenimiento básico e interpretación de resultados.</p></div>
+      <div class="val"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.5 9.3 8 11 4.5-1.7 8-6 8-11V5z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Garantía de 1 año</h3><p>Garantía del fabricante contra defectos de fabricación, con servicio técnico directo de la marca.</p></div>
+      <div class="val o"><div class="ic"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2-2z"/></svg></div><h3>Mantenimiento</h3><p>Preventivo y correctivo en nuestro laboratorio o en sitio, según el equipo y el caso.</p></div>
+      <div class="val"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H4zM9 9h6M9 13h4"/></svg></div><h3>Refacciones y consumibles</h3><p>Suministro continuo de reactivos, calibradores y refacciones originales para tu equipo.</p></div>
+      <div class="val o"><div class="ic"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-13 8l-5 1 1-5a9 9 0 1 1 17-4z"/></svg></div><h3>Soporte por WhatsApp</h3><p>Atención rápida para dudas de operación y diagnóstico de fallas antes de una visita.</p></div>
+    </div>
+  </div></section>
+  <section class="sec alt"><div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">Cómo funciona</span><h2 class="sec-title">Del contacto a la solución</h2></div></div>
+    <div class="steps">
+      <div class="step"><h3>Reporte</h3><p>Nos escribes por WhatsApp o llenas el formulario con marca, modelo y falla. Si puedes, adjunta fotos.</p></div>
+      <div class="step"><h3>Diagnóstico</h3><p>Un técnico revisa el caso, lo resuelve en remoto si es posible o programa la revisión.</p></div>
+      <div class="step"><h3>Reparación</h3><p>En nuestro laboratorio o en sitio. Los tiempos varían según el equipo, el producto o el caso.</p></div>
+      <div class="step"><h3>Entrega y seguimiento</h3><p>Pruebas de funcionamiento, entrega y seguimiento para que no vuelva a detenerse tu operación.</p></div>
+    </div>
+  </div></section>
+  <section class="sec" id="agendar"><div class="wrap">
+    <div class="split" style="align-items:start">
+      <div class="prose"><span class="eyebrow">Equipos que atendemos</span><h2 class="sec-title" style="margin:8px 0 14px">Diagnóstico clínico y point of care</h2>
+        <ul><li>Analizadores de química clínica y química seca.</li><li>Hematología y coagulación.</li><li>Electrolitos y gasometría.</li><li>Uroanálisis.</li><li>Alcoholímetros: calibración y mantenimiento.</li><li>Termocicladores y equipos de diagnóstico molecular.</li><li>Equipos automáticos y semiautomáticos de microbiología.</li></ul>
+        <p>Equipos de otras marcas: consúltanos, muchos los atendemos como servicio independiente.</p>
+      </div>
+      <form class="form" data-waform="Solicitud de servicio técnico">
+        <h3>Agendar servicio</h3>
+        <label>Nombre<input name="nombre" data-label="Nombre" required></label>
+        <label>Empresa / Laboratorio<input name="empresa" data-label="Empresa" required></label>
+        <label>WhatsApp<input name="whatsapp" data-label="WhatsApp" type="tel" required></label>
+        <label>Ciudad<input name="ciudad" data-label="Ciudad"></label>
+        <label>Marca del equipo<input name="marca" data-label="Marca"></label>
+        <label>Modelo<input name="modelo" data-label="Modelo"></label>
+        <label class="full">Tipo de servicio<select name="tipo" data-label="Tipo de servicio"><option>Mantenimiento preventivo</option><option>Reparación / falla</option><option>Instalación y capacitación</option><option>Garantía</option><option>Calibración de alcoholímetro</option></select></label>
+        <label class="full">Describe la falla o el servicio<textarea name="detalle" data-label="Detalle" required></textarea></label>
+        <label class="full via">Enviar por <span><input type="radio" name="via" value="whatsapp" checked> WhatsApp</span><span><input type="radio" name="via" value="correo"> Correo</span></label>
+        <button class="btn btn-green full" type="submit">Enviar solicitud</button>
+        <div class="ok" data-ok>Listo: se abrió tu WhatsApp o correo con la solicitud. Te respondemos en horario hábil.</div>
+        <small>Los tiempos de respuesta y entrega varían según el equipo, producto o caso.</small>
+      </form>
+    </div>
+  </div></section>
+===JS===

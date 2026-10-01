@@ -1,0 +1,20 @@
+<!-- FICHA RÁPIDA y COTIZACIÓN (se mueven a <body> al cargar) -->
+<div id="lg1-modal" role="dialog" aria-modal="true" aria-label="Detalle de producto">
+  <div class="bd" data-close></div>
+  <div class="dlg" data-dlg></div>
+  <div class="toast" data-toast></div>
+</div>
+<div id="lg1-quote" role="dialog" aria-modal="true" aria-label="Mi cotización">
+  <div class="bd" data-qclose></div>
+  <div class="panel">
+    <div class="qhead"><div><b>Mi cotización</b><span data-qtotal>0 productos</span></div><button type="button" class="close" aria-label="Cerrar" data-qclose>×</button></div>
+    <div class="qlist" data-qlist></div>
+    <div class="qfoot">
+      <textarea data-qnotes placeholder="Notas: empresa, ciudad, urgencia, frecuencia de pedido…"></textarea>
+      <a class="btn b1" href="#" target="_blank" rel="noopener" data-qwa><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>Enviar por WhatsApp</a>
+      <a class="btn b3" href="#" data-qmail>Enviar por correo</a>
+      <button class="lnk" type="button" data-qclear>Vaciar cotización</button>
+      <small>Respondemos en minutos en horario hábil. Pedido mínimo $5,000 · Envío gratis desde $5,000 a toda la República.</small>
+    </div>
+  </div>
+</div>

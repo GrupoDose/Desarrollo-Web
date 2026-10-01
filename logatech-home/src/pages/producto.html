@@ -1,0 +1,27 @@
+===CSS===
+===HTML===
+  <section class="pp"><div class="wrap" data-pp></div></section>
+  <section class="sec alt" data-relsec>
+    <div class="wrap">
+      <div class="sec-head"><div><span class="eyebrow">También piden</span><h2 class="sec-title">Productos relacionados</h2></div><a href="#" data-page="catalogo" data-rellink>Ver la categoría →</a></div>
+      <div class="pgrid cols3" data-related></div>
+    </div>
+  </section>
+===JS===
+  (function(){
+    var wrap=$('[data-pp]'),p=prodById(getParam('sku'));
+    if(!p){wrap.innerHTML='<div class="notfound"><h1 class="sec-title">Producto no encontrado</h1><p style="color:var(--muted);margin:10px 0 20px">La clave que buscas no está en el catálogo web. Pídela por WhatsApp: también surtimos productos especiales de importación.</p><a class="btn btn-green" href="'+waLink('Hola Loga, busco el producto con clave '+(getParam('sku')||'(sin clave)'))+'" target="_blank" rel="noopener">Cotizar por WhatsApp</a> <a class="btn btn-line" href="'+pageUrl('catalogo')+'">Ver catálogo</a></div>';$('[data-relsec]').style.display='none';return}
+    var cat=catById(p.cat)||{name:p.cat,id:p.cat};document.title=p.name+' · '+p.brand+' · Loga';
+    var doc='<svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6zM14 2v6h6"/></svg>';
+    wrap.innerHTML='<div class="crumbs"><a href="'+pageUrl('inicio')+'">Inicio</a> › <a href="'+pageUrl('catalogo')+'">Catálogo</a> › <a href="'+pageUrl('catalogo',{cat:cat.id})+'">'+esc(cat.name)+'</a>'+(p.sub?' › <a href="'+pageUrl('catalogo',{cat:cat.id,sub:p.sub})+'">'+esc(p.sub)+'</a>':'')+' › '+esc(p.name)+'</div>'
+      +'<div class="top"><div class="thumbs">'+thumbsHTML(p)+'</div>'
+      +'<div class="main"><div data-main>'+(p.img?photo(p.img,p.name,ART[p.art](),1200,900):ART[p.art]())+'</div></div>'
+      +'<div class="info"><h1>'+esc(p.name)+'</h1><div class="pbrand">Marca: <a href="'+pageUrl('catalogo',{marca:p.brand})+'">'+esc(p.brand)+'</a> · Clave <b>'+esc(p.sku)+'</b> · '+esc(p.pres)+'</div>'
+      +'<div class="flags"><span>Registro COFEPRIS</span><span class="b">Distribuidor autorizado</span><span class="b">Garantía de fábrica</span>'+(p.cold?'<span class="b">Cadena de frío</span>':'')+(p.badge?'<span>'+esc(p.badge)+'</span>':'')+'</div>'
+      +'<hr><h4>Acerca de este producto</h4><ul>'+p.bullets.map(function(b){return '<li>'+esc(b)+'</li>'}).join('')+'</ul><hr><h4>Especificaciones</h4>'+specsTable(p)+'</div>'
+      +buyBoxHTML(p)+'</div>'
+      +tabsHTML(p).replace('<div class="tabs"><nav>','<div class="tabs"><nav>').replace('data-tab="2">Envío, garantía y pagos</button>','data-tab="2">Envío, garantía y pagos</button><button type="button" data-tab="3">Documentos</button>').replace(/<\/div><\/div>$/,'</div><div class="pane"><div class="docs"><a href="'+waLink('Hola Loga, ¿me comparten la ficha técnica de '+p.name+' ('+p.sku+')?')+'" target="_blank" rel="noopener">'+doc+'<span>Ficha técnica<small>PDF · solicitar</small></span></a><a href="'+waLink('Hola Loga, ¿me comparten la hoja de seguridad de '+p.name+' ('+p.sku+')?')+'" target="_blank" rel="noopener">'+doc+'<span>Hoja de seguridad<small>PDF · solicitar</small></span></a><a href="'+waLink('Hola Loga, ¿me comparten el certificado de análisis de '+p.name+' ('+p.sku+')?')+'" target="_blank" rel="noopener">'+doc+'<span>Certificado de análisis<small>por lote, a solicitud</small></span></a></div></div></div>');
+    bindPhotos(wrap);bindProductUI(wrap,p);
+    var rel=$('[data-related]');rel.innerHTML=relatedOf(p,6).map(cardHTML).join('');bindPhotos(rel);
+    $('[data-rellink]').setAttribute('href',pageUrl('catalogo',{cat:cat.id}));
+  })();

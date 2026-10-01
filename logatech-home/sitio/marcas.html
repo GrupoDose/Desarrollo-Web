@@ -1,0 +1,1163 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marcas · Loga</title>
+</head>
+<body style="margin:0">
+
+<!-- ============================================================
+     LOGATECH · SITIO · página "marcas" · generado por build.py
+     Para Elementor: copia TODO entre INICIO y FIN en un widget "HTML".
+     ============================================================ -->
+<!-- ===== INICIO BLOQUE ELEMENTOR ===== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ---------- Variables de marca (cámbialas aquí y todo se actualiza) ---------- */
+#lg1, #lg1-modal{
+  /* === COLORES DE MARCA LOGATECH (tomados del logotipo). Azul = principal · Naranja = secundario. Cámbialos aquí === */
+  --brand-blue:#2F7FD3; --brand-blue-d:#1F5FBF; --brand-blue-l:#4A9EDA; --brand-orange:#E08A2E; --brand-orange-d:#C46F1C; --brand-green:#5FA33A; --brand-red:#C62A1E; --brand-ink:#12305E;
+  --brand-grad:linear-gradient(90deg,#1F5FBF 0%,#4A9EDA 60%,#E08A2E 100%);
+  --navy:var(--brand-ink); --blue:var(--brand-blue-d); --blue-d:#174A99; --green:var(--brand-green); --green-d:#3F8A31; --lime:var(--brand-orange); --teal:var(--brand-blue); --grad:var(--brand-grad); --orange:var(--brand-orange); --orange-d:var(--brand-orange-d);
+  --ink:#1B2430; --muted:#5F6B7A; --line:#E3E9EF; --bg:#F5F8FB; --white:#fff;
+  --font-h:'Montserrat',Arial,sans-serif; --font-b:'Open Sans',Arial,sans-serif;
+  --radius:10px; --shadow:0 10px 30px rgba(18,48,94,.10);
+}
+#lg1 *,#lg1 *::before,#lg1 *::after,#lg1-modal *,#lg1-modal *::before,#lg1-modal *::after{box-sizing:border-box}
+#lg1{font-family:var(--font-b);color:var(--ink);background:var(--white);line-height:1.55;font-size:15px;-webkit-font-smoothing:antialiased}
+#lg1 h1,#lg1 h2,#lg1 h3,#lg1 h4,#lg1 p,#lg1 ul{margin:0;padding:0}
+#lg1 ul{list-style:none}
+#lg1 a{color:inherit;text-decoration:none}
+#lg1 img,#lg1 svg{display:block;max-width:100%}
+#lg1 button{font-family:inherit;cursor:pointer}
+#lg1 .wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+#lg1 .h-font{font-family:var(--font-h)}
+#lg1 .btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:6px;padding:12px 20px;font:600 14px var(--font-h);transition:.2s;white-space:nowrap}
+#lg1 .btn-blue{background:var(--blue);color:#fff}#lg1 .btn-blue:hover{background:var(--blue-d)}
+#lg1 .btn-green{background:var(--orange-d);color:#fff}#lg1 .btn-green:hover{background:#A85C14;box-shadow:0 8px 20px rgba(224,138,46,.35)}
+#lg1 .btn-line{background:#fff;color:var(--blue);border:2px solid var(--blue)}#lg1 .btn-line:hover{background:var(--blue);color:#fff}
+#lg1 .eyebrow{font:700 12px var(--font-h);letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+#lg1 .sec-title{font:800 clamp(24px,3vw,34px)/1.15 var(--font-h);color:var(--navy)}
+#lg1 .sec-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:28px;flex-wrap:wrap}
+#lg1 .sec-head a{font:600 14px var(--font-h);color:var(--blue)}
+#lg1 .sec-head a:hover{text-decoration:underline}
+
+/* ---------- Top bar ---------- */
+#lg1 .topbar{background:var(--navy);color:#CFE0F0;font-size:13px;border-bottom:3px solid transparent;border-image:var(--grad) 1}
+#lg1 .topbar .wrap{display:flex;justify-content:space-between;align-items:center;min-height:38px;gap:16px;flex-wrap:wrap}
+#lg1 .topbar ul{display:flex;gap:22px;flex-wrap:wrap}
+#lg1 .topbar li{display:flex;align-items:center;gap:6px}
+#lg1 .topbar svg{width:14px;height:14px;fill:var(--green)}
+#lg1 .topbar .promo{font-weight:600;color:#fff}
+
+/* ---------- Header ---------- */
+#lg1 .header{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:50}
+#lg1 .header .wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:28px;min-height:88px}
+#lg1 .logo{display:flex;align-items:center;gap:10px}
+#lg1 .logo img{height:54px;width:auto}
+#lg1 .logo-fallback{display:flex;align-items:center;gap:10px}
+#lg1 .logo-fallback .mark{width:auto;height:48px}
+#lg1 .logo-fallback .wm{font:800 26px/1 var(--font-h);color:var(--navy);letter-spacing:-.02em}
+#lg1 .logo-fallback .wm span{color:var(--blue)}
+#lg1 .logo-fallback small{display:block;font:500 10px/1.2 var(--font-b);color:var(--muted);letter-spacing:.04em;margin-top:3px}
+#lg1 .search{display:flex;border:2px solid var(--blue);border-radius:8px;overflow:hidden;height:48px}
+#lg1 .search select{border:0;background:var(--bg);padding:0 12px;font:500 13px var(--font-b);color:var(--ink);border-right:1px solid var(--line);max-width:190px}
+#lg1 .search input{flex:1;border:0;padding:0 14px;font:400 14px var(--font-b);min-width:0;outline:none}
+#lg1 .search button{border:0;background:var(--blue);color:#fff;padding:0 18px;display:flex;align-items:center;gap:8px;font:600 14px var(--font-h)}
+#lg1 .search button svg{width:18px;height:18px;fill:#fff}
+#lg1 .hdr-actions{display:flex;align-items:center;gap:14px}
+#lg1 .quote-btn{position:relative;display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:8px;padding:8px 12px;background:#fff;font:600 13px var(--font-h);color:var(--navy)}
+#lg1 .quote-btn svg{width:22px;height:22px;fill:none;stroke:var(--navy);stroke-width:1.8}
+#lg1 .quote-btn .cnt{position:absolute;top:-8px;left:26px;background:var(--lime);color:var(--navy);border-radius:99px;min-width:20px;height:20px;padding:0 6px;font:700 11px/20px var(--font-h);text-align:center}
+#lg1 .quote-btn .cnt.bump{animation:lg1bump .4s}
+@keyframes lg1bump{50%{transform:scale(1.35)}}
+#lg1 .wa-btn svg{width:18px;height:18px;fill:#fff}
+
+/* ---------- Nav categorías ---------- */
+#lg1 .catnav{background:#fff;border-bottom:1px solid var(--line)}
+#lg1 .catnav .wrap{display:flex;align-items:center;gap:4px;overflow-x:auto;scrollbar-width:none}
+#lg1 .catnav .wrap::-webkit-scrollbar{display:none}
+#lg1 .catnav a{display:flex;align-items:center;gap:8px;padding:14px 14px;font:600 13px var(--font-h);color:var(--ink);white-space:nowrap;border-bottom:3px solid transparent;transition:.2s}
+#lg1 .catnav a:hover{color:var(--blue);border-color:var(--blue)}
+#lg1 .catnav a.all{background:var(--navy);color:#fff;border-radius:6px 6px 0 0;margin-right:8px}
+#lg1 .catnav a.all:hover{color:#fff;border-color:transparent}
+#lg1 .catnav a.all svg{width:16px;height:16px;fill:#fff}
+#lg1 .catnav a.hl{color:var(--green-d)}
+
+/* ---------- HERO SLIDER (4 audiencias) ---------- */
+#lg1 .hero{background:var(--bg);padding:26px 0 30px}
+#lg1 .slider{position:relative;border-radius:16px;overflow:hidden;background:var(--navy);box-shadow:var(--shadow);min-height:480px}
+#lg1 .slide{position:absolute;inset:0;display:grid;grid-template-columns:1.05fr .95fr;opacity:0;visibility:hidden;transform:translateX(60px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1),visibility 0s .7s}
+#lg1 .slide.active{opacity:1;visibility:visible;transform:none;transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1),visibility 0s}
+#lg1 .slide.leaving{opacity:0;visibility:visible;transform:translateX(-60px)}
+#lg1 .slide-txt{padding:56px 60px 84px;color:#fff;display:flex;flex-direction:column;justify-content:center;gap:18px;position:relative;z-index:2}
+#lg1 .slide-txt .tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:6px 12px;border-radius:99px;font:600 12px var(--font-h);letter-spacing:.08em;text-transform:uppercase;width:max-content}
+#lg1 .slide-txt .tag i{width:8px;height:8px;border-radius:50%;background:var(--lime);display:inline-block}
+#lg1 .slide-txt h2{font:800 clamp(28px,3.6vw,46px)/1.1 var(--font-h);letter-spacing:-.01em}
+#lg1 .slide-txt h2 em{font-style:normal;color:#E08A2E}
+#lg1 .slide-txt p{font-size:16px;color:#D6E4F0;max-width:520px}
+#lg1 .slide-txt .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+#lg1 .slide-txt ul{display:flex;gap:18px;flex-wrap:wrap;margin-top:10px}
+#lg1 .slide-txt li{font-size:13px;color:#B9CFE3;display:flex;align-items:center;gap:6px}
+#lg1 .slide-txt li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green)}
+#lg1 .slide-vis{position:relative;overflow:hidden}
+#lg1 .slide-vis .bg{position:absolute;inset:0;background:var(--g);transform:scale(1.08);transition:transform 6s linear}
+#lg1 .slide.active .slide-vis .bg{transform:scale(1)}
+#lg1 .slide-vis .art{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1}
+#lg1 .slide-vis .art svg{width:62%;max-width:340px;filter:drop-shadow(0 20px 30px rgba(0,0,0,.25))}
+#lg1 .slide-vis .art img.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 6s linear}
+#lg1 .slide.active .slide-vis .art img.ph{transform:scale(1)}
+#lg1 .slide-vis .art::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--navy) 0%,rgba(18,48,94,.45) 35%,rgba(18,48,94,.05) 100%);pointer-events:none}
+#lg1 .slide-vis .art.nophoto::after{display:none}
+#lg1 .slide-vis .chip{z-index:3}
+#lg1 .slide-vis .chip{position:absolute;background:#fff;color:var(--navy);border-radius:10px;padding:10px 14px;font:700 13px var(--font-h);box-shadow:var(--shadow);display:flex;align-items:center;gap:8px}
+#lg1 .slide-vis .chip small{display:block;font:500 11px var(--font-b);color:var(--muted)}
+#lg1 .slide-vis .chip.c1{top:14%;left:8%}#lg1 .slide-vis .chip.c2{bottom:16%;right:10%}
+#lg1 .slide.active .slide-txt>*{animation:lg1rise .7s both}
+#lg1 .slide.active .slide-txt>*:nth-child(2){animation-delay:.1s}
+#lg1 .slide.active .slide-txt>*:nth-child(3){animation-delay:.2s}
+#lg1 .slide.active .slide-txt>*:nth-child(4){animation-delay:.3s}
+#lg1 .slide.active .slide-txt>*:nth-child(5){animation-delay:.4s}
+@keyframes lg1rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+#lg1 .arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:var(--navy);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow);transition:.2s}
+#lg1 .arrow:hover{background:var(--green);color:#fff}
+#lg1 .arrow svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.5}
+#lg1 .arrow.prev{left:16px}#lg1 .arrow.next{right:16px}
+#lg1 .dots{position:absolute;left:60px;bottom:22px;display:flex;gap:8px;z-index:5}
+#lg1 .dots button{width:34px;height:4px;border-radius:2px;border:0;background:rgba(255,255,255,.35);padding:0;overflow:hidden;position:relative}
+#lg1 .dots button i{position:absolute;inset:0;background:var(--lime);transform:scaleX(0);transform-origin:left}
+#lg1 .dots button.on i{animation:lg1prog 6s linear forwards}
+@keyframes lg1prog{to{transform:scaleX(1)}}
+#lg1 .slider:hover .dots button.on i{animation-play-state:paused}
+
+/* ---------- Trust strip ---------- */
+#lg1 .trust{padding:0 0 10px;background:var(--bg)}
+#lg1 .trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+#lg1 .trust .it{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;display:flex;gap:14px;align-items:center}
+#lg1 .trust .it svg{width:34px;height:34px;flex:none;fill:none;stroke:var(--blue);stroke-width:1.8}
+#lg1 .trust b{display:block;font:700 14px var(--font-h);color:var(--navy)}
+#lg1 .trust span{font-size:12.5px;color:var(--muted)}
+
+/* ---------- Marcas ---------- */
+#lg1 .brands{padding:56px 0 30px}
+#lg1 .brands .sec-head{margin-bottom:22px}
+#lg1 .marquee{overflow:hidden;position:relative;border:1px solid var(--line);border-radius:var(--radius);background:#fff;padding:18px 0}
+#lg1 .marquee::before,#lg1 .marquee::after{content:"";position:absolute;top:0;bottom:0;width:90px;z-index:2;pointer-events:none}
+#lg1 .marquee::before{left:0;background:linear-gradient(90deg,#fff,transparent)}
+#lg1 .marquee::after{right:0;background:linear-gradient(-90deg,#fff,transparent)}
+#lg1 .track{display:flex;gap:14px;width:max-content;animation:lg1marq 45s linear infinite}
+#lg1 .marquee:hover .track{animation-play-state:paused}
+@keyframes lg1marq{to{transform:translateX(-50%)}}
+#lg1 .brand{display:flex;align-items:center;justify-content:center;min-width:170px;height:64px;border:1px dashed var(--line);border-radius:8px;padding:0 20px;font:800 17px var(--font-h);color:#8A97A6;letter-spacing:.02em;filter:grayscale(1);transition:.25s;background:#fff}
+#lg1 .brand:hover{color:var(--navy);border-color:var(--blue);filter:none;transform:translateY(-2px)}
+#lg1 .brand img{max-height:36px;width:auto}
+
+/* ---------- Más pedidos ---------- */
+#lg1 .products{padding:30px 0 60px}
+#lg1 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+#lg1 .card{border:1px solid var(--line);border-radius:var(--radius);background:#fff;overflow:hidden;display:flex;flex-direction:column;transition:.25s;position:relative}
+#lg1 .card:hover{box-shadow:var(--shadow);transform:translateY(-4px);border-color:#C9D9E8}
+#lg1 .card .img{background:var(--bg);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative}
+#lg1 .card .img svg{width:52%;height:auto;transition:.3s}
+#lg1 .card .img img.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.4s}
+#lg1 .card:hover .img img.ph{transform:scale(1.05)}
+#lg1 .card .img .fb{display:flex;align-items:center;justify-content:center;width:100%;height:100%}
+#lg1 .card:hover .img svg,#lg1 .card:hover .img img{transform:scale(1.06)}
+#lg1 .card .badge{position:absolute;top:12px;left:12px;background:var(--lime);color:var(--navy);font:700 11px var(--font-h);letter-spacing:.06em;text-transform:uppercase;padding:5px 9px;border-radius:5px}
+#lg1 .card .badge.b2{background:var(--teal);color:#fff}
+#lg1 .card .quick{position:absolute;bottom:12px;left:50%;transform:translate(-50%,12px);opacity:0;background:var(--navy);color:#fff;border:0;border-radius:6px;padding:9px 14px;font:600 12px var(--font-h);transition:.25s}
+#lg1 .card:hover .quick{opacity:1;transform:translate(-50%,0)}
+#lg1 .card .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+#lg1 .card .cat{font:600 11px var(--font-h);color:var(--blue);text-transform:uppercase;letter-spacing:.08em}
+#lg1 .card h3{font:700 16px/1.3 var(--font-h);color:var(--navy);cursor:pointer}
+#lg1 .card h3:hover{color:var(--blue)}
+#lg1 .card .meta{font-size:12.5px;color:var(--muted)}
+#lg1 .card .meta b{color:var(--ink);font-weight:600}
+#lg1 .card .price{margin-top:auto;padding-top:12px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+#lg1 .card .price .p{font:800 18px var(--font-h);color:var(--navy)}
+#lg1 .card .price .p small{font:600 11px var(--font-b);color:var(--muted);display:block}
+#lg1 .card .price .p.q{font-size:14px;color:var(--green)}
+#lg1 .card .add{border:2px solid var(--blue);background:#fff;color:var(--blue);border-radius:6px;padding:8px 12px;font:700 12px var(--font-h);transition:.2s;display:flex;align-items:center;gap:6px}
+#lg1 .card .add:hover{background:var(--blue);color:#fff}
+#lg1 .card .add svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.5}
+
+/* ---------- Categorías ---------- */
+#lg1 .cats{padding:56px 0;background:var(--bg)}
+#lg1 .cgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:18px}
+#lg1 .ccard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px 22px;display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden;transition:.25s;cursor:pointer}
+#lg1 .ccard::after{content:"";position:absolute;right:-40px;top:-40px;width:130px;height:130px;border-radius:50%;background:var(--bg);transition:.35s}
+#lg1 .ccard:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
+#lg1 .ccard:hover::after{background:#FDF1E3;transform:scale(1.25)}
+#lg1 .ccard .pic{margin:-24px -22px 4px;height:150px;overflow:hidden;position:relative;z-index:1;background:var(--bg)}
+#lg1 .ccard .pic img.ph{width:100%;height:100%;object-fit:cover;transition:.5s}
+#lg1 .ccard:hover .pic img.ph{transform:scale(1.06)}
+#lg1 .ccard .pic .fb{display:flex;align-items:center;justify-content:center;height:100%}#lg1 .ccard .pic .fb svg{width:90px;height:90px}
+#lg1 .ccard .ico{width:54px;height:54px;border-radius:12px;background:var(--navy);display:flex;align-items:center;justify-content:center;position:relative;z-index:1;margin-top:-27px;border:3px solid #fff}
+#lg1 .ccard .ico svg{width:28px;height:28px;fill:none;stroke:#fff;stroke-width:1.7}
+#lg1 .ccard h3{font:700 17px var(--font-h);color:var(--navy);position:relative;z-index:1}
+#lg1 .ccard p{font-size:13px;color:var(--muted);position:relative;z-index:1}
+#lg1 .ccard .chips{display:flex;flex-wrap:wrap;gap:6px;position:relative;z-index:1}
+#lg1 .ccard .chips span{font:600 11px var(--font-b);background:var(--bg);border:1px solid var(--line);border-radius:99px;padding:4px 9px;color:var(--ink)}
+#lg1 .ccard .more{margin-top:auto;font:700 13px var(--font-h);color:var(--blue);display:flex;align-items:center;gap:6px;position:relative;z-index:1}
+#lg1 .cmini{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+#lg1 .cmini a{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 14px;font:600 13px var(--font-h);color:var(--navy);display:flex;align-items:center;justify-content:space-between;transition:.2s}
+#lg1 .cmini a:hover{border-color:var(--blue);color:var(--blue)}
+#lg1 .cmini a svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.5}
+
+/* ---------- Urgencias / Historia ---------- */
+#lg1 .story{padding:64px 0}
+#lg1 .story .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+#lg1 .story h2{font:800 clamp(24px,3vw,36px)/1.15 var(--font-h);color:var(--navy);margin:10px 0 16px}
+#lg1 .story p{color:var(--muted);font-size:16px;margin-bottom:14px}
+#lg1 .story .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+#lg1 .story .stat{border-left:3px solid var(--orange);padding-left:14px}
+#lg1 .story .stat b{display:block;font:800 30px/1 var(--font-h);color:var(--navy)}
+#lg1 .story .stat span{font-size:12.5px;color:var(--muted)}
+#lg1 .story .pic{border-radius:16px;overflow:hidden;height:230px;margin-top:26px;position:relative;box-shadow:var(--shadow)}
+#lg1 .story .pic img.ph{width:100%;height:100%;object-fit:cover}
+#lg1 .story .pic .cap{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.95);border-radius:8px;padding:8px 12px;font:700 12px var(--font-h);color:var(--navy)}
+#lg1 .story .pic.nophoto{display:none}
+#lg1 .story .panel{background:var(--navy);border-radius:16px;padding:34px;color:#fff;box-shadow:var(--shadow);position:relative;overflow:hidden}
+#lg1 .story .panel::before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(224,138,46,.35),transparent 70%);right:-80px;top:-80px}
+#lg1 .story .panel h3{font:800 22px var(--font-h);margin-bottom:14px}
+#lg1 .story .panel li{display:flex;gap:12px;padding:12px 0;border-top:1px solid rgba(255,255,255,.12);font-size:14px;color:#D6E4F0}
+#lg1 .story .panel li b{color:#fff}
+#lg1 .story .panel li svg{width:22px;height:22px;flex:none;fill:none;stroke:var(--green);stroke-width:2}
+
+/* ---------- Footer ---------- */
+#lg1 .footer{background:var(--navy);color:#B9CFE3;padding:56px 0 0;font-size:14px}
+#lg1 .footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:36px;padding-bottom:40px}
+#lg1 .footer h4{font:700 14px var(--font-h);color:#fff;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px}
+#lg1 .footer li{margin-bottom:9px}
+#lg1 .footer a:hover{color:#fff;text-decoration:underline}
+#lg1 .footer .logo-fallback .wm{color:#fff}#lg1 .footer .logo-fallback small{color:#B9CFE3}
+#lg1 .footer .about{margin:14px 0 18px;max-width:380px}
+#lg1 .footer .soc{display:flex;gap:10px}
+#lg1 .footer .soc a{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center}
+#lg1 .footer .soc a:hover{background:var(--teal)}
+#lg1 .footer .soc svg{width:18px;height:18px;fill:#fff}
+#lg1 .footer .legal{border-top:1px solid rgba(255,255,255,.12);padding:18px 0;font-size:12.5px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* ---------- Botón WhatsApp flotante ---------- */
+.lg1-wa{position:fixed;right:22px;bottom:22px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(37,211,102,.4);animation:lg1pulse 2.4s infinite}
+.lg1-wa svg{width:30px;height:30px;fill:#fff}
+@keyframes lg1pulse{0%,100%{box-shadow:0 10px 24px rgba(37,211,102,.4)}50%{box-shadow:0 10px 24px rgba(37,211,102,.4),0 0 0 14px rgba(37,211,102,.12)}}
+
+/* ---------- MODAL DE PRODUCTO (estilo Amazon adaptado) ---------- */
+#lg1-modal{position:fixed;inset:0;z-index:9999;display:none;font-family:var(--font-b);color:var(--ink);font-size:14px;line-height:1.5}
+#lg1-modal.open{display:block}
+#lg1-modal .bd{position:absolute;inset:0;background:rgba(18,48,94,.6);backdrop-filter:blur(3px);animation:lg1fade .25s}
+@keyframes lg1fade{from{opacity:0}}
+#lg1-modal .dlg{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(1180px,calc(100% - 32px));max-height:calc(100% - 32px);background:#fff;border-radius:14px;overflow:auto;box-shadow:0 30px 80px rgba(0,0,0,.35);animation:lg1pop .3s cubic-bezier(.2,.8,.2,1)}
+@keyframes lg1pop{from{opacity:0;transform:translate(-50%,-46%) scale(.97)}}
+#lg1-modal .close{position:sticky;top:0;float:right;margin:12px 12px 0 0;width:40px;height:40px;border-radius:50%;border:0;background:var(--bg);color:var(--navy);font-size:22px;cursor:pointer;z-index:3;display:flex;align-items:center;justify-content:center}
+#lg1-modal .close:hover{background:var(--navy);color:#fff}
+#lg1-modal .crumb{padding:18px 28px 0;font-size:12.5px;color:var(--muted)}
+#lg1-modal .crumb b{color:var(--blue);font-weight:600}
+#lg1-modal .top{display:grid;grid-template-columns:74px 1fr 1.05fr .85fr;gap:24px;padding:14px 28px 26px}
+#lg1-modal .thumbs{display:flex;flex-direction:column;gap:10px}
+#lg1-modal .thumbs button{border:1px solid var(--line);border-radius:8px;background:#fff;padding:6px;cursor:pointer;aspect-ratio:1;display:flex;align-items:center;justify-content:center}
+#lg1-modal .thumbs button.on{border-color:var(--blue);box-shadow:0 0 0 2px rgba(31,95,191,.25)}
+#lg1-modal .thumbs svg,#lg1-modal .thumbs img{width:100%;height:auto}
+#lg1-modal .main{background:var(--bg);border-radius:12px;display:flex;align-items:center;justify-content:center;min-height:380px;position:relative}
+#lg1-modal .main svg{width:70%;height:auto;animation:lg1fade .3s}
+#lg1-modal .main img.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:12px;animation:lg1fade .3s}
+#lg1-modal .main{overflow:hidden}
+#lg1-modal .thumbs img.ph{width:100%;height:100%;object-fit:cover;border-radius:5px;aspect-ratio:1}
+#lg1-modal .main .zoom{position:absolute;bottom:12px;right:12px;font-size:11px;color:var(--muted);background:#fff;border-radius:99px;padding:4px 10px}
+#lg1-modal .info h2{font:700 24px/1.25 var(--font-h);color:var(--navy);margin:0 0 6px}
+#lg1-modal .info .brand{font-size:13px;color:var(--muted);margin-bottom:10px}
+#lg1-modal .info .brand a{color:var(--blue);font-weight:600}
+#lg1-modal .info .flags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+#lg1-modal .info .flags span{font:600 11px var(--font-h);border-radius:5px;padding:4px 8px;background:#E8F6EA;color:var(--green-d)}
+#lg1-modal .info .flags span.b{background:#E8F1F9;color:var(--blue-d)}
+#lg1-modal .info hr{border:0;border-top:1px solid var(--line);margin:14px 0}
+#lg1-modal .info h4{font:700 14px var(--font-h);color:var(--ink);margin:0 0 8px}
+#lg1-modal .info ul{margin:0;padding-left:18px}
+#lg1-modal .info li{margin-bottom:6px}
+#lg1-modal .info table{width:100%;border-collapse:collapse;font-size:13px}
+#lg1-modal .info td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+#lg1-modal .info td:first-child{color:var(--muted);width:40%;background:var(--bg);font-weight:600}
+#lg1-modal .buy{border:1px solid var(--line);border-radius:12px;padding:20px;align-self:start;position:sticky;top:60px}
+#lg1-modal .buy .pr{font:800 28px/1 var(--font-h);color:var(--navy)}
+#lg1-modal .buy .pr small{font:500 12px var(--font-b);color:var(--muted);display:block;margin-top:4px}
+#lg1-modal .buy .pr.q{font-size:20px;color:var(--green-d)}
+#lg1-modal .buy .ship{margin:14px 0;font-size:13px;display:flex;flex-direction:column;gap:7px}
+#lg1-modal .buy .ship div{display:flex;gap:8px;align-items:flex-start}
+#lg1-modal .buy .ship svg{width:16px;height:16px;flex:none;fill:none;stroke:var(--green);stroke-width:2.5;margin-top:2px}
+#lg1-modal .buy .stock{color:var(--green-d);font:700 15px var(--font-h);margin-bottom:8px}
+#lg1-modal .buy .qty{display:flex;align-items:center;gap:8px;margin:12px 0;font-size:13px}
+#lg1-modal .buy .qty div{display:flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+#lg1-modal .buy .qty button{width:34px;height:34px;border:0;background:var(--bg);font-size:18px;cursor:pointer}
+#lg1-modal .buy .qty input{width:46px;text-align:center;border:0;font:600 14px var(--font-b)}
+#lg1-modal .buy .btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;border:0;border-radius:99px;padding:12px;font:700 14px var(--font-h);cursor:pointer;margin-bottom:8px;transition:.2s}
+#lg1-modal .buy .b1{background:var(--orange-d);color:#fff}#lg1-modal .buy .b1:hover{background:#A85C14}
+#lg1-modal .buy .b2{background:var(--blue);color:#fff}#lg1-modal .buy .b2:hover{background:var(--blue-d)}
+#lg1-modal .buy .b3{background:#fff;color:var(--navy);border:1px solid var(--line)}#lg1-modal .buy .b3:hover{border-color:var(--navy)}
+#lg1-modal .buy .btn svg{width:16px;height:16px;fill:#fff}
+#lg1-modal .buy .b3 svg{fill:var(--navy)}
+#lg1-modal .buy .sold{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.6}
+#lg1-modal .buy .sold b{color:var(--ink)}
+#lg1-modal .tabs{border-top:1px solid var(--line);padding:0 28px 28px}
+#lg1-modal .tabs nav{display:flex;flex-wrap:wrap;gap:6px;border-bottom:1px solid var(--line);margin-bottom:18px}
+#lg1-modal .tabs nav button{border:0;background:none;padding:14px 16px;font:700 13px var(--font-h);color:var(--muted);border-bottom:3px solid transparent;cursor:pointer;margin-bottom:-1px}
+#lg1-modal .tabs nav button.on{color:var(--blue);border-color:var(--blue)}
+#lg1-modal .tabs .pane{display:none;font-size:14px;color:var(--ink);max-width:900px}
+#lg1-modal .tabs .pane.on{display:block;animation:lg1fade .3s}
+#lg1-modal .tabs .pane p{margin:0 0 10px}
+#lg1-modal .tabs .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px 28px}
+#lg1-modal .tabs .grid2 div{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+#lg1-modal .tabs .grid2 b{width:44%;color:var(--muted);font-weight:600}
+#lg1-modal .related{background:var(--bg);padding:20px 28px 26px}
+#lg1-modal .related h4{font:700 15px var(--font-h);color:var(--navy);margin:0 0 12px}
+#lg1-modal .related .row{display:flex;gap:12px;overflow-x:auto}
+#lg1-modal .related .r{flex:0 0 190px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px;cursor:pointer;font-size:12.5px;display:flex;gap:10px;align-items:center;transition:.2s}
+#lg1-modal .related .r:hover{border-color:var(--blue)}
+#lg1-modal .related .r svg{width:44px;height:44px;flex:none}
+#lg1-modal .related .r b{display:block;color:var(--navy);font:700 12px/1.3 var(--font-h)}
+#lg1-modal .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);background:var(--navy);color:#fff;padding:12px 18px;border-radius:99px;font:600 13px var(--font-h);opacity:0;transition:.3s;pointer-events:none;box-shadow:var(--shadow)}
+#lg1-modal .toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1024px){
+  #lg1 .header .wrap{grid-template-columns:auto 1fr;grid-template-rows:auto auto;gap:12px 20px;padding-top:12px;padding-bottom:12px}
+  #lg1 .search{grid-column:1/-1}
+  #lg1 .slide{grid-template-columns:1fr}
+  #lg1 .slide-vis{display:none}
+  #lg1 .slide-txt{padding:48px 36px 70px}
+  #lg1 .trust .wrap{grid-template-columns:repeat(2,1fr)}
+  #lg1 .pgrid{grid-template-columns:repeat(2,1fr)}
+  #lg1 .cgrid{grid-template-columns:repeat(2,1fr)}
+  #lg1 .cmini{grid-template-columns:repeat(3,1fr)}
+  #lg1 .story .wrap{grid-template-columns:1fr}
+  #lg1 .footer .cols{grid-template-columns:1fr 1fr}
+  #lg1-modal .top{grid-template-columns:1fr 1fr}
+  #lg1-modal .thumbs{flex-direction:row;order:2;grid-column:1/-1}
+  #lg1-modal .thumbs button{width:70px}
+  #lg1-modal .main{order:1}
+  #lg1-modal .info{order:3;grid-column:1/-1}
+  #lg1-modal .buy{order:4;grid-column:1/-1;position:static}
+}
+@media (max-width:640px){
+  #lg1 .topbar ul li:nth-child(n+2){display:none}
+  #lg1 .hdr-actions .wa-btn span{display:none}
+  #lg1 .search select{display:none}
+  #lg1 .slide-txt{padding:36px 22px 64px}
+  #lg1 .dots{left:22px}
+  #lg1 .arrow{width:38px;height:38px}
+  #lg1 .trust .wrap{grid-template-columns:1fr}
+  #lg1 .pgrid{grid-template-columns:1fr}
+  #lg1 .cgrid{grid-template-columns:1fr}
+  #lg1 .cmini{grid-template-columns:1fr 1fr}
+  #lg1 .story .stats{grid-template-columns:1fr}
+  #lg1 .footer .cols{grid-template-columns:1fr}
+  #lg1-modal .top{grid-template-columns:1fr;padding:10px 16px 20px}
+  #lg1-modal .tabs{padding:0 16px 20px}
+  #lg1-modal .tabs .grid2{grid-template-columns:1fr}
+  #lg1-modal .related{padding:16px}
+}
+@media (prefers-reduced-motion:reduce){
+  #lg1 *,#lg1-modal *{animation:none!important;transition:none!important}
+}
+
+/* ======================================================================
+   SITIO COMPLETO · estilos adicionales (header móvil, cotización, catálogo,
+   ficha de producto y páginas internas). Mismo prefijo #lg1.
+   ====================================================================== */
+#lg1 .header .wrap{grid-template-columns:auto auto 1fr auto;gap:22px}
+#lg1 .mainnav{display:flex;gap:2px}
+#lg1 .mainnav a{padding:9px 11px;font:700 13.5px var(--font-h);color:var(--ink);border-radius:6px;white-space:nowrap}
+#lg1 .mainnav a:hover,#lg1 .mainnav a.cur{background:var(--bg);color:var(--blue)}
+#lg1 .burger{display:none;width:42px;height:42px;border:1px solid var(--line);border-radius:8px;background:#fff;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0}
+#lg1 .burger span{width:20px;height:2px;background:var(--navy);border-radius:2px;transition:.2s}
+#lg1 .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+#lg1 .burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+#lg1 .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+#lg1 .mobile-nav{display:none;border-top:1px solid var(--line);background:#fff;padding:8px 20px 14px;flex-direction:column}
+#lg1 .mobile-nav.open{display:flex}
+#lg1 .mobile-nav a{padding:11px 6px;border-bottom:1px solid var(--line);font:700 15px var(--font-h);color:var(--navy)}
+#lg1 .mobile-nav a.sub{padding-left:22px;font:600 14px var(--font-b);color:var(--ink)}
+#lg1 .catnav .cats{display:contents}
+#lg1 .catnav a.cur{color:var(--blue);border-color:var(--blue)}
+#lg1 .btn-sm{padding:9px 14px;font-size:13px}
+#lg1 .btn-blue{background:var(--blue);color:#fff}#lg1 .btn-blue:hover{background:var(--blue-d)}
+
+/* ---------- Cajón de cotización ---------- */
+#lg1-quote{position:fixed;inset:0;z-index:9998;display:none;font-family:var(--font-b);color:var(--ink);font-size:14px;line-height:1.5}
+#lg1-quote.open{display:block}
+#lg1-quote *,#lg1-quote *::before,#lg1-quote *::after{box-sizing:border-box}
+#lg1-quote .bd{position:absolute;inset:0;background:rgba(18,48,94,.55);backdrop-filter:blur(2px);animation:lg1fade .25s}
+#lg1-quote .panel{position:absolute;top:0;right:0;bottom:0;width:min(440px,100%);background:#fff;display:flex;flex-direction:column;box-shadow:-20px 0 60px rgba(0,0,0,.25);animation:lg1slidein .3s cubic-bezier(.2,.8,.2,1)}
+@keyframes lg1slidein{from{transform:translateX(40px);opacity:0}}
+#lg1-quote .qhead{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid var(--line)}
+#lg1-quote .qhead b{display:block;font:800 18px var(--font-h);color:var(--navy)}
+#lg1-quote .qhead span{font-size:12.5px;color:var(--muted)}
+#lg1-quote .close{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:#fff;font-size:20px;cursor:pointer;color:var(--navy)}
+#lg1-quote .qlist{flex:1;overflow:auto;padding:12px 20px}
+#lg1-quote .qi{display:grid;grid-template-columns:64px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+#lg1-quote .qim{width:64px;height:64px;border-radius:8px;background:var(--bg);overflow:hidden;display:flex;align-items:center;justify-content:center;position:relative}
+#lg1-quote .qim img.ph{width:100%;height:100%;object-fit:cover}#lg1-quote .qim svg{width:70%}#lg1-quote .qim .fb{display:flex;align-items:center;justify-content:center;width:100%;height:100%}
+#lg1-quote .qtx b{display:block;font:700 13.5px/1.3 var(--font-h);color:var(--navy)}
+#lg1-quote .qtx span{display:block;font-size:12px;color:var(--muted);margin:2px 0 8px}
+#lg1-quote .qq{display:flex;align-items:center;gap:0;border:1px solid var(--line);border-radius:6px;width:max-content;overflow:hidden}
+#lg1-quote .qq button{width:30px;height:30px;border:0;background:var(--bg);cursor:pointer;font-size:16px}
+#lg1-quote .qq input{width:44px;height:30px;border:0;text-align:center;font:700 13px var(--font-b)}
+#lg1-quote .qq .rm{width:auto;padding:0 10px;font:600 12px var(--font-b);color:#B42318;background:#fff;border-left:1px solid var(--line)}
+#lg1-quote .qempty{text-align:center;padding:40px 10px;color:var(--muted)}
+#lg1-quote .qempty svg{width:48px;height:48px;fill:none;stroke:var(--line);stroke-width:1.5;margin:0 auto 10px}
+#lg1-quote .qempty b{display:block;color:var(--navy);font:800 16px var(--font-h);margin-bottom:6px}
+#lg1-quote .qempty span{display:block;margin-bottom:16px}
+#lg1-quote .qempty .btn{display:inline-flex;border-radius:6px;padding:10px 18px;font:600 13px var(--font-h);text-decoration:none}
+#lg1-quote .qfoot{padding:14px 20px 18px;border-top:1px solid var(--line);background:var(--bg)}
+#lg1-quote textarea{width:100%;border:1px solid var(--line);border-radius:8px;padding:10px;font:400 13px var(--font-b);min-height:60px;resize:vertical;margin-bottom:10px;background:#fff}
+#lg1-quote .btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;border:0;border-radius:99px;padding:12px;font:700 14px var(--font-h);cursor:pointer;margin-bottom:8px;text-decoration:none;transition:.2s}
+#lg1-quote .b1{background:#25D366;color:#fff}#lg1-quote .b1 svg{width:16px;height:16px;fill:#fff}
+#lg1-quote .b3{background:#fff;color:var(--navy);border:1px solid var(--line)}
+#lg1-quote .btn.dis{opacity:.5;cursor:not-allowed}
+#lg1-quote .lnk{background:none;border:0;color:var(--muted);font:600 12px var(--font-b);text-decoration:underline;cursor:pointer;display:block;margin:2px auto 8px}
+#lg1-quote small{display:block;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.5}
+#lg1-modal .crumb .full{float:right;color:var(--blue);font-weight:700}
+#lg1-modal .related .r{text-decoration:none}
+
+/* ---------- Encabezado de página interna ---------- */
+#lg1 .phero{background:var(--navy);color:#fff;position:relative;overflow:hidden;padding:54px 0 60px}
+#lg1 .phero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--navy) 35%,rgba(18,48,94,.55) 65%,rgba(18,48,94,.15) 100%)}
+#lg1 .phero .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+#lg1 .phero .fb{display:none}
+#lg1 .phero .wrap{position:relative;z-index:1;max-width:1240px}
+#lg1 .phero .crumbs{font-size:13px;color:#B9CFE3;margin-bottom:14px}
+#lg1 .phero .crumbs a:hover{color:#fff;text-decoration:underline}
+#lg1 .phero h1{font:800 clamp(30px,4vw,48px)/1.1 var(--font-h);letter-spacing:-.01em;max-width:760px}
+#lg1 .phero h1 em{font-style:normal;color:var(--orange)}
+#lg1 .phero p{font-size:17px;color:#D6E4F0;max-width:640px;margin-top:12px}
+#lg1 .phero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+#lg1 .phero .btn-line{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+#lg1 .phero.sm{padding:34px 0 36px}
+#lg1 .phero.sm h1{font-size:clamp(26px,3vw,36px)}
+#lg1 .sec{padding:64px 0}
+#lg1 .sec.alt{background:var(--bg)}
+#lg1 .sec .wrap>.sec-head{margin-bottom:30px}
+#lg1 .prose{max-width:760px;font-size:16.5px;color:var(--ink)}
+#lg1 .prose p{margin-bottom:14px;color:var(--muted)}
+#lg1 .prose h3{font:800 20px var(--font-h);color:var(--navy);margin:22px 0 8px}
+#lg1 .prose ul{padding-left:18px;list-style:disc;color:var(--muted);margin-bottom:14px}
+#lg1 .prose li{margin-bottom:6px}
+
+/* ---------- Catálogo ---------- */
+#lg1 .cat-layout{display:grid;grid-template-columns:270px 1fr;gap:28px;align-items:start}
+#lg1 .filters{position:sticky;top:96px}
+#lg1 .filters .fbox{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;margin-bottom:14px}
+#lg1 .filters h4{font:800 13px var(--font-h);letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
+#lg1 .filters h4 button{border:0;background:none;color:var(--blue);font:600 12px var(--font-b);cursor:pointer}
+#lg1 .filters .fc{display:flex;flex-direction:column;gap:2px}
+#lg1 .filters .fc a,#lg1 .filters .fc label{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:7px 8px;border-radius:6px;font-size:14px;color:var(--ink);cursor:pointer}
+#lg1 .filters .fc a:hover,#lg1 .filters .fc label:hover{background:var(--bg)}
+#lg1 .filters .fc a.on{background:#EAF2FB;color:var(--blue);font-weight:700}
+#lg1 .filters .fc a .n,#lg1 .filters .fc label .n{font-size:12px;color:var(--muted);background:var(--bg);border-radius:99px;padding:1px 8px}
+#lg1 .filters .fc .sub{padding-left:22px;font-size:13px}
+#lg1 .filters .fc .sub.on{background:#EAF2FB;color:var(--blue);font-weight:700}
+#lg1 .filters label input{accent-color:var(--blue);margin-right:6px}
+#lg1 .filters label span{flex:1}
+#lg1 .filters .brands{max-height:260px;overflow:auto}
+#lg1 .filters .help{background:var(--navy);color:#fff;border-radius:var(--radius);padding:18px}
+#lg1 .filters .help b{display:block;font:800 15px var(--font-h);margin-bottom:6px}
+#lg1 .filters .help p{font-size:13px;color:#D6E4F0;margin-bottom:12px}
+#lg1 .toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+#lg1 .toolbar .res{font-size:14px;color:var(--muted)}#lg1 .toolbar .res b{color:var(--navy)}
+#lg1 .toolbar .chips{display:flex;gap:6px;flex-wrap:wrap}
+#lg1 .toolbar .chips a{display:inline-flex;align-items:center;gap:6px;background:#EAF2FB;color:var(--blue);border-radius:99px;padding:5px 10px;font:600 12px var(--font-b)}
+#lg1 .toolbar .chips a::after{content:"×";font-size:14px}
+#lg1 .toolbar select{border:1px solid var(--line);border-radius:6px;padding:9px 12px;font:600 13px var(--font-b);background:#fff;color:var(--ink)}
+#lg1 .toolbar .fbtn{display:none;border:1px solid var(--line);border-radius:6px;padding:9px 12px;font:700 13px var(--font-h);background:#fff;color:var(--navy)}
+#lg1 .pgrid.cols3{grid-template-columns:repeat(3,1fr)}
+#lg1 .empty{background:#fff;border:1px dashed var(--line);border-radius:var(--radius);padding:50px 24px;text-align:center}
+#lg1 .empty svg{width:56px;height:56px;fill:none;stroke:var(--blue);stroke-width:1.5;margin:0 auto 12px}
+#lg1 .empty h3{font:800 20px var(--font-h);color:var(--navy);margin-bottom:8px}
+#lg1 .empty p{color:var(--muted);max-width:520px;margin:0 auto 18px}
+#lg1 .pager{display:flex;justify-content:center;gap:6px;margin-top:28px}
+#lg1 .pager button{min-width:38px;height:38px;border:1px solid var(--line);border-radius:6px;background:#fff;font:700 13px var(--font-h);color:var(--navy);padding:0 10px}
+#lg1 .pager button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+#lg1 .pager button:disabled{opacity:.4}
+#lg1 .catbanner{display:flex;gap:18px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;margin-bottom:22px}
+#lg1 .catbanner .ic{width:64px;height:64px;border-radius:12px;background:var(--navy);display:flex;align-items:center;justify-content:center;flex:none;overflow:hidden}
+#lg1 .catbanner .ic svg{width:40px}
+#lg1 .catbanner h2{font:800 20px var(--font-h);color:var(--navy)}
+#lg1 .catbanner p{font-size:13.5px;color:var(--muted)}
+#lg1 .catbanner .subs{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+#lg1 .catbanner .subs a{font:600 11.5px var(--font-b);background:var(--bg);border:1px solid var(--line);border-radius:99px;padding:4px 9px;color:var(--ink)}
+#lg1 .catbanner .subs a.on,#lg1 .catbanner .subs a:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+/* ---------- Ficha de producto (página) ---------- */
+#lg1 .pp{padding:28px 0 60px}
+#lg1 .pp .crumbs{font-size:13px;color:var(--muted);margin-bottom:18px}
+#lg1 .pp .crumbs a:hover{text-decoration:underline;color:var(--blue)}
+#lg1 .pp .top{display:grid;grid-template-columns:74px 1fr 1.05fr .85fr;gap:24px}
+#lg1 .pp .thumbs{display:flex;flex-direction:column;gap:10px}
+#lg1 .pp .thumbs button{border:1px solid var(--line);border-radius:8px;background:#fff;padding:6px;cursor:pointer;aspect-ratio:1;display:flex;align-items:center;justify-content:center;overflow:hidden}
+#lg1 .pp .thumbs button.on{border-color:var(--blue);box-shadow:0 0 0 2px rgba(47,127,211,.25)}
+#lg1 .pp .thumbs svg,#lg1 .pp .thumbs img{width:100%;height:100%;object-fit:cover}
+#lg1 .pp .main{background:var(--bg);border-radius:12px;display:flex;align-items:center;justify-content:center;min-height:420px;position:relative;overflow:hidden;border:1px solid var(--line)}
+#lg1 .pp .main svg{width:70%;height:auto}
+#lg1 .pp .main img.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#lg1 .pp .main .fb{display:flex;align-items:center;justify-content:center;width:100%;height:100%}
+#lg1 .pp .info h1{font:800 28px/1.2 var(--font-h);color:var(--navy);margin:0 0 6px}
+#lg1 .pp .info .pbrand{font-size:13.5px;color:var(--muted);margin-bottom:10px}
+#lg1 .pp .info .pbrand a{color:var(--blue);font-weight:700}
+#lg1 .pp .info .flags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+#lg1 .pp .info .flags span{font:600 11px var(--font-h);border-radius:5px;padding:4px 8px;background:#E8F6EA;color:var(--green-d)}
+#lg1 .pp .info .flags span.b{background:#EAF2FB;color:var(--blue-d)}
+#lg1 .pp .info hr{border:0;border-top:1px solid var(--line);margin:14px 0}
+#lg1 .pp .info h4{font:700 14px var(--font-h);color:var(--ink);margin:0 0 8px}
+#lg1 .pp .info ul{padding-left:18px;list-style:disc}#lg1 .pp .info li{margin-bottom:6px}
+#lg1 .pp .info table{width:100%;border-collapse:collapse;font-size:13.5px}
+#lg1 .pp .info td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+#lg1 .pp .info td:first-child{color:var(--muted);width:40%;background:var(--bg);font-weight:600}
+#lg1 .pp .buy{border:1px solid var(--line);border-radius:12px;padding:20px;align-self:start;position:sticky;top:100px;background:#fff}
+#lg1 .pp .buy .pr{font:800 28px/1 var(--font-h);color:var(--navy)}
+#lg1 .pp .buy .pr small{font:500 12px var(--font-b);color:var(--muted);display:block;margin-top:4px}
+#lg1 .pp .buy .pr.q{font-size:20px;color:var(--green-d)}
+#lg1 .pp .buy .ship{margin:14px 0;font-size:13px;display:flex;flex-direction:column;gap:7px}
+#lg1 .pp .buy .ship div{display:flex;gap:8px;align-items:flex-start}
+#lg1 .pp .buy .ship svg{width:16px;height:16px;flex:none;fill:none;stroke:var(--green);stroke-width:2.5;margin-top:2px}
+#lg1 .pp .buy .stock{color:var(--green-d);font:700 15px var(--font-h);margin-bottom:8px}
+#lg1 .pp .buy .qty{display:flex;align-items:center;gap:8px;margin:12px 0;font-size:13px}
+#lg1 .pp .buy .qty div{display:flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+#lg1 .pp .buy .qty button{width:34px;height:34px;border:0;background:var(--bg);font-size:18px;cursor:pointer}
+#lg1 .pp .buy .qty input{width:46px;text-align:center;border:0;font:600 14px var(--font-b)}
+#lg1 .pp .buy .btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;border:0;border-radius:99px;padding:12px;font:700 14px var(--font-h);cursor:pointer;margin-bottom:8px;transition:.2s}
+#lg1 .pp .buy .b1{background:var(--orange-d);color:#fff}#lg1 .pp .buy .b1:hover{background:#A85C14}
+#lg1 .pp .buy .b2{background:var(--blue);color:#fff}#lg1 .pp .buy .b2:hover{background:var(--blue-d)}
+#lg1 .pp .buy .b3{background:#fff;color:var(--navy);border:1px solid var(--line)}#lg1 .pp .buy .b3:hover{border-color:var(--navy)}
+#lg1 .pp .buy .btn svg{width:16px;height:16px;fill:#fff}
+#lg1 .pp .buy .sold{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.6}#lg1 .pp .buy .sold b{color:var(--ink)}
+#lg1 .pp .tabs{margin-top:34px;border-top:1px solid var(--line)}
+#lg1 .pp .tabs nav{display:flex;flex-wrap:wrap;gap:6px;border-bottom:1px solid var(--line);margin-bottom:18px}
+#lg1 .pp .tabs nav button{border:0;background:none;padding:14px 16px;font:700 13px var(--font-h);color:var(--muted);border-bottom:3px solid transparent;cursor:pointer;margin-bottom:-1px}
+#lg1 .pp .tabs nav button.on{color:var(--blue);border-color:var(--blue)}
+#lg1 .pp .tabs .pane{display:none;font-size:15px;color:var(--ink);max-width:900px}
+#lg1 .pp .tabs .pane.on{display:block;animation:lg1fade .3s}
+#lg1 .pp .tabs .pane p{margin:0 0 10px}
+#lg1 .pp .tabs .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px 28px}
+#lg1 .pp .tabs .grid2 div{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+#lg1 .pp .tabs .grid2 b{width:44%;color:var(--muted);font-weight:600}
+#lg1 .pp .docs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+#lg1 .pp .docs a{border:1px solid var(--line);border-radius:var(--radius);padding:14px;display:flex;gap:10px;align-items:center;font:700 13px var(--font-h);color:var(--navy)}
+#lg1 .pp .docs a:hover{border-color:var(--blue)}
+#lg1 .pp .docs svg{width:26px;height:26px;fill:none;stroke:var(--blue);stroke-width:1.8;flex:none}
+#lg1 .pp .docs small{display:block;font:500 11px var(--font-b);color:var(--muted)}
+#lg1 .notfound{text-align:center;padding:80px 20px}
+
+/* ---------- Páginas internas: bloques ---------- */
+#lg1 .split{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+#lg1 .split .pic{border-radius:16px;overflow:hidden;position:relative;min-height:320px;background:var(--navy)}
+#lg1 .split .pic img.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#lg1 .split .pic .fb{display:flex;align-items:center;justify-content:center;height:100%;min-height:320px}#lg1 .split .pic .fb svg{width:50%}
+#lg1 .split .pic .cap{position:absolute;left:16px;bottom:16px;background:rgba(255,255,255,.95);border-radius:8px;padding:10px 14px;font:700 13px var(--font-h);color:var(--navy)}
+#lg1 .split .pic .cap small{display:block;font:500 12px var(--font-b);color:var(--muted)}
+#lg1 .vals{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+#lg1 .val{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;gap:10px}
+#lg1 .val .ic{width:50px;height:50px;border-radius:12px;background:#EAF2FB;display:flex;align-items:center;justify-content:center}
+#lg1 .val .ic svg{width:26px;height:26px;fill:none;stroke:var(--blue);stroke-width:1.8}
+#lg1 .val h3{font:800 17px var(--font-h);color:var(--navy)}
+#lg1 .val p{font-size:14px;color:var(--muted)}
+#lg1 .val.o .ic{background:#FDF1E3}#lg1 .val.o .ic svg{stroke:var(--orange-d)}
+#lg1 .nums{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+#lg1 .nums div{background:var(--navy);color:#fff;border-radius:var(--radius);padding:24px;position:relative;overflow:hidden}
+#lg1 .nums div::after{content:"";position:absolute;right:-30px;top:-30px;width:110px;height:110px;border-radius:50%;background:rgba(224,138,46,.25)}
+#lg1 .nums b{display:block;font:800 36px/1 var(--font-h);margin-bottom:8px;color:var(--orange)}
+#lg1 .nums span{font-size:13.5px;color:#D6E4F0}
+#lg1 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:st}
+#lg1 .step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;position:relative}
+#lg1 .step::before{counter-increment:st;content:counter(st);width:36px;height:36px;border-radius:50%;background:var(--orange);color:var(--navy);font:800 15px/36px var(--font-h);text-align:center;display:block;margin-bottom:12px}
+#lg1 .step h3{font:800 16px var(--font-h);color:var(--navy);margin-bottom:6px}
+#lg1 .step p{font-size:13.5px;color:var(--muted)}
+#lg1 .faq .it{border:1px solid var(--line);border-radius:10px;background:#fff;margin-bottom:10px;overflow:hidden}
+#lg1 .faq [data-acc]{width:100%;text-align:left;border:0;background:none;padding:16px 18px;font:700 15px var(--font-h);color:var(--navy);display:flex;justify-content:space-between;align-items:center;gap:12px;cursor:pointer}
+#lg1 .faq [data-acc]::after{content:"+";font-size:20px;color:var(--blue);flex:none}
+#lg1 .faq .it.open [data-acc]::after{content:"−"}
+#lg1 .faq .body{display:none;padding:0 18px 16px;color:var(--muted);font-size:14.5px}
+#lg1 .faq .it.open .body{display:block}
+#lg1 .faq .body p{margin-bottom:8px}
+#lg1 .form{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#lg1 .form h3{grid-column:1/-1;font:800 20px var(--font-h);color:var(--navy)}
+#lg1 .form label{display:flex;flex-direction:column;gap:5px;font:700 12px var(--font-h);color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+#lg1 .form input,#lg1 .form select,#lg1 .form textarea{width:100%;border:1px solid var(--line);border-radius:6px;padding:11px 12px;font:400 15px var(--font-b);background:var(--bg);color:var(--ink);text-transform:none;letter-spacing:0}
+#lg1 .form input.err,#lg1 .form select.err,#lg1 .form textarea.err{border-color:#B42318;background:#FFF5F4}
+#lg1 .form textarea{min-height:90px;resize:vertical}
+#lg1 .form .full{grid-column:1/-1}
+#lg1 .form .via{display:flex;gap:16px;flex-direction:row;text-transform:none;letter-spacing:0;font:600 14px var(--font-b);color:var(--ink)}
+#lg1 .form .via span{display:flex;align-items:center;gap:6px}
+#lg1 .form small{grid-column:1/-1;font-size:12px;color:var(--muted)}
+#lg1 .form .ok{display:none;grid-column:1/-1;background:#E8F6EA;color:var(--green-d);border-radius:6px;padding:12px 14px;font-weight:600}
+#lg1 .ways{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#lg1 .way{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px;display:flex;gap:12px;align-items:center;transition:.2s}
+#lg1 .way:hover{border-color:var(--blue);transform:translateY(-2px)}
+#lg1 .way svg{width:28px;height:28px;flex:none;fill:none;stroke:var(--blue);stroke-width:2}
+#lg1 .way b{display:block;font:800 15px var(--font-h);color:var(--navy)}#lg1 .way span{font-size:13px;color:var(--muted)}
+#lg1 .map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);min-height:360px;background:var(--bg)}
+#lg1 .map iframe{width:100%;height:100%;min-height:360px;border:0;display:block}
+#lg1 .phones{columns:2;gap:20px;font-size:14.5px}
+#lg1 .phones li{padding:6px 0;border-bottom:1px solid var(--line);break-inside:avoid}
+#lg1 .phones a{color:var(--navy);font-weight:600}
+#lg1 .brandgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+#lg1 .bcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px 16px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px;transition:.2s;color:var(--navy)}
+#lg1 .bcard:hover{border-color:var(--blue);box-shadow:var(--shadow);transform:translateY(-3px)}
+#lg1 .bcard .ini{width:54px;height:54px;border-radius:50%;background:var(--bg);display:flex;align-items:center;justify-content:center;font:800 18px var(--font-h);color:var(--blue)}
+#lg1 .bcard b{font:800 15px var(--font-h)}
+#lg1 .bcard span{font-size:12px;color:var(--muted)}
+#lg1 .bcard .tag{font:700 10px var(--font-h);letter-spacing:.08em;text-transform:uppercase;color:var(--green-d);background:#E8F6EA;border-radius:4px;padding:3px 7px}
+#lg1 .bsearch{display:flex;gap:10px;margin-bottom:22px;flex-wrap:wrap}
+#lg1 .bsearch input{flex:1;min-width:220px;border:1px solid var(--line);border-radius:8px;padding:11px 14px;font:400 15px var(--font-b)}
+#lg1 .bsearch .letters{display:flex;gap:4px;flex-wrap:wrap}
+#lg1 .bsearch .letters button{width:32px;height:38px;border:1px solid var(--line);border-radius:6px;background:#fff;font:700 12px var(--font-h);color:var(--navy);cursor:pointer}
+#lg1 .bsearch .letters button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+#lg1 .cta-band{background:linear-gradient(135deg,var(--navy),var(--blue-d));color:#fff;border-radius:16px;padding:40px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+#lg1 .cta-band h2{font:800 clamp(22px,2.6vw,30px)/1.15 var(--font-h);max-width:560px}
+#lg1 .cta-band p{color:#D6E4F0;margin-top:6px}
+#lg1 .cta-band .btns{display:flex;gap:10px;flex-wrap:wrap}
+#lg1 .policy{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+#lg1 .pol{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+#lg1 .pol h3{font:800 18px var(--font-h);color:var(--navy);display:flex;align-items:center;gap:10px;margin-bottom:12px}
+#lg1 .pol h3 svg{width:26px;height:26px;fill:none;stroke:var(--orange-d);stroke-width:1.8}
+#lg1 .pol ul{padding-left:0}
+#lg1 .pol li{padding:8px 0;border-top:1px solid var(--line);font-size:14.5px;display:flex;gap:10px}
+#lg1 .pol li::before{content:"✔";color:var(--green);font-weight:700;flex:none}
+#lg1 .pol li b{color:var(--navy)}
+
+@media (max-width:1100px){
+  #lg1 .mainnav{display:none}
+  #lg1 .header .wrap{grid-template-columns:auto auto 1fr auto}
+  #lg1 .cat-layout{grid-template-columns:1fr}
+  #lg1 .filters{position:fixed;inset:0;z-index:70;background:#fff;overflow:auto;padding:70px 18px 24px;display:none}
+  #lg1 .filters.open{display:block}
+  #lg1 .filters .fclose{display:flex;position:fixed;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:#fff;font-size:20px;align-items:center;justify-content:center}
+  #lg1 .toolbar .fbtn{display:inline-flex}
+  #lg1 .pgrid.cols3{grid-template-columns:repeat(2,1fr)}
+  #lg1 .pp .top{grid-template-columns:1fr 1fr}
+  #lg1 .pp .thumbs{flex-direction:row;order:2;grid-column:1/-1}#lg1 .pp .thumbs button{width:70px}
+  #lg1 .pp .main{order:1;grid-column:1/-1;min-height:320px}#lg1 .pp .info{order:3;grid-column:1/-1}#lg1 .pp .buy{order:4;grid-column:1/-1;position:static}
+  #lg1 .split{grid-template-columns:1fr}
+  #lg1 .vals,#lg1 .steps{grid-template-columns:1fr 1fr}
+  #lg1 .nums{grid-template-columns:1fr 1fr}
+  #lg1 .brandgrid{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:640px){
+  #lg1 .burger{display:flex}
+  #lg1 .header .wrap{grid-template-columns:auto 1fr auto;grid-template-rows:auto auto}
+  #lg1 .search{grid-column:1/-1}
+  #lg1 .catnav{display:none}
+  #lg1 .pgrid.cols3{grid-template-columns:1fr}
+  #lg1 .pp .top{grid-template-columns:1fr}#lg1 .pp .docs{grid-template-columns:1fr}#lg1 .pp .tabs .grid2{grid-template-columns:1fr}
+  #lg1 .vals,#lg1 .steps,#lg1 .nums,#lg1 .form,#lg1 .ways,#lg1 .policy{grid-template-columns:1fr}
+  #lg1 .brandgrid{grid-template-columns:1fr 1fr}
+  #lg1 .phones{columns:1}
+  #lg1 .cta-band{padding:28px 22px}
+  #lg1 .phero{padding:36px 0 40px}
+}
+#lg1 .filters .fclose{display:none}
+</style>
+
+<div id="lg1" data-current="marcas">
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="wrap">
+      <ul>
+        <li><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg><a href="tel:+528133760911">81 3376 0911</a></li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg><a href="mailto:ventas@logatech.com.mx">ventas@logatech.com.mx</a></li>
+        <li><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>San Nicolás de los Garza, N.L.</li>
+      </ul>
+      <div class="promo">🚚 Envío GRATIS desde $5,000 a toda la República · Lun–Vie 8:30–17:30</div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="wrap">
+      <button class="burger" type="button" aria-label="Menú" aria-expanded="false" data-burger><span></span><span></span><span></span></button>
+      <a class="logo" href="#" data-page="inicio" aria-label="Loga Soluciones Científicas para Laboratorio" data-logo></a>
+      <nav class="mainnav">
+        <a href="#" data-page="catalogo">Catálogo</a><a href="#" data-page="marcas">Marcas</a><a href="#" data-page="servicio">Servicio técnico</a><a href="#" data-page="envios">Envíos y crédito</a><a href="#" data-page="nosotros">Nosotros</a><a href="#" data-page="contacto">Contacto</a>
+      </nav>
+      <form class="search" data-search>
+        <select aria-label="Categoría" data-catselect></select>
+        <input type="search" name="q" placeholder="Busca por producto, marca o clave (ej. Vacutainer 368171)">
+        <button type="submit"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.8l-.3-.3A6.5 6.5 0 1 0 14 15.5l.3.3v.8l5 5 1.5-1.5-5-5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z"/></svg>Buscar</button>
+      </form>
+      <div class="hdr-actions">
+        <button class="quote-btn" type="button" data-quote-open>
+          <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z M8 9h8M8 13h8M8 17h5"/></svg>
+          <span>Mi cotización</span><i class="cnt" data-quote-count>0</i>
+        </button>
+        <a class="btn btn-green wa-btn" href="https://wa.me/528113638885?text=Hola%20Loga%2C%20quiero%20cotizar" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4.1c1.7.7 2.4.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg><span>Cotizar por WhatsApp</span></a>
+      </div>
+    </div>
+    <nav class="mobile-nav" data-mobile-nav></nav>
+  </header>
+
+  <!-- NAV CATEGORÍAS -->
+  <nav class="catnav" aria-label="Categorías">
+    <div class="wrap">
+      <a class="all" href="#" data-page="catalogo"><svg viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>Todas las categorías</a>
+      <span class="cats" data-catnav></span>
+    </div>
+  </nav>
+
+
+  <section class="phero sm" data-photo="cat_re" data-alt="Marcas">
+    <div class="wrap">
+      <div class="crumbs"><a href="#" data-page="inicio">Inicio</a> › Marcas</div>
+      <h1>Marcas con las que <em>trabajamos</em></h1>
+      <p>Distribuidor autorizado de más de 40 fabricantes. Garantía directa del fabricante, servicio técnico de marca y cartas de distribuidor a solicitud del cliente.</p>
+    </div>
+  </section>
+  <section class="sec alt"><div class="wrap">
+    <div class="bsearch"><input type="search" placeholder="Buscar marca…" data-bq><div class="letters" data-letters></div></div>
+    <div class="brandgrid" data-bgrid></div>
+    <p style="margin-top:22px;font-size:14px;color:var(--muted)">¿Buscas una marca que no aparece? Trabajamos con fabricantes adicionales bajo pedido. <a href="https://wa.me/528113638885?text=Hola%20Loga%2C%20busco%20una%20marca" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">Pregunta por WhatsApp →</a></p>
+  </div></section>
+  <section class="sec"><div class="wrap"><div class="cta-band"><div><h2>Equipos nuevos de fábrica con garantía de 1 año</h2><p>Instalación, capacitación y mantenimiento incluidos. Servicio técnico propio en Monterrey.</p></div><div class="btns"><a class="btn btn-green" href="#" data-page="servicio">Servicio técnico</a><a class="btn btn-line" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.5)" href="#" data-page="catalogo" data-params="cat=equipos">Ver equipos</a></div></div></div></section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <div data-logo></div>
+          <p class="about">Pruebas rápidas, antidoping, dispositivos médicos, reactivos, equipos y consumibles para laboratorios clínicos, industriales, moleculares e institucionales. 10 años de experiencia desde Monterrey para toda la República.</p>
+          <div class="soc">
+            <a href="https://www.facebook.com/LogaSolucionesCientificas" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8z"/></svg></a>
+            <a href="https://www.youtube.com/@logasolucionesparalavoratorio" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22 8s-.2-1.6-.9-2.3c-.8-.9-1.7-.9-2.1-1C16 4.5 12 4.5 12 4.5s-4 0-7 .2c-.4.1-1.3.1-2.1 1C2.2 6.4 2 8 2 8s-.2 1.9-.2 3.8v1.7c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.8.9 1.9.9 2.4 1 1.7.2 6.7.2 6.7.2s4 0 7-.2c.4-.1 1.3-.1 2.1-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.8v-1.7C22.2 9.9 22 8 22 8zM10 15V9l5.5 3z"/></svg></a>
+          </div>
+        </div>
+        <div><h4>Categorías</h4><ul data-catlist></ul></div>
+        <div><h4>Empresa</h4><ul><li><a href="#" data-page="nosotros">Nosotros</a></li><li><a href="#" data-page="marcas">Marcas</a></li><li><a href="#" data-page="servicio">Servicio técnico</a></li><li><a href="#" data-page="envios">Envíos y cadena de frío</a></li><li><a href="#" data-page="envios">Crédito y pagos</a></li><li><a href="#" data-page="contacto">Contacto</a></li><li><a href="#">Aviso de privacidad</a></li></ul></div>
+        <div><h4>Contacto</h4><ul><li>Abril en Portugal 345, Col. Roble<br>San Nicolás de los Garza, N.L.</li><li><a href="tel:+528133760911">81 3376 0911</a> · <a href="tel:+528129680596">81 2968 0596</a></li><li><a href="https://wa.me/528113638885" target="_blank" rel="noopener">WhatsApp 81 1363 8885</a></li><li><a href="mailto:ventas@logatech.com.mx">ventas@logatech.com.mx</a></li><li>Lun–Vie 8:30 a 17:30 h</li><li><a href="https://maps.app.goo.gl/edKh68XSe5Ziowa68" target="_blank" rel="noopener">Ver en Google Maps →</a></li></ul></div>
+      </div>
+      <div class="legal"><span>© 2026 Logatech Corporation Industrial S.A. de C.V. · Loga Soluciones Científicas para Laboratorio</span><span>Todos los derechos reservados</span></div>
+    </div>
+  </footer>
+
+  <a class="lg1-wa" href="https://wa.me/528113638885?text=Hola%20Loga%2C%20necesito%20cotizar" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4.1c1.7.7 2.4.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></a>
+</div>
+
+<!-- FICHA RÁPIDA y COTIZACIÓN (se mueven a <body> al cargar) -->
+<div id="lg1-modal" role="dialog" aria-modal="true" aria-label="Detalle de producto">
+  <div class="bd" data-close></div>
+  <div class="dlg" data-dlg></div>
+  <div class="toast" data-toast></div>
+</div>
+<div id="lg1-quote" role="dialog" aria-modal="true" aria-label="Mi cotización">
+  <div class="bd" data-qclose></div>
+  <div class="panel">
+    <div class="qhead"><div><b>Mi cotización</b><span data-qtotal>0 productos</span></div><button type="button" class="close" aria-label="Cerrar" data-qclose>×</button></div>
+    <div class="qlist" data-qlist></div>
+    <div class="qfoot">
+      <textarea data-qnotes placeholder="Notas: empresa, ciudad, urgencia, frecuencia de pedido…"></textarea>
+      <a class="btn b1" href="#" target="_blank" rel="noopener" data-qwa><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>Enviar por WhatsApp</a>
+      <a class="btn b3" href="#" data-qmail>Enviar por correo</a>
+      <button class="lnk" type="button" data-qclear>Vaciar cotización</button>
+      <small>Respondemos en minutos en horario hábil. Pedido mínimo $5,000 · Envío gratis desde $5,000 a toda la República.</small>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  /* ===================== CONFIGURACIÓN DEL SITIO ===================== */
+  var CFG = {
+    logoUrl: '',                 // URL del logotipo completo (PNG/SVG). Vacío = isotipo incrustado + wordmark.
+    whatsapp: '528113638885',    // WhatsApp con lada país
+    phone: '81 3376 0911',
+    email: 'ventas@logatech.com.mx',
+    currency: 'MXN',
+    /* Rutas de las páginas. Para WordPress cambia cada valor por el slug real, ej. catalogo:'/catalogo/' */
+    pages: { inicio:'inicio.html', catalogo:'catalogo.html', producto:'producto.html', nosotros:'nosotros.html', marcas:'marcas.html', servicio:'servicio-tecnico.html', envios:'envios-y-credito.html', contacto:'contacto.html' }
+  };
+
+  /* ===================== CATEGORÍAS (cuestionario A3.1 / A3.2) ===================== */
+  var CATEGORIES = [
+    {id:'pruebas-rapidas',name:'Pruebas rápidas',short:'Diagnóstico inmunocromatográfico en minutos.',art:'cassette',photo:'cat_pr',subs:['Enfermedades infecciosas','Hepáticas','Tumorales e inflamatorias','Fertilidad','Vectoriales','Resistencia a antibióticos','Sepsis','Salud general']},
+    {id:'antidoping',name:'Antidoping',short:'Pruebas de drogas en orina y saliva.',art:'cup',photo:'cat_ad',subs:['Pruebas individuales en orina','Frasco integrado','Cassette individual','Paneles y frascos multidrogas','Pruebas en saliva']},
+    {id:'point-of-care',name:'Point of care',short:'Resultados junto al paciente.',art:'kit',photo:'cat_eq',subs:['Química seca','Turbidimetría','HbA1c','Monitoreo portátil','Coagulación']},
+    {id:'cuidados-criticos',name:'Cuidados críticos',short:'Gasometría, electrolitos y marcadores cardiacos.',art:'kit',photo:'hospital',subs:['Multiparamétrico','Cardio y sepsis','Electrolitos','Gasometría']},
+    {id:'deteccion-alcohol',name:'Detección de alcohol',short:'Alcoholímetros profesionales, personales y fijos.',art:'cup',photo:'empresa',subs:['Alcoholímetros profesionales','Alcoholímetros personales','Alcoholímetros fijos de pared','Pruebas rápidas','Mantenimiento y servicio técnico']},
+    {id:'reactivos',name:'Reactivos',short:'Química analítica, tinciones y soluciones.',art:'bottle',photo:'cat_re',subs:['Buffers y soluciones valoradas','Colorantes','Equipos de tinción','Detergentes y limpieza especializada','Solventes y sales','Aguas','Antibacteriales','Soluciones glucosadas','Patrones de absorción atómica']},
+    {id:'diagnostico-molecular',name:'Diagnóstico molecular',short:'PCR, secuenciación y extracción.',art:'kit',photo:'lab',subs:['PCR tiempo real','Secuenciación','INNO-LiPA','Extracción de ARN/ADN','Termociclador']},
+    {id:'microbiologia',name:'Microbiología',short:'Medios de cultivo, agares y consumibles.',art:'bottle',photo:'cat_re',subs:['Medios de cultivo','Peptonas y agares','Biología molecular','Equipos automáticos y semiautomáticos','Consumibles']},
+    {id:'equipos',name:'Equipos para diagnóstico clínico',short:'Analizadores nuevos, de fábrica, con instalación.',art:'kit',photo:'cat_eq',subs:['Química','Hematología','Coagulación','Electrolitos','Uroanálisis']},
+    {id:'consumibles',name:'Consumibles y toma de muestra',short:'Tubos, contenedores, cajas Petri, portaobjetos e hisopos.',art:'tube',photo:'scientist',subs:['Tubos de toma de muestra','Contenedores de orina','Cajas Petri','Portaobjetos','Medios de transporte']}
+  ];
+  var CAT_HOME = ['pruebas-rapidas','antidoping','reactivos','equipos']; // las 4 destacadas en inicio
+
+  /* ===================== MARCAS (cuestionario A5.1) ===================== */
+  var BRANDS = ['MCD LAB','HYCEL','JALMEK','BD','FERMONT','COPAN','YAMATO','GH MEDICAL','Thermo Scientific','Eppendorf','VELAB','CERTUM','SD Biosensor','Instant View','ARTRON','Life Lock','Dräger','Sentech','Mission','ELITech Group','Voule','MNCHIP','Maglumi','Corning','Wiener Lab','Spinreact','Bio-Rad','Falcon','Licon','Leica','Simport','QuidelOrtho','Alfa','CerTest','Vircell','Dymind','Diagon','GeneProof','i-SENS','Immunostics','Response Biomedical','Sugentech','bioMérieux'];
+  var BRANDS_HOME = ['BD','Thermo Scientific','Eppendorf','Corning','Bio-Rad','Leica','Dräger','bioMérieux','MCD LAB','HYCEL','JALMEK','COPAN','CERTUM','SD Biosensor','ARTRON','Spinreact','Wiener Lab','QuidelOrtho','Maglumi','Mission','Sugentech','GH MEDICAL','FERMONT','YAMATO'];
+
+  /* ===================== PRODUCTOS (cuestionario A4.1: los más vendidos) =====================
+     Campos: id, name, brand, sku, cat (id de categoría), sub, art (ilustración de respaldo), img (foto Pexels),
+     badge, pres (presentación), price (null = cotización), cold (cadena de frío), bullets, specs, desc.
+     Las especificaciones son de referencia: validar contra la ficha técnica del fabricante. */
+  var PRODUCTS = [
+    {id:'DOA164',name:'Panel multidrogas 6 parámetros en cassette',brand:'CERTUM',sku:'DOA164',cat:'antidoping',sub:'Paneles y frascos multidrogas',art:'cup',img:8670147,badge:'Más vendido',pres:'Caja con 25 pruebas',price:null,cold:false,home:true,
+      bullets:['Detecta THC, COC, AMP, MET, OPI y BZO en orina en un solo paso.','Resultado visual en 5 minutos; válido hasta 10 minutos.','Ideal para reclutamiento y selección de personal, clínicas y hospitales.','Sensibilidad de corte conforme a lineamientos SAMHSA.','Registro sanitario COFEPRIS vigente.'],
+      specs:{'Muestra':'Orina','Parámetros':'THC 50 · COC 300 · AMP 1000 · MET 1000 · OPI 2000 · BZO 300 ng/mL','Tiempo de lectura':'5 minutos','Presentación':'Caja con 25 cassettes + pipetas','Almacenamiento':'2–30 °C','Vida de anaquel':'24 meses'},
+      desc:'Prueba inmunocromatográfica rápida para la detección cualitativa simultánea de seis drogas de abuso en orina humana. Es la prueba más solicitada por empresas con procesos de reclutamiento, clínicas de salud ocupacional y hospitales.'},
+    {id:'DOA154',name:'Panel multidrogas 5 parámetros en cassette',brand:'CERTUM',sku:'DOA154',cat:'antidoping',sub:'Paneles y frascos multidrogas',art:'cup',img:8670147,badge:'',pres:'Caja con 25 pruebas',price:null,cold:false,
+      bullets:['Detecta THC, COC, AMP, MET y BZO en orina.','Resultado en 5 minutos, lectura visual.','Formato cassette con pipeta incluida.'],
+      specs:{'Muestra':'Orina','Parámetros':'THC · COC · AMP · MET · BZO','Tiempo de lectura':'5 minutos','Presentación':'Caja con 25','Almacenamiento':'2–30 °C'},
+      desc:'Panel de cinco parámetros para programas de control de drogas en empresas y clínicas. Misma plataforma que el panel de 6 parámetros, con el perfil más usado en reclutamiento.'},
+    {id:'A04-17-140-A',name:'Panel multidrogas 5 parámetros',brand:'ARTRON',sku:'A04-17-140-A',cat:'antidoping',sub:'Paneles y frascos multidrogas',art:'cup',img:8670147,badge:'',pres:'Caja con 25 pruebas',price:null,cold:false,
+      bullets:['Cinco drogas en una sola prueba de orina.','Resultado en 5 minutos.','Marca canadiense con distribución autorizada.'],
+      specs:{'Muestra':'Orina','Parámetros':'5 (THC, COC, AMP, MET, OPI)','Tiempo':'5 minutos','Presentación':'Caja con 25'},
+      desc:'Panel multidrogas ARTRON de 5 parámetros, alternativa de alta rotación para clínicas y empresas que requieren volumen.'},
+    {id:'HDOA-334',name:'Panel multidrogas 3 parámetros (THC/COC/AMP)',brand:'CERTUM',sku:'HDOA-334',cat:'antidoping',sub:'Paneles y frascos multidrogas',art:'cup',img:8670147,badge:'',pres:'Caja con 25 pruebas',price:null,cold:false,
+      bullets:['Marihuana, cocaína y anfetaminas en una sola prueba.','Resultado en 5 minutos.','Formato económico para tamizaje.'],
+      specs:{'Muestra':'Orina','Parámetros':'THC 50 · COC 300 · AMP 1000 ng/mL','Tiempo':'5 minutos','Presentación':'Caja con 25'},
+      desc:'Panel básico de tres parámetros para tamizaje de drogas en orina.'},
+    {id:'A04-15-140-A',name:'Panel multidrogas 3 parámetros (COC/AMP/THC)',brand:'ARTRON',sku:'A04-15-140-A',cat:'antidoping',sub:'Paneles y frascos multidrogas',art:'cup',img:8670147,badge:'',pres:'Caja con 25 pruebas',price:null,cold:false,
+      bullets:['Tres parámetros en cassette.','Resultado en 5 minutos.','Alta disponibilidad.'],
+      specs:{'Muestra':'Orina','Parámetros':'COC · AMP · THC','Tiempo':'5 minutos','Presentación':'Caja con 25'},
+      desc:'Panel ARTRON de tres parámetros para programas de tamizaje de bajo costo.'},
+    {id:'DTH-101',name:'Detección de marihuana (THC 50 ng/mL) en tiras',brand:'CERTUM',sku:'DTH-101',cat:'antidoping',sub:'Pruebas individuales en orina',art:'cassette',img:7280977,badge:'',pres:'Caja con 50 tiras',price:null,cold:false,
+      bullets:['Prueba individual en tira reactiva.','Corte de 50 ng/mL.','Resultado en 5 minutos.'],
+      specs:{'Muestra':'Orina','Analito':'THC 50 ng/mL','Formato':'Tira','Presentación':'Caja con 50'},
+      desc:'Tira individual para detección cualitativa de cannabinoides en orina.'},
+    {id:'DCO-101',name:'Detección de cocaína (COC 300 ng/mL) en tiras',brand:'CERTUM',sku:'DCO-101',cat:'antidoping',sub:'Pruebas individuales en orina',art:'cassette',img:7280977,badge:'',pres:'Caja con 50 tiras',price:null,cold:false,
+      bullets:['Prueba individual en tira.','Corte de 300 ng/mL.','Resultado en 5 minutos.'],
+      specs:{'Muestra':'Orina','Analito':'COC 300 ng/mL','Formato':'Tira','Presentación':'Caja con 50'},
+      desc:'Tira individual para detección cualitativa de cocaína (benzoilecgonina) en orina.'},
+    {id:'DME-101',name:'Detección de metanfetamina (MET 1000 ng/mL)',brand:'CERTUM',sku:'DME-101',cat:'antidoping',sub:'Pruebas individuales en orina',art:'cassette',img:7280977,badge:'',pres:'Caja con 50 tiras',price:null,cold:false,
+      bullets:['Prueba individual en tira.','Corte de 1000 ng/mL.','Resultado en 5 minutos.'],
+      specs:{'Muestra':'Orina','Analito':'MET 1000 ng/mL','Formato':'Tira','Presentación':'Caja con 50'},
+      desc:'Tira individual para detección cualitativa de metanfetamina en orina.'},
+    {id:'DAM-101',name:'Detección de anfetamina (AMP 1000 ng/mL)',brand:'CERTUM',sku:'DAM-101',cat:'antidoping',sub:'Pruebas individuales en orina',art:'cassette',img:7280977,badge:'',pres:'Caja con 50 tiras',price:null,cold:false,
+      bullets:['Prueba individual en tira.','Corte de 1000 ng/mL.','Resultado en 5 minutos.'],
+      specs:{'Muestra':'Orina','Analito':'AMP 1000 ng/mL','Formato':'Tira','Presentación':'Caja con 50'},
+      desc:'Tira individual para detección cualitativa de anfetamina en orina.'},
+
+    {id:'CAGD025E',name:'SGTi-flex COVID-19 / Influenza A+B Ag Duo',brand:'Sugentech',sku:'CAGD025E',cat:'pruebas-rapidas',sub:'Enfermedades infecciosas',art:'cassette',img:7867251,badge:'',pres:'Caja con 25 pruebas',price:null,cold:false,home:true,
+      bullets:['Detección simultánea de antígeno SARS-CoV-2 e Influenza A/B en un solo cassette.','Muestra nasofaríngea; resultado en 15 minutos.','Alta sensibilidad y especificidad validada clínicamente.','Incluye hisopos, tubos de extracción y tapas gotero.'],
+      specs:{'Muestra':'Hisopado nasofaríngeo','Tiempo':'15 minutos','Presentación':'25 pruebas + accesorios','Almacenamiento':'2–30 °C','Registro':'COFEPRIS'},
+      desc:'Prueba combinada para diferenciar COVID-19 de Influenza A y B en una sola corrida, reduciendo el costo por paciente y el tiempo de respuesta en urgencias y consulta externa.'},
+    {id:'166561',name:'Prueba rápida Influenza Ag A/B/A(H1N1) pandémica',brand:'SD Biosensor',sku:'166561',cat:'pruebas-rapidas',sub:'Enfermedades infecciosas',art:'cassette',img:7867251,badge:'',pres:'Caja con 25 pruebas',price:null,cold:false,
+      bullets:['Diferencia Influenza A, B y A(H1N1) pandémica.','Muestra nasofaríngea; resultado en 10–15 minutos.','Marca SD con distribución autorizada.'],
+      specs:{'Muestra':'Hisopado nasofaríngeo','Tiempo':'10–15 minutos','Presentación':'Caja con 25','Almacenamiento':'2–30 °C'},
+      desc:'Prueba de antígeno para influenza con diferenciación de subtipo pandémico, de uso frecuente en temporada invernal.'},
+    {id:'FHC-201',name:'Embarazo Combo (hCG 25 mIU/mL) orina/suero en tiras',brand:'CERTUM',sku:'FHC-201',cat:'pruebas-rapidas',sub:'Fertilidad',art:'cassette',img:7280977,badge:'',pres:'Caja con 50 tiras',price:null,cold:false,
+      bullets:['Detección de hCG en orina o suero.','Sensibilidad 25 mIU/mL.','Resultado en 3–5 minutos.'],
+      specs:{'Muestra':'Orina / suero','Sensibilidad':'25 mIU/mL','Tiempo':'3–5 minutos','Presentación':'Caja con 50'},
+      desc:'Tira combo para detección temprana de embarazo en laboratorio clínico y consultorio.'},
+    {id:'IDEC-425',name:'Dengue Combo Duo IgG/IgM + NS1 en cassette',brand:'CERTUM',sku:'IDEC-425',cat:'pruebas-rapidas',sub:'Vectoriales',art:'cassette',img:7280977,badge:'Temporada',pres:'Caja con 25 pruebas',price:null,cold:false,home:true,
+      bullets:['Antígeno NS1 y anticuerpos IgG/IgM en el mismo cassette.','Muestra de sangre total, suero o plasma.','Resultado en 15 minutos.','Cobertura desde el día 1 de síntomas hasta fase tardía.'],
+      specs:{'Muestra':'Sangre total / suero / plasma','Tiempo':'15 minutos','Presentación':'25 cassettes + buffer','Almacenamiento':'2–30 °C','Registro':'COFEPRIS'},
+      desc:'Permite diagnosticar dengue en cualquier fase de la infección con una sola muestra, ideal para hospitales y laboratorios en zonas endémicas.'},
+    {id:'02-7602',name:'Prueba de sangre oculta en heces (FOB) en cassette',brand:'Instant View',sku:'02-7602',cat:'pruebas-rapidas',sub:'Salud general',art:'cassette',img:7867251,badge:'',pres:'Caja con 25 pruebas',price:null,cold:false,
+      bullets:['Detección inmunológica de hemoglobina humana en heces.','Sin restricciones dietéticas previas.','Resultado en 5 minutos.'],
+      specs:{'Muestra':'Heces','Tiempo':'5 minutos','Presentación':'Caja con 25','Almacenamiento':'2–30 °C'},
+      desc:'Prueba inmunocromatográfica para tamizaje de sangrado gastrointestinal, usada en chequeos de salud general.'},
+
+    {id:'368171',name:'Tubo Vacutainer® EDTA K2, tapa lila, 4 ml',brand:'BD',sku:'368171',cat:'consumibles',sub:'Tubos de toma de muestra',art:'tube',img:4047146,badge:'Pedido recurrente',pres:'Caja con 100 tubos',price:null,cold:false,home:true,
+      bullets:['Anticoagulante EDTA K2 en aerosol para hematología.','Tubo de plástico PET con tapa Hemogard™ de seguridad.','Volumen de extracción 4 ml, 13 × 75 mm.','Compatible con todos los analizadores de hematología.','Original BD, distribuidor autorizado.'],
+      specs:{'Aditivo':'EDTA K2 7.2 mg','Volumen':'4 ml','Dimensiones':'13 × 75 mm','Material':'PET','Presentación':'Caja con 100 · Empaque con 1,000'},
+      desc:'Los tubos BD Vacutainer® con EDTA K2 son el estándar para toma de muestra en hematología y banco de sangre. Uno de los consumibles de compra recurrente más frecuentes entre hospitales y cadenas de laboratorio.'},
+    {id:'368175',name:'Tubo Vacutainer® SST™ tapa amarilla, 5 ml, suero con gel separador',brand:'BD',sku:'368175',cat:'consumibles',sub:'Tubos de toma de muestra',art:'tube',img:6622518,badge:'',pres:'Caja con 100 tubos',price:null,cold:false,
+      bullets:['Activador de coagulación y gel separador.','Suero listo para química clínica e inmunología.','Tapa Hemogard™ de seguridad.'],
+      specs:{'Aditivo':'Activador de coágulo + gel','Volumen':'5 ml','Dimensiones':'13 × 100 mm','Presentación':'Caja con 100'},
+      desc:'Tubo para obtención de suero con barrera de gel, de uso diario en química clínica.'},
+    {id:'BD-ROJO-6ML',name:'Tubo Vacutainer® tapa roja, 6 ml, suero con activador de coagulación',brand:'BD',sku:'Por confirmar',cat:'consumibles',sub:'Tubos de toma de muestra',art:'tube',img:4047146,badge:'',pres:'Caja con 100 tubos',price:null,cold:false,
+      bullets:['Activador de coagulación con sílice, sin gel.','Suero para serología, banco de sangre y química.','Tapa Hemogard™ de seguridad.'],
+      specs:{'Aditivo':'Activador de coágulo','Volumen':'6 ml','Dimensiones':'13 × 100 mm','Presentación':'Caja con 100'},
+      desc:'Tubo de suero sin gel para pruebas que requieren muestra sin barrera. La clave del cuestionario coincide con la del tubo amarillo; confirmar con el cliente.'},
+    {id:'CY-151PZA',name:'Contenedor para muestra de orina no estéril',brand:'GH MEDICAL',sku:'CY-151PZA',cat:'consumibles',sub:'Contenedores de orina',art:'cup',img:8670147,badge:'',pres:'Pieza',price:null,cold:false,
+      bullets:['Contenedor de polipropileno con tapa de rosca.','Uso general en laboratorio clínico.','Alta rotación y disponibilidad constante.'],
+      specs:{'Material':'Polipropileno','Esterilidad':'No estéril','Presentación':'Pieza / bolsa'},
+      desc:'Contenedor económico para recolección de orina en laboratorio y hospital.'},
+    {id:'BK-25031',name:'Vaso para orina 120 ml, tapa roja, no ensamblado, no estéril',brand:'GH MEDICAL',sku:'BK-25031',cat:'consumibles',sub:'Contenedores de orina',art:'cup',img:8670147,badge:'',pres:'Bolsa con 100',price:null,cold:false,
+      bullets:['Capacidad 120 ml con graduación.','Tapa roja a rosca no ensamblada.','Ideal para alto volumen de muestras.'],
+      specs:{'Capacidad':'120 ml','Tapa':'Roja, rosca','Esterilidad':'No estéril','Presentación':'Bolsa con 100'},
+      desc:'Vaso recolector de orina de uso rutinario, no estéril, para laboratorios con alto flujo.'},
+    {id:'BK-25032E-MX',name:'Vaso para orina 120 ml, tapa roja, estéril con etiqueta',brand:'GH MEDICAL',sku:'BK-25032E-MX',cat:'consumibles',sub:'Contenedores de orina',art:'cup',img:8670147,badge:'',pres:'Pieza empacada individualmente',price:null,cold:false,
+      bullets:['Estéril, empaque individual.','Etiqueta para identificación del paciente.','Para urocultivo y antidoping con cadena de custodia.'],
+      specs:{'Capacidad':'120 ml','Tapa':'Roja, rosca','Esterilidad':'Estéril','Presentación':'Pieza'},
+      desc:'Vaso estéril con etiqueta para muestras que requieren condiciones controladas, como urocultivo.'},
+    {id:'PETRI-100',name:'Caja Petri sencilla estéril 100 × 15 mm',brand:'LOGA',sku:'PETRI',cat:'consumibles',sub:'Cajas Petri',art:'bottle',img:8940346,badge:'',pres:'Paquete con 20 · Caja con 500',price:null,cold:false,
+      bullets:['Poliestireno cristal, estéril por radiación.','Compatible con medios MCD LAB.','Marca propia Loga con precio competitivo.'],
+      specs:{'Dimensiones':'100 × 15 mm','Material':'Poliestireno','Esterilidad':'Estéril','Presentación':'20 / 500'},
+      desc:'Caja Petri desechable para microbiología clínica e industrial.'},
+    {id:'2947BN-25X75',name:'Portaobjetos 25 × 75 mm, banda esmerilada, grosor 0.90–1.10 mm',brand:'Corning',sku:'2947BN-25X75',cat:'consumibles',sub:'Portaobjetos',art:'kit',img:3938022,badge:'',pres:'Caja con 72 piezas',price:null,cold:false,
+      bullets:['Vidrio de alta claridad con banda esmerilada para rotular.','Bordes lisos, grosor uniforme.','Marca Corning, distribuidor autorizado.'],
+      specs:{'Dimensiones':'25 × 75 mm','Grosor':'0.90–1.10 mm','Banda':'Esmerilada','Presentación':'Caja con 72'},
+      desc:'Portaobjetos de vidrio para frotis, citología y microscopía de rutina.'},
+    {id:'COP111C',name:'Tubo con medio de transporte Stuart con hisopo',brand:'COPAN',sku:'COP111C',cat:'consumibles',sub:'Medios de transporte',art:'tube',img:8442652,badge:'',pres:'Caja con 100',price:null,cold:false,
+      bullets:['Medio Stuart para conservación de muestras bacteriológicas.','Hisopo estéril incluido.','Marca COPAN, referencia mundial en toma de muestra.'],
+      specs:{'Medio':'Stuart','Hisopo':'Incluido','Esterilidad':'Estéril','Presentación':'Caja con 100'},
+      desc:'Sistema de transporte para cultivos bacterianos desde la toma hasta el laboratorio.'},
+
+    {id:'PT7494',name:'Agar sangre con azida',brand:'MCD LAB',sku:'PT7494',cat:'microbiologia',sub:'Peptonas y agares',art:'bottle',img:3786246,badge:'',pres:'Frasco de 450 g',price:null,cold:false,
+      bullets:['Medio selectivo para Gram positivos (estreptococos, estafilococos).','Fabricación nacional con control por lote.','Certificado de análisis disponible.'],
+      specs:{'Presentación':'Frasco 450 g','Rendimiento':'~10 L','Almacenamiento':'10–30 °C, lugar seco','Uso':'Aislamiento de Gram positivos'},
+      desc:'Medio de cultivo deshidratado con azida de sodio para inhibir Gram negativos.'},
+    {id:'PT7114',name:'Agar MacConkey',brand:'MCD LAB',sku:'PT7114',cat:'microbiologia',sub:'Medios de cultivo',art:'bottle',img:3786246,badge:'',pres:'Frasco de 450 g',price:null,cold:false,home:true,
+      bullets:['Medio selectivo y diferencial para enterobacterias.','Fabricación nacional con control de calidad por lote.','Rinde aproximadamente 9 litros de medio.','Certificado de análisis disponible.'],
+      specs:{'Presentación':'Frasco 450 g','Rendimiento':'~9 L','pH final':'7.1 ± 0.2','Almacenamiento':'10–30 °C, lugar seco','Uso':'Aislamiento de Gram negativos'},
+      desc:'El medio de cultivo de mayor rotación en microbiología clínica para aislamiento y diferenciación de bacilos entéricos Gram negativos.'},
+
+    {id:'64840',name:'Kit Wright, equipo de tinción con buffer',brand:'HYCEL',sku:'64840',cat:'reactivos',sub:'Equipos de tinción',art:'kit',img:8539753,badge:'',pres:'Kit completo',price:null,cold:false,home:true,
+      bullets:['Colorante Wright + buffer de fosfatos listo para usar.','Tinción de frotis sanguíneos y médula ósea.','Coloración nítida de núcleos y granulaciones.','Fabricado en México por HYCEL.'],
+      specs:{'Contenido':'Colorante Wright 500 ml + Buffer 500 ml','Uso':'Hematología · Citología','Almacenamiento':'15–30 °C','Presentación':'Kit'},
+      desc:'Equipo de tinción Wright para la evaluación morfológica de células sanguíneas. El kit de tinción más pedido por laboratorios clínicos en toda la República.'},
+    {id:'64293',name:'Kit Ziehl Neelsen, equipo para tinción BAAR',brand:'HYCEL',sku:'64293',cat:'reactivos',sub:'Equipos de tinción',art:'kit',img:8539753,badge:'',pres:'Kit completo',price:null,cold:false,
+      bullets:['Fucsina fenicada, alcohol-ácido y azul de metileno.','Tinción de bacilos ácido-alcohol resistentes.','Listo para usar.'],
+      specs:{'Contenido':'3 reactivos','Uso':'Microbiología · Tuberculosis','Almacenamiento':'15–30 °C','Presentación':'Kit'},
+      desc:'Equipo de tinción para identificación de micobacterias en frotis.'},
+    {id:'64287-100',name:'Aceite de inmersión tipo A',brand:'HYCEL',sku:'64287-100',cat:'reactivos',sub:'Colorantes',art:'bottle',img:11703173,badge:'',pres:'Frasco de 100 ml',price:null,cold:false,
+      bullets:['Índice de refracción óptimo para objetivos 100×.','Baja viscosidad, no amarillea.','Frasco gotero.'],
+      specs:{'Tipo':'A','Presentación':'100 ml','Uso':'Microscopía'},
+      desc:'Aceite de inmersión para microscopía de alta resolución.'},
+    {id:'5342',name:'Detergente líquido Plus neutro',brand:'HYCEL',sku:'5342',cat:'reactivos',sub:'Detergentes y limpieza especializada',art:'bottle',img:11703173,badge:'',pres:'Garrafa de 4 L',price:null,cold:false,
+      bullets:['Limpieza de material de vidrio y plástico de laboratorio.','pH neutro, libre de fosfatos.','Enjuague fácil, sin residuos.'],
+      specs:{'pH':'Neutro','Presentación':'4 L','Uso':'Lavado de material'},
+      desc:'Detergente concentrado para material de laboratorio.'},
+    {id:'1822',name:'Alcohol etílico (etanol) 96%',brand:'HYCEL',sku:'1822',cat:'reactivos',sub:'Solventes y sales',art:'bottle',img:11703173,badge:'',pres:'Garrafa de 20 L',price:null,cold:false,
+      bullets:['Etanol al 96% para uso en laboratorio.','Desinfección, extracción y preparación de soluciones.','Disponible en varias presentaciones.'],
+      specs:{'Concentración':'96%','Presentación':'20 L (otras bajo pedido)','Grado':'Laboratorio'},
+      desc:'Solvente de uso general en laboratorios clínicos e industriales.'},
+    {id:'A1425-15',name:'Ácido clorhídrico 36–38% ACS, 3.5 L',brand:'JALMEK',sku:'A1425-15',cat:'reactivos',sub:'Solventes y sales',art:'bottle',img:11703173,badge:'',pres:'Frasco de 3.5 L',price:null,cold:false,
+      bullets:['Grado reactivo ACS.','Para análisis químico industrial y preparación de soluciones.','Hoja de seguridad disponible.'],
+      specs:{'Concentración':'36–38%','Grado':'ACS','Presentación':'3.5 L'},
+      desc:'Ácido clorhídrico grado ACS para laboratorios industriales y de control de calidad.'},
+    {id:'917',name:'Xilol (dimetilbenceno) 19 L',brand:'HYCEL',sku:'917',cat:'reactivos',sub:'Solventes y sales',art:'bottle',img:11703173,badge:'',pres:'Garrafa de 19 L',price:null,cold:false,
+      bullets:['Aclarante para histología y citología.','Grado laboratorio.','Presentación industrial de 19 L.'],
+      specs:{'Presentación':'19 L','Uso':'Histología · Patología','Grado':'Laboratorio'},
+      desc:'Solvente aclarante de uso rutinario en histopatología.'},
+
+    {id:'IISC-425',name:'BioFire® FilmArray® RP2 panel respiratorio molecular',brand:'bioMérieux',sku:'IISC-425',cat:'diagnostico-molecular',sub:'PCR tiempo real',art:'kit',img:18471457,badge:'',pres:'Caja con 30 pruebas',price:null,cold:true,
+      bullets:['PCR multiplex: 21+ patógenos respiratorios en una corrida.','Resultado en aproximadamente 45 minutos.','Producto refrigerado: se embarca lunes y miércoles con cadena de frío.'],
+      specs:{'Tecnología':'PCR multiplex anidada','Tiempo':'~45 minutos','Muestra':'Hisopado nasofaríngeo','Almacenamiento':'Refrigerado','Presentación':'Caja con 30'},
+      desc:'Panel sindrómico respiratorio para hospitales con diagnóstico molecular. Requiere equipo FilmArray®.'}
+  ];
+
+  /* Ilustraciones SVG de producto (placeholder mientras llegan fotos reales) */
+  var ART = {
+    cassette: function(c){c=c||'#2F7FD3';return '<svg viewBox="0 0 200 200"><rect x="42" y="18" width="116" height="164" rx="16" fill="#fff" stroke="'+c+'" stroke-width="5"/><rect x="70" y="42" width="60" height="72" rx="7" fill="#EAF2FB" stroke="'+c+'" stroke-width="3"/><line x1="82" y1="62" x2="118" y2="62" stroke="#D93B3B" stroke-width="5"/><line x1="82" y1="88" x2="118" y2="88" stroke="#D93B3B" stroke-width="5" opacity=".35"/><text x="136" y="66" font-size="13" font-family="Arial" font-weight="700" fill="'+c+'">C</text><text x="136" y="92" font-size="13" font-family="Arial" font-weight="700" fill="'+c+'">T</text><circle cx="100" cy="146" r="13" fill="#EAF2FB" stroke="'+c+'" stroke-width="3"/><text x="60" y="172" font-size="9" font-family="Arial" fill="'+c+'">S</text></svg>';},
+    tube: function(){return '<svg viewBox="0 0 200 200"><rect x="76" y="12" width="48" height="28" rx="7" fill="#8E5BC7"/><path d="M82 40h36v112a18 18 0 0 1-36 0z" fill="#fff" stroke="#2F7FD3" stroke-width="5"/><path d="M85 98h30v54a15 15 0 0 1-30 0z" fill="#C43B3B" opacity=".85"/><rect x="70" y="58" width="60" height="30" fill="#fff" stroke="#2F7FD3" stroke-width="2"/><line x1="76" y1="68" x2="124" y2="68" stroke="#2F7FD3" stroke-width="2"/><line x1="76" y1="78" x2="112" y2="78" stroke="#2F7FD3" stroke-width="2"/></svg>';},
+    bottle: function(){return '<svg viewBox="0 0 200 200"><rect x="80" y="16" width="40" height="24" rx="5" fill="#2F7FD3"/><path d="M84 40h32v20l22 18v92a12 12 0 0 1-12 12H74a12 12 0 0 1-12-12V78l22-18z" fill="#fff" stroke="#2F7FD3" stroke-width="5"/><path d="M62 148h76v22a12 12 0 0 1-12 12H74a12 12 0 0 1-12-12z" fill="#D9A066" opacity=".75"/><rect x="72" y="98" width="56" height="44" rx="4" fill="#EAF2FB" stroke="#5FA33A" stroke-width="3"/><line x1="80" y1="112" x2="120" y2="112" stroke="#5FA33A" stroke-width="3"/><line x1="80" y1="124" x2="110" y2="124" stroke="#5FA33A" stroke-width="3"/></svg>';},
+    kit: function(){return '<svg viewBox="0 0 200 200"><rect x="28" y="72" width="144" height="102" rx="12" fill="#fff" stroke="#2F7FD3" stroke-width="5"/><rect x="28" y="72" width="144" height="28" rx="12" fill="#2F7FD3"/><rect x="52" y="38" width="24" height="72" rx="6" fill="#EAF2FB" stroke="#2F7FD3" stroke-width="3"/><rect x="88" y="38" width="24" height="72" rx="6" fill="#EAF2FB" stroke="#5FA33A" stroke-width="3"/><rect x="124" y="38" width="24" height="72" rx="6" fill="#EAF2FB" stroke="#E0A33B" stroke-width="3"/><rect x="56" y="62" width="16" height="40" fill="#6A4C93" opacity=".6"/><rect x="92" y="62" width="16" height="40" fill="#5FA33A" opacity=".6"/><rect x="128" y="62" width="16" height="40" fill="#E0A33B" opacity=".6"/><text x="100" y="146" text-anchor="middle" font-size="12" font-family="Arial" font-weight="700" fill="#2F7FD3">KIT</text></svg>';},
+    cup: function(){return '<svg viewBox="0 0 200 200"><rect x="52" y="22" width="96" height="20" rx="6" fill="#2F7FD3"/><path d="M60 42h80l-8 128a10 10 0 0 1-10 10H78a10 10 0 0 1-10-10z" fill="#fff" stroke="#2F7FD3" stroke-width="5"/><rect x="72" y="66" width="56" height="78" rx="6" fill="#EAF2FB" stroke="#2F7FD3" stroke-width="3"/><g stroke="#D93B3B" stroke-width="4"><line x1="82" y1="82" x2="118" y2="82"/><line x1="82" y1="96" x2="118" y2="96" opacity=".5"/><line x1="82" y1="110" x2="118" y2="110" opacity=".3"/><line x1="82" y1="124" x2="118" y2="124" opacity=".6"/></g><path d="M74 150h52" stroke="#E0A33B" stroke-width="10" opacity=".6"/></svg>';},
+    hospital: function(){return '<svg viewBox="0 0 240 240"><rect x="30" y="70" width="180" height="140" rx="14" fill="#fff" opacity=".95"/><rect x="95" y="40" width="50" height="50" rx="10" fill="#5FA33A"/><path d="M120 52v26M107 65h26" stroke="#fff" stroke-width="7" stroke-linecap="round"/><g fill="#2F7FD3" opacity=".85"><rect x="50" y="95" width="30" height="26" rx="4"/><rect x="105" y="95" width="30" height="26" rx="4"/><rect x="160" y="95" width="30" height="26" rx="4"/><rect x="50" y="135" width="30" height="26" rx="4"/><rect x="160" y="135" width="30" height="26" rx="4"/></g><rect x="100" y="140" width="40" height="70" rx="6" fill="#12305E"/></svg>';},
+    lab: function(){return '<svg viewBox="0 0 240 240"><path d="M90 30h60v20h-8v60l48 84a12 12 0 0 1-10 18H60a12 12 0 0 1-10-18l48-84V50h-8z" fill="#fff" opacity=".95"/><path d="M78 150h84l30 50H48z" fill="#5FA33A" opacity=".85"/><circle cx="110" cy="176" r="7" fill="#fff"/><circle cx="140" cy="190" r="5" fill="#fff"/><circle cx="125" cy="165" r="4" fill="#fff"/><rect x="170" y="40" width="40" height="70" rx="8" fill="#2F7FD3" opacity=".9"/><rect x="178" y="52" width="24" height="20" rx="3" fill="#fff"/></svg>';},
+    empresa: function(){return '<svg viewBox="0 0 240 240"><rect x="60" y="30" width="120" height="180" rx="16" fill="#fff" opacity=".95"/><rect x="80" y="60" width="80" height="90" rx="8" fill="#EAF2FB"/><g stroke="#D93B3B" stroke-width="5"><line x1="92" y1="80" x2="148" y2="80"/><line x1="92" y1="98" x2="148" y2="98" opacity=".5"/><line x1="92" y1="116" x2="148" y2="116"/><line x1="92" y1="134" x2="148" y2="134" opacity=".4"/></g><circle cx="120" cy="178" r="14" fill="#5FA33A"/><path d="m112 178 6 6 11-12" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/><rect x="20" y="150" width="40" height="60" rx="8" fill="#2F7FD3" opacity=".9"/><rect x="180" y="120" width="40" height="90" rx="8" fill="#2F7FD3" opacity=".9"/></svg>';},
+    industria: function(){return '<svg viewBox="0 0 240 240"><path d="M30 210V110l50 40v-40l50 40v-40l50 40v-40l30 20v80z" fill="#fff" opacity=".95"/><rect x="40" y="40" width="26" height="80" rx="4" fill="#2F7FD3"/><rect x="150" y="150" width="30" height="40" rx="4" fill="#5FA33A"/><rect x="100" y="150" width="30" height="40" rx="4" fill="#5FA33A"/><rect x="50" y="160" width="30" height="30" rx="4" fill="#5FA33A"/><circle cx="53" cy="30" r="10" fill="#fff" opacity=".5"/><circle cx="60" cy="16" r="6" fill="#fff" opacity=".35"/></svg>';}
+  };
+
+
+  /* ===== FOTOGRAFÍAS (Pexels, licencia libre) con respaldo SVG si la URL no carga ===== */
+  var PHOTOS={hospital:10827916,lab:3938022,empresa:5989931,industria:2760241,cat_pr:7867251,cat_ad:8670147,cat_re:11703173,cat_eq:18471457,delivery:5025665,service:9574330,scientist:4031692};
+  function px(id,w,h){return 'https://images.pexels.com/photos/'+id+'/pexels-photo-'+id+'.jpeg?auto=compress&cs=tinysrgb&w='+(w||1200)+(h?'&h='+h+'&fit=crop':'')}
+  function photo(id,alt,fallback,w,h){return '<img class="ph" src="'+px(id,w,h)+'" alt="'+alt.replace(/"/g,'&quot;')+'" loading="lazy" decoding="async"><div class="fb" style="display:none">'+(fallback||'')+'</div>'}
+  function bindPhotos(scope){Array.prototype.slice.call((scope||document).querySelectorAll('img.ph')).forEach(function(im){if(im.__b)return;im.__b=1;im.addEventListener('error',function(){im.style.display='none';var f=im.nextElementSibling;if(f&&f.className==='fb')f.style.display='';im.parentNode&&im.parentNode.classList&&im.parentNode.classList.add('nophoto')})})}
+
+
+  var LOGO_MARK='<img class="mark" src="data:image/png;base64,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" alt="">';
+  /* ===================== NÚCLEO COMPARTIDO (todas las páginas) ===================== */
+  var root = document.getElementById('lg1'), modal = document.getElementById('lg1-modal'), drawer = document.getElementById('lg1-quote');
+  /* Elementos fijos a <body>: si la sección de Elementor tiene transform, position:fixed dejaría de funcionar */
+  [modal, drawer].forEach(function(el){ if(el && el.parentNode!==document.body) document.body.appendChild(el); });
+  var fl=root.querySelector('.lg1-wa'); if(fl) document.body.appendChild(fl);
+
+  function $(s,c){return (c||root).querySelector(s)}
+  function $$(s,c){return Array.prototype.slice.call((c||root).querySelectorAll(s))}
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]})}
+  function money(n){return '$'+n.toLocaleString('es-MX',{minimumFractionDigits:2})+' '+CFG.currency}
+  function waLink(text){return 'https://wa.me/'+CFG.whatsapp+'?text='+encodeURIComponent(text)}
+  function pageUrl(page,params){var u=CFG.pages[page]||'#';if(params){var q=Object.keys(params).filter(function(k){return params[k]!==undefined&&params[k]!==''}).map(function(k){return encodeURIComponent(k)+'='+encodeURIComponent(params[k])}).join('&');if(q)u+=(u.indexOf('?')>-1?'&':'?')+q}return u}
+  function getParam(k){var m=new RegExp('[?&]'+k+'=([^&#]*)').exec(location.search);return m?decodeURIComponent(m[1].replace(/\+/g,' ')):''}
+  function catById(id){return CATEGORIES.filter(function(c){return c.id===id})[0]}
+  function prodById(id){return PRODUCTS.filter(function(p){return p.id===id||p.sku===id})[0]}
+  function slug(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
+
+  /* ---- Logotipo ---- */
+  function logoHTML(){
+    if(CFG.logoUrl) return '<img src="'+esc(CFG.logoUrl)+'" alt="Loga Soluciones Científicas para Laboratorio">';
+    return '<div class="logo-fallback">'+LOGO_MARK+'<div><div class="wm">LOGA<span>TECH</span></div><small>SOLUCIONES CIENTÍFICAS PARA LABORATORIO</small></div></div>';
+  }
+  $$('[data-logo]').forEach(function(el){el.innerHTML=logoHTML()});
+
+  /* ---- Enlaces entre páginas: <a data-page="catalogo" data-params="cat=antidoping"> ---- */
+  function resolveLinks(scope){
+    $$('[data-page]',scope).forEach(function(a){
+      var page=a.getAttribute('data-page'),ps=a.getAttribute('data-params'),params={};
+      if(ps)ps.split('&').forEach(function(kv){var p=kv.split('=');params[p[0]]=decodeURIComponent(p[1]||'')});
+      a.setAttribute('href',pageUrl(page,params));
+    });
+  }
+  resolveLinks(root);
+  var CURRENT=root.getAttribute('data-current')||'';
+  $$('.mainnav a[data-page], .catnav a[data-page]').forEach(function(a){if(a.getAttribute('data-page')===CURRENT&&!a.getAttribute('data-params'))a.classList.add('cur')});
+
+  /* ---- Navegación de categorías y listas del footer (generadas desde CATEGORIES) ---- */
+  $$('[data-catnav]').forEach(function(el){el.innerHTML=CATEGORIES.map(function(c){return '<a href="'+pageUrl('catalogo',{cat:c.id})+'"'+(CURRENT==='catalogo'&&getParam('cat')===c.id?' class="cur"':'')+'>'+esc(c.name)+'</a>'}).join('')+'<a class="hl" href="'+pageUrl('servicio')+'">Servicio técnico</a>'});
+  $$('[data-catlist]').forEach(function(el){el.innerHTML=CATEGORIES.map(function(c){return '<li><a href="'+pageUrl('catalogo',{cat:c.id})+'">'+esc(c.name)+'</a></li>'}).join('')});
+  $$('[data-catselect]').forEach(function(el){el.innerHTML='<option value="">Todas las categorías</option>'+CATEGORIES.map(function(c){return '<option value="'+c.id+'">'+esc(c.name)+'</option>'}).join('');var cur=getParam('cat');if(cur)el.value=cur});
+
+  /* ---- Buscador del header → catálogo?q= ---- */
+  $$('form[data-search]').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();var q=f.querySelector('input').value.trim(),c=f.querySelector('select');location.href=pageUrl('catalogo',{q:q,cat:c?c.value:''})})});
+  var qi=$('form[data-search] input');if(qi&&getParam('q'))qi.value=getParam('q');
+
+  /* ---- Menú móvil ---- */
+  var burger=$('[data-burger]'),mnav=$('[data-mobile-nav]');
+  if(burger&&mnav){burger.addEventListener('click',function(){var o=mnav.classList.toggle('open');burger.setAttribute('aria-expanded',o)});}
+  if(mnav){mnav.innerHTML='<a href="'+pageUrl('inicio')+'">Inicio</a><a href="'+pageUrl('catalogo')+'">Catálogo</a>'+CATEGORIES.map(function(c){return '<a class="sub" href="'+pageUrl('catalogo',{cat:c.id})+'">'+esc(c.name)+'</a>'}).join('')+'<a href="'+pageUrl('marcas')+'">Marcas</a><a href="'+pageUrl('servicio')+'">Servicio técnico</a><a href="'+pageUrl('envios')+'">Envíos y crédito</a><a href="'+pageUrl('nosotros')+'">Nosotros</a><a href="'+pageUrl('contacto')+'">Contacto</a>'}
+
+  /* ---- Ilustraciones / fotos ---- */
+  $$('[data-art]').forEach(function(el){var k=el.getAttribute('data-art'),f=ART[k];var fb=f?f():'';el.innerHTML=PHOTOS[k]?photo(PHOTOS[k],'Loga · '+k,fb,1400):fb});
+  $$('[data-photo]').forEach(function(el){var k=el.getAttribute('data-photo'),fbk=el.getAttribute('data-fb');var fb=fbk&&ART[fbk]?ART[fbk]():'';if(PHOTOS[k])el.insertAdjacentHTML('afterbegin',photo(PHOTOS[k],el.getAttribute('data-alt')||'Loga',fb,1200))});
+  bindPhotos(root);
+
+  /* ---- Tarjeta de producto (inicio, catálogo, relacionados) ---- */
+  function cardHTML(p){
+    return '<article class="card" data-id="'+p.id+'">'
+      +'<a class="img" href="'+pageUrl('producto',{sku:p.id})+'" data-open>'+(p.img?photo(p.img,p.name,ART[p.art](),900,675):ART[p.art]())+(p.badge?'<span class="badge'+(p.badge==='Temporada'?' b2':'')+'">'+esc(p.badge)+'</span>':'')+'<button class="quick" type="button" data-quick>Vista rápida</button></a>'
+      +'<div class="body"><span class="cat">'+esc((catById(p.cat)||{}).name||p.cat)+'</span><h3><a href="'+pageUrl('producto',{sku:p.id})+'">'+esc(p.name)+'</a></h3>'
+      +'<div class="meta"><b>'+esc(p.brand)+'</b> · Clave '+esc(p.sku)+' · '+esc(p.pres)+'</div>'
+      +'<div class="price">'+(p.price?'<div class="p">'+money(p.price)+'<small>+ IVA · Precio por volumen</small></div>':'<div class="p q">Cotiza en minutos<small>Precio especial en pedido recurrente</small></div>')
+      +'<button class="add" type="button" data-add><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Cotización</button></div></div></article>';
+  }
+  root.addEventListener('click',function(e){
+    var card=e.target.closest('.card');if(!card)return;
+    var p=prodById(card.getAttribute('data-id'));if(!p)return;
+    if(e.target.closest('[data-add]')){e.preventDefault();addQuote(p,1);return}
+    if(e.target.closest('[data-quick]')){e.preventDefault();openModal(p);return}
+  });
+
+  /* ===================== COTIZACIÓN PERSISTENTE (localStorage) ===================== */
+  var quote=[];try{quote=JSON.parse(localStorage.getItem('loga_quote')||'[]')}catch(e){quote=[]}
+  function saveQuote(){try{localStorage.setItem('loga_quote',JSON.stringify(quote))}catch(e){}paintCount()}
+  function paintCount(){var n=0;quote.forEach(function(x){n+=x.qty});$$('[data-quote-count]').forEach(function(c){c.textContent=n;c.classList.remove('bump');void c.offsetWidth;c.classList.add('bump')})}
+  function addQuote(p,q){var f=quote.filter(function(x){return x.id===p.id})[0];if(f)f.qty+=q;else quote.push({id:p.id,name:p.name,sku:p.sku,brand:p.brand,pres:p.pres,qty:q});saveQuote();toast('Agregado a tu cotización: '+p.name);renderDrawer()}
+  function quoteText(){var notes=$('[data-qnotes]',drawer);return 'Hola Loga, quiero cotizar:\n'+quote.map(function(x){return '• '+x.qty+' × '+x.name+' (clave '+x.sku+', '+x.brand+')'}).join('\n')+(notes&&notes.value.trim()?'\n\nNotas: '+notes.value.trim():'')}
+  function renderDrawer(){
+    if(!drawer)return;var list=$('[data-qlist]',drawer);
+    if(!quote.length){list.innerHTML='<div class="qempty"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM9 9h6M9 13h6M9 17h3"/></svg><b>Tu cotización está vacía</b><span>Agrega productos con el botón “Cotización” en cualquier tarjeta.</span><a class="btn btn-blue" href="'+pageUrl('catalogo')+'">Ver catálogo</a></div>'}
+    else list.innerHTML=quote.map(function(x){var p=prodById(x.id);return '<div class="qi" data-qid="'+x.id+'"><div class="qim">'+(p?(p.img?photo(p.img,x.name,ART[p.art](),200,200):ART[p.art]()):'')+'</div><div class="qtx"><b>'+esc(x.name)+'</b><span>'+esc(x.brand)+' · '+esc(x.sku)+' · '+esc(x.pres)+'</span><div class="qq"><button type="button" data-qd="-1">−</button><input type="number" min="1" value="'+x.qty+'" data-qin><button type="button" data-qd="1">+</button><button class="rm" type="button" data-qrm>Quitar</button></div></div></div>'}).join('');
+    var n=0;quote.forEach(function(x){n+=x.qty});$('[data-qtotal]',drawer).textContent=quote.length+' producto'+(quote.length===1?'':'s')+' · '+n+' pieza'+(n===1?'':'s');
+    var wa=$('[data-qwa]',drawer);wa.href=waLink(quoteText());wa.classList.toggle('dis',!quote.length);
+    var ml=$('[data-qmail]',drawer);ml.href='mailto:'+CFG.email+'?subject='+encodeURIComponent('Solicitud de cotización')+'&body='+encodeURIComponent(quoteText());ml.classList.toggle('dis',!quote.length);
+    bindPhotos(drawer);
+  }
+  function openDrawer(){renderDrawer();drawer.classList.add('open');document.body.style.overflow='hidden'}
+  function closeDrawer(){drawer.classList.remove('open');document.body.style.overflow=''}
+  $$('[data-quote-open]').forEach(function(b){b.addEventListener('click',openDrawer)});
+  if(drawer){
+    drawer.addEventListener('click',function(e){
+      if(e.target.hasAttribute('data-qclose'))return closeDrawer();
+      var qi=e.target.closest('.qi');if(!qi)return;var id=qi.getAttribute('data-qid'),it=quote.filter(function(x){return x.id===id})[0];
+      if(e.target.closest('[data-qrm]')){quote=quote.filter(function(x){return x.id!==id});saveQuote();renderDrawer();return}
+      var d=e.target.closest('[data-qd]');if(d&&it){it.qty=Math.max(1,it.qty+parseInt(d.getAttribute('data-qd')));saveQuote();renderDrawer()}
+    });
+    drawer.addEventListener('input',function(e){var qi=e.target.closest('.qi');if(e.target.hasAttribute('data-qin')&&qi){var it=quote.filter(function(x){return x.id===qi.getAttribute('data-qid')})[0];if(it){it.qty=Math.max(1,parseInt(e.target.value)||1);saveQuote();var wa=$('[data-qwa]',drawer);wa.href=waLink(quoteText())}}if(e.target.hasAttribute('data-qnotes')){$('[data-qwa]',drawer).href=waLink(quoteText())}});
+    $('[data-qclear]',drawer).addEventListener('click',function(){if(!quote.length)return;quote=[];saveQuote();renderDrawer()});
+    $$('[data-qwa],[data-qmail]',drawer).forEach(function(a){a.addEventListener('click',function(e){if(a.classList.contains('dis')){e.preventDefault();toast('Agrega productos antes de enviar.')}})});
+  }
+  paintCount();
+
+  var tt;function toast(m){var t=$('[data-toast]',modal);t.textContent=m;modal.style.display='block';t.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('show');if(!modal.classList.contains('open'))modal.style.display=''},2200)}
+
+  /* ===================== FICHA RÁPIDA (modal estilo Amazon) ===================== */
+  function specsTable(p){var s='';Object.keys(p.specs).forEach(function(k){s+='<tr><td>'+esc(k)+'</td><td>'+esc(p.specs[k])+'</td></tr>'});return '<table>'+s+'</table>'}
+  function specsGrid(p){return '<div class="grid2">'+Object.keys(p.specs).map(function(k){return '<div><b>'+esc(k)+'</b><span>'+esc(p.specs[k])+'</span></div>'}).join('')+'</div>'}
+  function relatedOf(p,n){var same=PRODUCTS.filter(function(x){return x.id!==p.id&&x.cat===p.cat}),other=PRODUCTS.filter(function(x){return x.id!==p.id&&x.cat!==p.cat});return same.concat(other).slice(0,n||5)}
+  function thumbsHTML(p){return ['Producto','Empaque','Detalle'].map(function(l,k){var inner=p.img?photo(p.img,p.name+' · '+l,ART[p.art](),k===0?900:k===1?800:700,k===0?900:k===1?800:700):ART[p.art](k===1?'#5FA33A':k===2?'#12305E':undefined);return '<button type="button" class="'+(k?'':'on')+'" data-th="'+k+'" title="'+l+'">'+inner+'</button>'}).join('')}
+  function buyBoxHTML(p){
+    return '<aside class="buy">'
+      +(p.price?'<div class="pr">'+money(p.price)+'<small>+ IVA · Facturamos de inmediato</small></div>':'<div class="pr q">Precio por cotización<small>Respuesta en minutos en horario hábil</small></div>')
+      +'<div class="ship"><div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>Envío GRATIS</b> en pedidos desde $5,000 a toda la República.</span></div>'
+      +'<div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Entrega local en Monterrey <b>sin costo</b>.</span></div>'
+      +(p.cold?'<div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Producto refrigerado: se embarca <b>lunes y miércoles</b> con hielera y geles.</span></div>':'')
+      +'<div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Pedido mínimo <b>$5,000</b> · Crédito a 15 y 30 días.</span></div></div>'
+      +'<div class="stock">✔ Disponibilidad constante</div>'
+      +'<div class="qty">Cantidad <div><button type="button" data-q="-1">−</button><input type="number" min="1" value="1" data-qty><button type="button" data-q="1">+</button></div><span>'+esc(p.pres.toLowerCase())+'</span></div>'
+      +'<button class="btn b1" type="button" data-madd>Agregar a cotización</button>'
+      +'<a class="btn b2" href="#" target="_blank" rel="noopener" data-mwa><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>Cotizar ahora por WhatsApp</a>'
+      +'<a class="btn b3" href="mailto:'+CFG.email+'?subject='+encodeURIComponent('Cotización '+p.name+' ('+p.sku+')')+'">Solicitar por correo</a>'
+      +'<div class="sold">Vendido y enviado por <b>Loga Soluciones Científicas</b><br>Garantía del fabricante · Factura CFDI 4.0 · Cambio físico en reactivos dañados</div>'
+      +'</aside>';
+  }
+  function tabsHTML(p){
+    return '<div class="tabs"><nav><button type="button" class="on" data-tab="0">Descripción</button><button type="button" data-tab="1">Especificaciones</button><button type="button" data-tab="2">Envío, garantía y pagos</button></nav>'
+      +'<div class="pane on"><p>'+esc(p.desc)+'</p><p>Nuestros productos están dirigidos a laboratorios clínicos, industriales, institucionales y de investigación; atendemos hospitales, cadenas de laboratorio, empresas con reclutamiento de personal e industria en toda la República Mexicana.</p></div>'
+      +'<div class="pane">'+specsGrid(p)+'</div>'
+      +'<div class="pane"><p><b>Envíos:</b> locales sin costo; foráneos gratis desde $5,000. Productos especiales de importación: 4 a 6 semanas.</p><p><b>Cadena de frío:</b> reactivos refrigerados salen lunes y miércoles en hielera con geles; si llegan dañados hacemos cambio físico.</p><p><b>Garantía:</b> 1 año del fabricante contra defectos. En equipos incluimos instalación, capacitación y mantenimiento.</p><p><b>Crédito:</b> tras 3 compras de contado y solicitud aprobada, crédito a 15 o 30 días.</p></div></div>';
+  }
+  function bindProductUI(scope,p){
+    var qty=$('[data-qty]',scope);
+    function upd(){var q=Math.max(1,parseInt(qty.value)||1);qty.value=q;$('[data-mwa]',scope).href=waLink('Hola Loga, quiero cotizar '+q+' × '+p.name+' (clave '+p.sku+', '+p.brand+').')}
+    upd();qty.addEventListener('input',upd);
+    scope.addEventListener('click',function(e){
+      var th=e.target.closest('[data-th]');if(th){$$('[data-th]',scope).forEach(function(b){b.classList.remove('on')});th.classList.add('on');$('[data-main]',scope).innerHTML=th.innerHTML;bindPhotos(scope);return}
+      var q=e.target.closest('[data-q]');if(q){qty.value=(parseInt(qty.value)||1)+parseInt(q.getAttribute('data-q'));upd();return}
+      var tb=e.target.closest('[data-tab]');if(tb){var n=+tb.getAttribute('data-tab');$$('[data-tab]',scope).forEach(function(b,k){b.classList.toggle('on',k===n)});$$('.pane',scope).forEach(function(b,k){b.classList.toggle('on',k===n)});return}
+      if(e.target.closest('[data-madd]')){addQuote(p,parseInt(qty.value)||1);return}
+    });
+  }
+  function openModal(p){
+    var dlg=$('[data-dlg]',modal),cat=catById(p.cat)||{name:p.cat};
+    var related=relatedOf(p,5).map(function(x){return '<a class="r" href="'+pageUrl('producto',{sku:x.id})+'">'+(x.img?photo(x.img,x.name,ART[x.art](),200,200):ART[x.art]())+'<div><b>'+esc(x.name)+'</b>'+esc(x.brand)+' · '+esc(x.sku)+'</div></a>'}).join('');
+    dlg.innerHTML='<button class="close" type="button" aria-label="Cerrar" data-close>×</button>'
+      +'<div class="crumb"><a href="'+pageUrl('inicio')+'">Inicio</a> › <a href="'+pageUrl('catalogo',{cat:p.cat})+'"><b>'+esc(cat.name)+'</b></a> › '+esc(p.name)+' <a class="full" href="'+pageUrl('producto',{sku:p.id})+'">Ver ficha completa →</a></div>'
+      +'<div class="top"><div class="thumbs">'+thumbsHTML(p)+'</div>'
+      +'<div class="main"><div data-main>'+(p.img?photo(p.img,p.name,ART[p.art](),1200,900):ART[p.art]())+'</div><span class="zoom">Pasa el cursor para ampliar</span></div>'
+      +'<div class="info"><h2>'+esc(p.name)+'</h2><div class="brand">Marca: <a href="'+pageUrl('catalogo',{marca:p.brand})+'">'+esc(p.brand)+'</a> · Clave <b>'+esc(p.sku)+'</b> · '+esc(p.pres)+'</div>'
+      +'<div class="flags"><span>Registro COFEPRIS</span><span class="b">Distribuidor autorizado</span>'+(p.cold?'<span class="b">Cadena de frío</span>':'')+(p.badge?'<span>'+esc(p.badge)+'</span>':'')+'</div>'
+      +'<hr><h4>Acerca de este producto</h4><ul>'+p.bullets.map(function(b){return '<li>'+esc(b)+'</li>'}).join('')+'</ul>'
+      +'<hr><h4>Especificaciones</h4>'+specsTable(p)+'</div>'+buyBoxHTML(p)+'</div>'
+      +tabsHTML(p)+'<div class="related"><h4>Los clientes también piden</h4><div class="row">'+related+'</div></div>';
+    modal.style.display='block';modal.classList.add('open');document.body.style.overflow='hidden';bindPhotos(dlg);
+    bindProductUI(dlg,p);
+    dlg.addEventListener('click',function(e){if(e.target.closest('[data-close]'))closeModal()});
+    $('.close',dlg).focus();
+  }
+  function closeModal(){modal.classList.remove('open');modal.style.display='';document.body.style.overflow=''}
+  modal.addEventListener('click',function(e){if(e.target.hasAttribute('data-close'))closeModal()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){if(modal.classList.contains('open'))closeModal();if(drawer&&drawer.classList.contains('open'))closeDrawer()}});
+
+  /* ---- Formularios → WhatsApp + correo (sin backend) ---- */
+  $$('form[data-waform]').forEach(function(f){
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var lines=[f.getAttribute('data-waform')],ok=true;
+      $$('[name]',f).forEach(function(i){var lbl=i.getAttribute('data-label')||i.name;if(i.required&&!i.value.trim()){ok=false;i.classList.add('err')}else i.classList.remove('err');if(i.value.trim())lines.push(lbl+': '+i.value.trim())});
+      if(!ok){toast('Completa los campos marcados.');return}
+      var txt=lines.join('\n'),mode=(f.querySelector('[name=via]')||{}).value||'whatsapp';
+      if(mode==='correo')location.href='mailto:'+CFG.email+'?subject='+encodeURIComponent(lines[0])+'&body='+encodeURIComponent(txt);
+      else window.open(waLink(txt),'_blank');
+      var okb=$('[data-ok]',f);if(okb){okb.style.display='block'}
+    });
+  });
+
+  /* ---- Acordeones ---- */
+  root.addEventListener('click',function(e){var h=e.target.closest('[data-acc]');if(!h)return;var it=h.parentNode;it.classList.toggle('open')});
+
+
+  (function(){
+    var grid=$('[data-bgrid]'),q=$('[data-bq]'),letters=$('[data-letters]'),L='';
+    var all=BRANDS.slice().sort(function(a,b){return a.localeCompare(b,'es')});
+    var ls=[];all.forEach(function(b){var c=b[0].toUpperCase();if(ls.indexOf(c)<0)ls.push(c)});
+    letters.innerHTML='<button type="button" data-l="" class="on">Todas</button>'+ls.map(function(c){return '<button type="button" data-l="'+c+'">'+c+'</button>'}).join('');
+    function count(b){return PRODUCTS.filter(function(p){return p.brand.toLowerCase()===b.toLowerCase()}).length}
+    function render(){var s=q.value.trim().toLowerCase();var list=all.filter(function(b){return (!L||b[0].toUpperCase()===L)&&(!s||b.toLowerCase().indexOf(s)>-1)});
+      grid.innerHTML=list.map(function(b){var n=count(b);return '<a class="bcard" href="'+(n?pageUrl('catalogo',{marca:b}):waLink('Hola Loga, quiero cotizar productos de la marca '+b))+'"'+(n?'':' target="_blank" rel="noopener"')+'><span class="ini">'+esc(b.split(/\s/).map(function(w){return w[0]}).join('').slice(0,2).toUpperCase())+'</span><b>'+esc(b)+'</b><span>'+(n?n+' producto'+(n===1?'':'s')+' en línea':'Cotización con asesor')+'</span><span class="tag">Distribuidor autorizado</span></a>'}).join('')||'<p style="grid-column:1/-1;color:var(--muted)">Sin resultados.</p>';
+      $$('[data-l]',letters).forEach(function(b){b.classList.toggle('on',b.getAttribute('data-l')===L)});
+    }
+    letters.addEventListener('click',function(e){var b=e.target.closest('[data-l]');if(!b)return;L=b.getAttribute('data-l');render()});
+    q.addEventListener('input',render);render();
+  })();
+
+})();
+</script>
+<!-- ===== FIN BLOQUE ELEMENTOR ===== -->
+
+</body>
+</html>

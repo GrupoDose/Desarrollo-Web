@@ -1,0 +1,90 @@
+===CSS===
+===HTML===
+  <section class="phero sm" data-photo="lab" data-alt="Catálogo Loga">
+    <div class="wrap">
+      <div class="crumbs"><a href="#" data-page="inicio">Inicio</a> › Catálogo</div>
+      <h1 data-cattitle>Catálogo <em>completo</em></h1>
+      <p data-catsub>Pruebas rápidas, antidoping, reactivos, microbiología, consumibles y equipos de diagnóstico. Precios por cotización con respuesta en minutos.</p>
+    </div>
+  </section>
+  <section class="sec alt" style="padding-top:28px">
+    <div class="wrap">
+      <div class="catbanner" data-catbanner style="display:none"></div>
+      <div class="cat-layout">
+        <aside class="filters" data-filters>
+          <button class="fclose" type="button" aria-label="Cerrar filtros" data-fclose>×</button>
+          <div class="fbox"><h4>Categorías <button type="button" data-clear="cat">Limpiar</button></h4><div class="fc" data-fcats></div></div>
+          <div class="fbox"><h4>Marcas <button type="button" data-clear="marca">Limpiar</button></h4><div class="fc brands" data-fbrands></div></div>
+          <div class="help"><b>¿No encuentras un producto?</b><p>Manejamos más de 40 marcas y productos especiales de importación (4 a 6 semanas). Pídelo por WhatsApp.</p><a class="btn btn-green btn-sm" href="https://wa.me/528113638885?text=Hola%20Loga%2C%20busco%20un%20producto%20que%20no%20veo%20en%20el%20cat%C3%A1logo" target="_blank" rel="noopener">Pedir por WhatsApp</a></div>
+        </aside>
+        <div>
+          <div class="toolbar">
+            <div><div class="res" data-res></div><div class="chips" data-chips></div></div>
+            <div style="display:flex;gap:8px;align-items:center"><button class="fbtn" type="button" data-fopen>Filtros</button><select data-sort aria-label="Ordenar"><option value="rel">Relevancia</option><option value="az">Nombre A–Z</option><option value="brand">Marca</option><option value="cat">Categoría</option></select></div>
+          </div>
+          <div class="pgrid cols3" data-grid></div>
+          <div class="pager" data-pager></div>
+        </div>
+      </div>
+    </div>
+  </section>
+===JS===
+  (function(){
+    var PER=12,state={cat:getParam('cat'),sub:getParam('sub'),marca:getParam('marca'),q:getParam('q'),sort:getParam('orden')||'rel',page:+(getParam('p')||1)};
+    var grid=$('[data-grid]'),res=$('[data-res]'),chips=$('[data-chips]'),pager=$('[data-pager]'),sortEl=$('[data-sort]'),banner=$('[data-catbanner]');
+    function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+    function filtered(){
+      var q=norm(state.q);
+      return PRODUCTS.filter(function(p){
+        if(state.cat&&p.cat!==state.cat)return false;
+        if(state.sub&&p.sub!==state.sub)return false;
+        if(state.marca&&norm(p.brand)!==norm(state.marca))return false;
+        if(q){var hay=norm([p.name,p.brand,p.sku,p.sub,(catById(p.cat)||{}).name,p.desc].join(' '));if(q.split(/\s+/).some(function(w){return hay.indexOf(w)<0}))return false}
+        return true;
+      });
+    }
+    function sorted(list){
+      var s=list.slice();
+      if(state.sort==='az')s.sort(function(a,b){return a.name.localeCompare(b.name,'es')});
+      else if(state.sort==='brand')s.sort(function(a,b){return a.brand.localeCompare(b.brand,'es')||a.name.localeCompare(b.name,'es')});
+      else if(state.sort==='cat')s.sort(function(a,b){return a.cat.localeCompare(b.cat)||a.name.localeCompare(b.name,'es')});
+      else s.sort(function(a,b){return (b.home?1:0)-(a.home?1:0)||(b.badge?1:0)-(a.badge?1:0)});
+      return s;
+    }
+    function syncUrl(){var u=pageUrl('catalogo',{cat:state.cat,sub:state.sub,marca:state.marca,q:state.q,orden:state.sort==='rel'?'':state.sort,p:state.page>1?state.page:''});try{history.replaceState(null,'',u)}catch(e){}}
+    function set(k,v){state[k]=v;if(k!=='page')state.page=1;if(k==='cat')state.sub='';render();syncUrl()}
+    function render(){
+      var all=filtered(),list=sorted(all),pages=Math.max(1,Math.ceil(list.length/PER));state.page=Math.min(state.page,pages);
+      var slice=list.slice((state.page-1)*PER,state.page*PER);
+      var c=state.cat?catById(state.cat):null;
+      $('[data-cattitle]').innerHTML=c?esc(c.name)+(state.sub?' <em>· '+esc(state.sub)+'</em>':''):(state.marca?'Marca <em>'+esc(state.marca)+'</em>':(state.q?'Resultados para <em>“'+esc(state.q)+'”</em>':'Catálogo <em>completo</em>'));
+      $('[data-catsub]').textContent=c?c.short+' Precios por cotización con respuesta en minutos.':'Pruebas rápidas, antidoping, reactivos, microbiología, consumibles y equipos de diagnóstico. Precios por cotización con respuesta en minutos.';
+      document.title=(c?c.name:'Catálogo')+' · Loga Soluciones Científicas';
+      if(c){banner.style.display='';banner.innerHTML='<div class="ic">'+ART[c.art]()+'</div><div><h2>'+esc(c.name)+'</h2><p>'+esc(c.short)+'</p><div class="subs">'+c.subs.map(function(s){var n=PRODUCTS.filter(function(p){return p.cat===c.id&&p.sub===s}).length;return '<a href="#" data-sub="'+esc(s)+'" class="'+(state.sub===s?'on':'')+'">'+esc(s)+(n?' ('+n+')':'')+'</a>'}).join('')+'</div></div>'}else banner.style.display='none';
+      res.innerHTML='<b>'+list.length+'</b> producto'+(list.length===1?'':'s')+(pages>1?' · página '+state.page+' de '+pages:'');
+      var ch=[];if(state.cat)ch.push('<a href="#" data-rm="cat">'+esc((catById(state.cat)||{}).name)+'</a>');if(state.sub)ch.push('<a href="#" data-rm="sub">'+esc(state.sub)+'</a>');if(state.marca)ch.push('<a href="#" data-rm="marca">Marca: '+esc(state.marca)+'</a>');if(state.q)ch.push('<a href="#" data-rm="q">“'+esc(state.q)+'”</a>');chips.innerHTML=ch.join('');
+      if(!list.length){grid.innerHTML='<div class="empty" style="grid-column:1/-1"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4M8 11h6"/></svg><h3>'+(c&&!state.q&&!state.marca?'Esta categoría se cotiza con asesor':'No encontramos productos con esos filtros')+'</h3><p>'+(c&&!state.q&&!state.marca?'Manejamos '+esc(c.name.toLowerCase())+' de más de 40 marcas: '+esc(c.subs.join(', '))+'. Pide el catálogo o cotiza directo con un asesor.':'Prueba con otra palabra, marca o clave, o pídelo por WhatsApp: también surtimos productos especiales de importación.')+'</p><a class="btn btn-green" href="'+waLink('Hola Loga, quiero cotizar '+(c?c.name:state.q||'un producto')+'.')+'" target="_blank" rel="noopener">Cotizar por WhatsApp</a> <a class="btn btn-line" href="#" data-rmall>Ver todo el catálogo</a></div>'}
+      else grid.innerHTML=slice.map(cardHTML).join('');
+      bindPhotos(grid);
+      var ph='';if(pages>1){ph+='<button type="button" data-p="'+(state.page-1)+'" '+(state.page===1?'disabled':'')+'>‹</button>';for(var i=1;i<=pages;i++)ph+='<button type="button" data-p="'+i+'" class="'+(i===state.page?'on':'')+'">'+i+'</button>';ph+='<button type="button" data-p="'+(state.page+1)+'" '+(state.page===pages?'disabled':'')+'>›</button>'}pager.innerHTML=ph;
+      /* sidebar */
+      $('[data-fcats]').innerHTML='<a href="#" data-cat="" class="'+(!state.cat?'on':'')+'">Todas <span class="n">'+PRODUCTS.length+'</span></a>'+CATEGORIES.map(function(cc){var n=PRODUCTS.filter(function(p){return p.cat===cc.id}).length;var h='<a href="#" data-cat="'+cc.id+'" class="'+(state.cat===cc.id?'on':'')+'">'+esc(cc.name)+'<span class="n">'+n+'</span></a>';if(state.cat===cc.id)h+=cc.subs.map(function(s){var m=PRODUCTS.filter(function(p){return p.cat===cc.id&&p.sub===s}).length;return m?'<a href="#" class="sub '+(state.sub===s?'on':'')+'" data-sub="'+esc(s)+'">'+esc(s)+'<span class="n">'+m+'</span></a>':''}).join('');return h}).join('');
+      var bc={};PRODUCTS.forEach(function(p){if(!state.cat||p.cat===state.cat)bc[p.brand]=(bc[p.brand]||0)+1});
+      var bl=Object.keys(bc).sort();$('[data-fbrands]').innerHTML=bl.map(function(b){return '<label><input type="radio" name="marca" value="'+esc(b)+'" '+(norm(state.marca)===norm(b)?'checked':'')+'><span>'+esc(b)+'</span><span class="n">'+bc[b]+'</span></label>'}).join('')||'<span style="font-size:13px;color:var(--muted)">Sin marcas en esta selección.</span>';
+      sortEl.value=state.sort;
+      if(window.scrollY>300)window.scrollTo({top:$('.toolbar').getBoundingClientRect().top+window.scrollY-110,behavior:'smooth'});
+    }
+    root.addEventListener('click',function(e){
+      var a=e.target.closest('[data-cat]');if(a){e.preventDefault();set('cat',a.getAttribute('data-cat'));closeF();return}
+      var s=e.target.closest('[data-sub]');if(s){e.preventDefault();set('sub',state.sub===s.getAttribute('data-sub')?'':s.getAttribute('data-sub'));closeF();return}
+      var rm=e.target.closest('[data-rm]');if(rm){e.preventDefault();set(rm.getAttribute('data-rm'),'');return}
+      if(e.target.closest('[data-rmall]')){e.preventDefault();state={cat:'',sub:'',marca:'',q:'',sort:'rel',page:1};render();syncUrl();return}
+      var cl=e.target.closest('[data-clear]');if(cl){set(cl.getAttribute('data-clear'),'');return}
+      var pg=e.target.closest('[data-p]');if(pg&&!pg.disabled){state.page=+pg.getAttribute('data-p');render();syncUrl();return}
+      if(e.target.closest('[data-fopen]')){$('[data-filters]').classList.add('open');return}
+      if(e.target.closest('[data-fclose]')){closeF();return}
+    });
+    function closeF(){$('[data-filters]').classList.remove('open')}
+    root.addEventListener('change',function(e){if(e.target.name==='marca'){set('marca',e.target.value);closeF()}if(e.target===sortEl){set('sort',sortEl.value)}});
+    render();
+  })();
