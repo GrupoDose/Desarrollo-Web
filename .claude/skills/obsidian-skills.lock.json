@@ -1,0 +1,15 @@
+{
+  "source": "https://github.com/kepano/obsidian-skills",
+  "commit": "3ccff5338ea700537839b21900aa5358a0402c98",
+  "plugin_version": "1.0.1",
+  "license": "MIT (ver LICENSE-obsidian-skills)",
+  "installed": "2026-10-12",
+  "skills_sha256": {
+    "defuddle": "5ae2d9f2d5de3f27adb5b4d0a752c16be38f1a2d6316721a74ab721866d5fb2e",
+    "json-canvas": "b2296db7a2c7582b96ccdb14815873985250803ed9f626dbc1180821e9bd7691",
+    "knap": "e376a3f24ed9c48a00afff39372dae304e18c89f5c8bd69d4d6e1819d6333145",
+    "obsidian-bases": "c5b65df92f3d8a4509efad8814dc0d5c92d037d4c2024778280a4210f175e061",
+    "obsidian-cli": "f46ae626875f7e47c410c2ee93896c4526024ebe127719e8fb430261b5677edc",
+    "obsidian-markdown": "622c48fb0c4642ef3725e782e96a37e645832d674df67f1a9383f3b592c354fe"
+  }
+}
