@@ -1,0 +1,29 @@
+===CSS===
+===HTML===
+  <section class="phero sm" data-photo="cat_re" data-alt="Marcas">
+    <div class="wrap">
+      <div class="crumbs"><a href="#" data-page="inicio">Inicio</a> › Marcas</div>
+      <h1>Marcas con las que <em>trabajamos</em></h1>
+      <p>Distribuidor autorizado de más de 40 fabricantes. Garantía directa del fabricante, servicio técnico de marca y cartas de distribuidor a solicitud del cliente.</p>
+    </div>
+  </section>
+  <section class="sec alt"><div class="wrap">
+    <div class="bsearch"><input type="search" placeholder="Buscar marca…" data-bq><div class="letters" data-letters></div></div>
+    <div class="brandgrid" data-bgrid></div>
+    <p style="margin-top:22px;font-size:14px;color:var(--muted)">¿Buscas una marca que no aparece? Trabajamos con fabricantes adicionales bajo pedido. <a href="https://wa.me/528113638885?text=Hola%20Loga%2C%20busco%20una%20marca" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">Pregunta por WhatsApp →</a></p>
+  </div></section>
+  <section class="sec"><div class="wrap"><div class="cta-band"><div><h2>Equipos nuevos de fábrica con garantía de 1 año</h2><p>Instalación, capacitación y mantenimiento incluidos. Servicio técnico propio en Monterrey.</p></div><div class="btns"><a class="btn btn-green" href="#" data-page="servicio">Servicio técnico</a><a class="btn btn-line" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.5)" href="#" data-page="catalogo" data-params="cat=equipos">Ver equipos</a></div></div></div></section>
+===JS===
+  (function(){
+    var grid=$('[data-bgrid]'),q=$('[data-bq]'),letters=$('[data-letters]'),L='';
+    var all=BRANDS.slice().sort(function(a,b){return a.localeCompare(b,'es')});
+    var ls=[];all.forEach(function(b){var c=b[0].toUpperCase();if(ls.indexOf(c)<0)ls.push(c)});
+    letters.innerHTML='<button type="button" data-l="" class="on">Todas</button>'+ls.map(function(c){return '<button type="button" data-l="'+c+'">'+c+'</button>'}).join('');
+    function count(b){return PRODUCTS.filter(function(p){return p.brand.toLowerCase()===b.toLowerCase()}).length}
+    function render(){var s=q.value.trim().toLowerCase();var list=all.filter(function(b){return (!L||b[0].toUpperCase()===L)&&(!s||b.toLowerCase().indexOf(s)>-1)});
+      grid.innerHTML=list.map(function(b){var n=count(b);return '<a class="bcard" href="'+(n?pageUrl('catalogo',{marca:b}):waLink('Hola Loga, quiero cotizar productos de la marca '+b))+'"'+(n?'':' target="_blank" rel="noopener"')+'><span class="ini">'+esc(b.split(/\s/).map(function(w){return w[0]}).join('').slice(0,2).toUpperCase())+'</span><b>'+esc(b)+'</b><span>'+(n?n+' producto'+(n===1?'':'s')+' en línea':'Cotización con asesor')+'</span><span class="tag">Distribuidor autorizado</span></a>'}).join('')||'<p style="grid-column:1/-1;color:var(--muted)">Sin resultados.</p>';
+      $$('[data-l]',letters).forEach(function(b){b.classList.toggle('on',b.getAttribute('data-l')===L)});
+    }
+    letters.addEventListener('click',function(e){var b=e.target.closest('[data-l]');if(!b)return;L=b.getAttribute('data-l');render()});
+    q.addEventListener('input',render);render();
+  })();

@@ -1,5 +1,10 @@
 # Logatech · Sitio web
 
+## Versión corregida (carpeta `sitio-v2/`)
+
+`sitio-v2/` es la copia corregida del sitio (fichas validadas, imágenes de producto pendientes, cotizador sincronizado, política de pedido única y promesas ajustadas). Se genera con `python3 build.py src-v2 sitio-v2`. Los originales `src/` y `sitio/` se conservan sin cambios. Ver `sitio-v2/CAMBIOS-v2.md` (resumen y pruebas) y `sitio-v2/FUENTES-Y-PENDIENTES.md` (fuentes, claves por confirmar, datos e imágenes pendientes).
+
+
 ## Sitio completo (carpeta `sitio/`)
 
 El cliente eligió la propuesta 1 (Catálogo Pro). A partir de ella está construido el sitio completo, con el mismo sistema de diseño, la paleta del logotipo y fotografía real:
@@ -25,7 +30,7 @@ Funciones compartidas en todas las páginas:
 
 ### Cómo se construye
 
-Los archivos de `sitio/` se generan con `python3 build.py` a partir de `src/`:
+Los archivos de `sitio/` se generan con `python3 build.py` a partir de `src/` (y `sitio-v2/` con `python3 build.py src-v2 sitio-v2` a partir de `src-v2/`):
 
 - `src/data.js`: configuración (`CFG`, incluidos los slugs de cada página), categorías, marcas y los 33 productos del cuestionario. **Aquí se agregan productos**: cada uno con categoría, subcategoría, marca, clave, presentación, viñetas, especificaciones, descripción y foto.
 - `src/core.js`: cotización, modal, enlaces, formularios, menú.

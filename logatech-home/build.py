@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Ensambla las páginas del sitio Logatech en archivos HTML autónomos (listos para Elementor)."""
 import re, os, pathlib
-ROOT=pathlib.Path(__file__).parent; SRC=ROOT/'src'; OUT=ROOT/'sitio'; OUT.mkdir(exist_ok=True)
+import sys
+ROOT=pathlib.Path(__file__).parent; SRC=ROOT/(sys.argv[1] if len(sys.argv)>1 else 'src'); OUT=ROOT/(sys.argv[2] if len(sys.argv)>2 else 'sitio'); OUT.mkdir(exist_ok=True)
 base_js=(SRC/'base.js').read_text(encoding='utf-8')
 art=base_js[base_js.index('  /* Ilustraciones SVG'):base_js.index('  /* ===================== DATOS')]
 mark=re.search(r'<img class="mark" src="data:image/png;base64,[^"]+" alt="">',base_js).group(0)
