@@ -8,6 +8,11 @@ art=base_js[base_js.index('  /* Ilustraciones SVG'):base_js.index('  /* ========
 mark=re.search(r'<img class="mark" src="data:image/png;base64,[^"]+" alt="">',base_js).group(0)
 css=(SRC/'base.css').read_text(encoding='utf-8')+(SRC/'extra.css').read_text(encoding='utf-8')
 data=(SRC/'data.js').read_text(encoding='utf-8'); core=(SRC/'core.js').read_text(encoding='utf-8')
+# LOGA_CFG_JSON: JSON con claves de CFG a sobrescribir (p. ej. rutas de WordPress). Se inyecta tras la declaración de CFG.
+if os.environ.get('LOGA_CFG_JSON'):
+    import json; ov=json.loads(os.environ['LOGA_CFG_JSON']); anchor='  };\n\n  /* ===================== CATEGORÍAS'
+    assert anchor in data, 'ancla CFG no encontrada'
+    data=data.replace(anchor,'  };\n  (function(o){for(var k in o)CFG[k]=o[k]})('+json.dumps(ov,ensure_ascii=False)+');\n\n  /* ===================== CATEGORÍAS',1)
 header=(SRC/'header.html').read_text(encoding='utf-8'); footer=(SRC/'footer.html').read_text(encoding='utf-8'); overlays=(SRC/'overlays.html').read_text(encoding='utf-8')
 FONTS='<link rel="preconnect" href="https://fonts.googleapis.com">\n<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">'
 TITLES={'inicio':'Loga Soluciones Científicas para Laboratorio · Monterrey','catalogo':'Catálogo · Loga','producto':'Producto · Loga','nosotros':'Nosotros · Loga','marcas':'Marcas · Loga','servicio-tecnico':'Servicio técnico · Loga','envios-y-credito':'Envíos y crédito · Loga','contacto':'Contacto · Loga'}
