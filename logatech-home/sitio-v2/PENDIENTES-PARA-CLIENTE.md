@@ -1,5 +1,7 @@
 # Pendientes para solicitar al cliente · Logatech
 
+> Actualizado el 27 de octubre de 2026 tras recibir la carpeta de Drive (correcciones, logotipos, fotos y Excel de pruebas rápidas). Lo ya resuelto con ese material se marca como ✔.
+
 Lista de lo que necesitamos de Logatech para terminar de completar la web. Todo lo demás ya está hecho y guardado en la versión corregida (`sitio-v2/`). Mientras no llegue cada dato, la web muestra "Consultar con un asesor", "Clave por confirmar" o "Imagen del producto pendiente", según el caso.
 
 ## A. Claves de producto que hay que confirmar (prioridad alta)
@@ -8,7 +10,7 @@ Lista de lo que necesitamos de Logatech para terminar de completar la web. Todo 
    - Tapa lila, EDTA K2, 4 ml → ¿368171? (en bd.com EUA el equivalente es 367861)
    - Tapa amarilla, 5 ml, suero con gel separador → ¿368175? (en bd.com EUA el equivalente es 367986)
    - Tapa roja, 6 ml, suero con activador de coagulación → **sin clave** (en bd.com EUA el equivalente es 367815; no la asignamos hasta que la confirmen)
-2. **BioFire® FilmArray® Respiratory Panel.** Confirmar qué modelo venden: RP2, RP2.1 o RP2.1plus. La clave "IISC-425" del listado no coincide con las referencias de bioMérieux; ¿es clave interna de Logatech? Indicar también pruebas por kit y registro sanitario.
+2. **BioFire® FilmArray® Respiratory Panel.** Confirmar qué modelo venden: RP2, RP2.1 o RP2.1plus, y su clave (✔ aclarado: IISC-425 es la prueba CERTUM Sífilis/VIH del Excel, así que el BioFire quedó sin clave). Indicar también pruebas por kit y registro sanitario.
 3. **Caja Petri 100 × 15 mm.** El listado solo dice "petri". Confirmar clave y marca (¿es marca propia Loga o de un fabricante?).
 4. **Prueba Influenza A/B/A(H1N1), clave 166561.** El listado dice marca "SD". Confirmar si es SD Biosensor.
 
@@ -55,6 +57,12 @@ Para cada producto también necesitamos saber en qué unidad se vende (pieza, ca
 
 ## C. Imágenes de producto (prioridad alta)
 
+✔ Recibidas: 85 fotos de pruebas rápidas (por clave) y 41 logotipos de marcas; ya están en la web. Falta:
+- Fotos de los 29 productos del listado original que no están en el Excel: 9 antidoping (DOA164, DOA154, A04-17-140-A, HDOA-334, A04-15-140-A, DTH-101, DCO-101, DME-101, DAM-101), prueba influenza SD 166561, 3 tubos BD, 7 consumibles (GH MEDICAL, caja Petri, Corning, COPAN), 2 medios MCD LAB, 7 reactivos HYCEL/JALMEK y el BioFire.
+- Fotos específicas de las 24 pruebas de Alergias (hoy comparten una imagen genérica) y de los 8 controles CerTest (comparten otra).
+- Logotipos de Dräger, BOULE, Seratec, Provisión y Coris (no venían en la carpeta).
+- Las 4 imágenes para "Explora por categoría" que menciona el documento de correcciones (hoy se usan fotos de banco).
+
 Necesitamos una imagen real por producto (33 en total). Opciones: foto propia de Logatech o imagen del fabricante con permiso de uso. Requisitos: producto solo, fondo neutro, buena resolución (mínimo 1200 px de ancho), archivo nombrado con la clave (por ejemplo `DOA164.jpg`). No se usará la foto de un producto para ilustrar otro.
 
 Orden sugerido: primero los 6 productos que aparecen en inicio ("Más pedidos"), después antidoping y pruebas rápidas, luego consumibles y reactivos.
@@ -68,8 +76,8 @@ Estas frases vienen del cuestionario pero son compromisos operativos. Confirmar 
 3. "Si un reactivo llega con problema de temperatura, hacemos cambio físico".
 4. Equipos: "instalación, capacitación y mantenimiento incluidos" y "garantía de 1 año del fabricante".
 5. "Cartas de distribuidor a solicitud".
-6. Crédito: confirmar que el texto final es "sujeto a aprobación después de 3 compras de contado, solicitud y documentación; plazos de 15 o 30 días según autorización" y que no hay otras condiciones.
-7. Confirmar el texto único de pedido y envío: "Pedido mínimo de $5,000 MXN. Entrega local sin costo y envío foráneo gratis a partir de este monto. Consulta cobertura y condiciones con tu asesor." ¿Hay zonas o productos excluidos del envío gratis?
+6. ✔ Crédito: ya dice "Facilidades de crédito según solicitud y documentación; plazos de hasta 30 días de crédito o más", como pidió el cliente.
+7. ✔ Pedido mínimo retirado; ahora dice "Envíos a toda la República Mexicana. Entrega local sin costo. Consulta con tu asesor cómo llevarte el flete gratis." Confirmar si quieren publicar el monto o las condiciones del flete gratis en la página de Envíos.
 8. Urgencias: confirmar que están de acuerdo con presentarlas como "sujetas a disponibilidad, ubicación y confirmación del asesor" y no como entrega el mismo día.
 
 ## E. Textos y enlaces legales (prioridad media)

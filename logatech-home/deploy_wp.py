@@ -5,6 +5,8 @@ Uso:  WP_URL=https://sitio.com WP_USER=usuario WP_PASS='contraseña' python3 dep
 - Crea o actualiza una página por archivo (slug = nombre del archivo; inicio = portada).
 - Si Elementor está activo, guarda cada página como página de Elementor (plantilla Canvas, sección a ancho
   completo con un widget HTML que contiene el bloque). Si no, deja el bloque como contenido HTML de la página.
+- Sube a Medios los logotipos (sitio-v2/logos) y las fotos de producto (sitio-v2/img/productos) y reconstruye
+  sitio-wp/ con las URLs reales antes de publicar (build.py con LOGA_CFG_JSON).
 - Activa enlaces permanentes /%postname%/ si estaban en modo simple.
 No imprime credenciales.
 """
@@ -56,6 +58,37 @@ def page_templates():
     return re.findall(r'<option value="([^"]+)"[^>]*>[^<]*</option>',r.split('name="page_template"')[1].split('</select>')[0]) if 'name="page_template"' in r else []
 TPLS=page_templates(); TEMPLATE='elementor_canvas' if 'elementor_canvas' in TPLS else ''
 print('Plantilla de página:',TEMPLATE or '(por defecto del tema)')
+
+# 4b) Medios: logotipos y fotos de producto (se reutilizan si ya existen por título)
+import subprocess,mimetypes
+ROOTD=pathlib.Path(__file__).parent
+def media_index():
+    idx={};page=1
+    while True:
+        r=rest('GET',f'/wp/v2/media?per_page=100&page={page}&_fields=id,title,source_url,slug')
+        for m in r:idx[m['title']['rendered']]=m['source_url']
+        if len(r)<100:break
+        page+=1
+    return idx
+def upload(path,title):
+    mime=mimetypes.guess_type(str(path))[0] or 'application/octet-stream'
+    r=S.post(BASE+'/wp-json/wp/v2/media',headers={'Content-Disposition':f'attachment; filename="{path.name}"','Content-Type':mime},data=path.read_bytes(),timeout=180)
+    if r.status_code>=400:die(f'media {path.name} → {r.status_code}: {r.text[:200]}')
+    j=r.json();S.post(BASE+f"/wp-json/wp/v2/media/{j['id']}",json={'title':title,'alt_text':title},timeout=60)
+    return j['source_url']
+idx=media_index();logos={};images={}
+for f in sorted((ROOTD/'sitio-v2'/'logos').glob('*')):
+    t='loga-logo-'+f.name;logos[f.name]=idx.get(t) or upload(f,t)
+for f in sorted((ROOTD/'sitio-v2'/'img'/'productos').glob('*')):
+    t='loga-producto-'+f.name;images[f.name]=idx.get(t) or upload(f,t)
+print(f'Medios: {len(logos)} logotipos, {len(images)} fotos de producto')
+# mapa marca→URL para CFG.logos (BRAND_LOGOS usa nombres de archivo)
+dj=(ROOTD/'src-v2'/'data.js').read_text(encoding='utf-8')
+bl=json.loads(re.search(r"var BRAND_LOGOS = (\{.*?\});",dj).group(1).replace("'",'"'))
+cfg={"pages":{"inicio":"/","catalogo":"/catalogo/","producto":"/producto/","nosotros":"/nosotros/","marcas":"/marcas/","servicio":"/servicio-tecnico/","envios":"/envios-y-credito/","contacto":"/contacto/"},
+     "qmap":{"cat":"categoria","p":"pagina"},"logos":{b:logos[f] for b,f in bl.items() if f in logos},"images":images}
+subprocess.run(['python3',str(ROOTD/'build.py'),'src-v2',str(SRC.name)],env={**os.environ,'LOGA_CFG_JSON':json.dumps(cfg,ensure_ascii=False)},check=True,cwd=str(ROOTD))
+print('sitio-wp reconstruido con URLs de Medios')
 
 def block_of(name):
     s=(SRC/(name+'.html')).read_text(encoding='utf-8')

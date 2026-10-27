@@ -25,7 +25,7 @@
   /* ---- Logotipo ---- */
   function logoHTML(){
     if(CFG.logoUrl) return '<img src="'+esc(CFG.logoUrl)+'" alt="Loga Soluciones Científicas para Laboratorio">';
-    return '<div class="logo-fallback">'+LOGO_MARK+'<div><div class="wm">LOGA<span>TECH</span></div><small>SOLUCIONES CIENTÍFICAS PARA LABORATORIO</small></div></div>';
+    return '<div class="logo-fallback">'+LOGO_MARK+'<div><div class="wm">LOGA</div><small>Soluciones Científicas para Laboratorio</small></div></div>';
   }
   $$('[data-logo]').forEach(function(el){el.innerHTML=logoHTML()});
 
@@ -40,6 +40,21 @@
   resolveLinks(root);
   var CURRENT=root.getAttribute('data-current')||'';
   $$('.mainnav a[data-page], .catnav a[data-page]').forEach(function(a){if(a.getAttribute('data-page')===CURRENT&&!a.getAttribute('data-params'))a.classList.add('cur')});
+
+  /* ---- Logotipos de marcas ---- */
+  function brandLogo(b){var f=(typeof BRAND_LOGOS!=='undefined')&&BRAND_LOGOS[b];if(!f)return '';return (CFG.logos&&CFG.logos[b])||(CFG.logoBase||'')+f}
+  var IMG_FB=' onerror="var s=document.createElement(\'span\');s.className=\'ini\';s.textContent=this.alt.split(/\\s/).map(function(w){return w[0]}).join(\'\').slice(0,2).toUpperCase();this.replaceWith(s)"';
+  function brandMark(b,cls){var u=brandLogo(b);return u?'<img class="'+(cls||'blogo')+'" src="'+esc(u)+'" alt="'+esc(b)+'" loading="lazy"'+IMG_FB+'>':'<span class="ini">'+esc(b.split(/\s/).map(function(w){return w[0]}).join('').slice(0,2).toUpperCase())+'</span>'}
+
+  /* ---- Mega menú "Productos" (categorías con subcategorías, estilo MCD LAB) ---- */
+  $$('[data-megamenu]').forEach(function(el){
+    el.innerHTML='<div class="mm-grid">'+CATEGORIES.map(function(c){return '<div class="mm-col"><a class="mm-h" href="'+pageUrl('catalogo',{cat:c.id})+'">'+esc(c.name)+'</a>'+c.subs.slice(0,6).map(function(s){return '<a href="'+pageUrl('catalogo',{cat:c.id,sub:s})+'">'+esc(s)+'</a>'}).join('')+(c.subs.length>6?'<a class="mm-more" href="'+pageUrl('catalogo',{cat:c.id})+'">Ver todo →</a>':'')+'</div>'}).join('')+'</div><div class="mm-foot"><a href="'+pageUrl('catalogo')+'">Ver catálogo completo →</a><a href="'+pageUrl('marcas')+'">Marcas →</a><a href="'+pageUrl('servicio')+'">Servicio técnico →</a></div>';
+  });
+  $$('[data-mm]').forEach(function(mm){var btn=$('.mm-btn',mm);
+    btn.addEventListener('click',function(e){if(window.matchMedia('(hover:none)').matches||e.detail===0){e.preventDefault();var o=mm.classList.toggle('open');btn.setAttribute('aria-expanded',o)}});
+    document.addEventListener('click',function(e){if(!mm.contains(e.target)){mm.classList.remove('open');btn.setAttribute('aria-expanded','false')}});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'){mm.classList.remove('open');btn.setAttribute('aria-expanded','false')}});
+  });
 
   /* ---- Navegación de categorías y listas del footer (generadas desde CATEGORIES) ---- */
   $$('[data-catnav]').forEach(function(el){el.innerHTML=CATEGORIES.map(function(c){return '<a href="'+pageUrl('catalogo',{cat:c.id})+'"'+(CURRENT==='catalogo'&&getParam('cat')===c.id?' class="cur"':'')+'>'+esc(c.name)+'</a>'}).join('')+'<a class="hl" href="'+pageUrl('servicio')+'">Servicio técnico</a>'});
@@ -122,7 +137,7 @@
       +(p.price?'<div class="pr">'+money(p.price)+'<small>+ IVA</small></div>':'<div class="pr q">Precio por cotización<small>Atención de lunes a viernes de 8:30 a 17:30 h</small></div>')
       +'<div class="ship"><div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>'+POL+'</span></div>'
       +(p.cold?'<div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Producto refrigerado: se embarca <b>lunes y miércoles</b> con hielera y geles.</span></div>':'')
-      +'<div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Crédito sujeto a aprobación (3 compras de contado, solicitud y documentación); plazos de 15 o 30 días según autorización.</span></div></div>'
+      +'<div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Facilidades de crédito según solicitud y documentación; plazos de hasta 30 días de crédito o más.</span></div></div>'
       +'<div class="stock">Consulta disponibilidad y fecha estimada de entrega al cotizar.</div>'
       +'<div class="qty">Cantidad <div><button type="button" data-q="-1" aria-label="Menos">−</button><input type="number" min="1" max="9999" step="1" inputmode="numeric" value="1" data-qty aria-label="Cantidad"><button type="button" data-q="1" aria-label="Más">+</button></div><span data-qunit>'+unitWord(p,1)+' · '+esc(presText(p))+'</span></div>'
       +'<button class="btn b1" type="button" data-madd>Agregar a cotización</button>'
@@ -135,7 +150,7 @@
     return '<div class="tabs"><nav><button type="button" class="on" data-tab="0">Descripción</button><button type="button" data-tab="1">Especificaciones</button><button type="button" data-tab="2">Envío, garantía y pagos</button></nav>'
       +'<div class="pane on"><p>'+esc(p.desc)+'</p><p>Las especificaciones completas (muestra, tiempo de lectura, presentación, almacenamiento y registro sanitario) están en la ficha técnica del fabricante, disponible a solicitud. Atendemos laboratorios clínicos, industriales, institucionales y de investigación en toda la República Mexicana.</p></div>'
       +'<div class="pane">'+specsGrid(p)+'<p class="specnote">Datos tomados del listado comercial y de la documentación del fabricante disponible. '+(p.pending&&p.pending.length?'Por confirmar: '+esc(p.pending.join('; '))+'.':'')+'</p></div>'
-      +'<div class="pane"><p><b>Pedido y envío:</b> '+POL+'</p><p><b>Entregas urgentes</b> sujetas a disponibilidad, ubicación y confirmación del asesor. Productos especiales de importación: 4 a 6 semanas.</p><p><b>Cadena de frío:</b> los productos refrigerados salen lunes y miércoles en hielera con geles; si un reactivo llega con problema, se realiza cambio físico.</p><p><b>Garantía:</b> 1 año del fabricante contra defectos de fabricación. En equipos de laboratorio se incluye instalación, capacitación y servicio de mantenimiento.</p><p><b>Crédito:</b> sujeto a aprobación después de 3 compras de contado, solicitud y documentación; plazos de 15 o 30 días según autorización.</p></div></div>';
+      +'<div class="pane"><p><b>Envíos:</b> '+POL+'</p><p><b>Entregas urgentes</b> sujetas a disponibilidad, ubicación y confirmación del asesor. Productos especiales de importación: 4 a 6 semanas.</p><p><b>Cadena de frío:</b> los productos refrigerados salen lunes y miércoles en hielera con geles; si un reactivo llega con problema, se realiza cambio físico.</p><p><b>Garantía:</b> 1 año del fabricante contra defectos de fabricación. En equipos de laboratorio se incluye instalación, capacitación y servicio de mantenimiento.</p><p><b>Crédito:</b> sujeto a aprobación después de 3 compras de contado, solicitud y documentación; plazos de 15 o 30 días según autorización.</p></div></div>';
   }
   function bindProductUI(scope,p){
     var qty=$('[data-qty]',scope);

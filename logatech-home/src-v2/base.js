@@ -22,7 +22,9 @@
   /* ===== FOTOGRAFÍAS (Pexels, licencia libre) con respaldo SVG si la URL no carga ===== */
   var PHOTOS={hospital:10827916,lab:3938022,empresa:5989931,industria:2760241,cat_pr:7867251,cat_ad:8670147,cat_re:11703173,cat_eq:18471457,delivery:5025665,service:9574330,scientist:4031692};
   function px(id,w,h){return 'https://images.pexels.com/photos/'+id+'/pexels-photo-'+id+'.jpeg?auto=compress&cs=tinysrgb&w='+(w||1200)+(h?'&h='+h+'&fit=crop':'')}
-  function photo(id,alt,fallback,w,h){return '<img class="ph" src="'+px(id,w,h)+'" alt="'+alt.replace(/"/g,'&quot;')+'" loading="lazy" decoding="async"><div class="fb" style="display:none">'+(fallback||'')+'</div>'}
+  /* id numérico = foto de Pexels; cadena con "/" o "." = archivo propio (CFG.imgBase + archivo, o URL absoluta / mapa CFG.images en WordPress) */
+  function imgSrc(id,w,h){if(typeof id==='string'&&/[\/.]/.test(id)){if(/^(https?:|data:|\/)/.test(id))return id;return (CFG.images&&CFG.images[id])||(CFG.imgBase||'')+id}return px(id,w,h)}
+  function photo(id,alt,fallback,w,h){return '<img class="ph" src="'+imgSrc(id,w,h)+'" alt="'+alt.replace(/"/g,'&quot;')+'" loading="lazy" decoding="async"><div class="fb" style="display:none">'+(fallback||'')+'</div>'}
   function bindPhotos(scope){Array.prototype.slice.call((scope||document).querySelectorAll('img.ph')).forEach(function(im){if(im.__b)return;im.__b=1;im.addEventListener('error',function(){im.style.display='none';var f=im.nextElementSibling;if(f&&f.className==='fb')f.style.display='';im.parentNode&&im.parentNode.classList&&im.parentNode.classList.add('nophoto')})})}
 
   /* ===================== DATOS ===================== */

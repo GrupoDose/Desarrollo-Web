@@ -1,5 +1,12 @@
 # Fuentes y pendientes · Logatech v2
 
+> **Actualización v3 (27 de octubre de 2026).** El cliente compartió una carpeta de Drive con: "Correcciones HOME", 41 logotipos de marcas, 85 fotos de pruebas rápidas nombradas por clave y "Pruebas rapidas.xlsx" (114 productos con marca, clave, descripción y presentación). Con ello:
+> - Las 110 pruebas rápidas nuevas y 4 existentes tienen presentación ("Caja con N pruebas") y foto real; su fuente es el listado del cliente, no la ficha del fabricante (sigue pendiente).
+> - **IISC-425 no es el BioFire**: en el listado del cliente es la prueba CERTUM Sífilis (IgG/IgM) + VIH combo en cassette (caja con 25). El BioFire RP2 queda sin clave ("Por confirmar", id interno BIOFIRE-RP2); todo lo demás de la sección 2.1 sigue vigente.
+> - Marcas corregidas con los logotipos recibidos: "Voule" → BOULE, "Life Lock" → Lifeloc. Marcas nuevas del listado: Seratec, Provisión, Coris; QuickVue y Quidel se muestran como QuidelOrtho.
+> - Las 24 pruebas de Alergias comparten una imagen genérica enviada por el cliente y 8 controles CerTest (TA220001, R200001P, P220001, TA200001P, TB200001P, AD220001, CP220001, F200201P) otra; se piden fotos específicas.
+> - Los 29 productos originales sin foto (antidoping, BD, consumibles, reactivos, BioFire y la prueba SD 166561) siguen con el marcador "Imagen del producto pendiente".
+
 Registro de verificación de las 33 fichas de producto (grupo 1 del encargo), de las imágenes (grupo 2) y de los datos comerciales (grupos 6 y 7). Fecha de corte: 19 de octubre de 2026.
 
 ## 1. Criterio aplicado

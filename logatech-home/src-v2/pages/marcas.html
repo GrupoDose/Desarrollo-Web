@@ -21,7 +21,7 @@
     letters.innerHTML='<button type="button" data-l="" class="on">Todas</button>'+ls.map(function(c){return '<button type="button" data-l="'+c+'">'+c+'</button>'}).join('');
     function count(b){return PRODUCTS.filter(function(p){return p.brand.toLowerCase()===b.toLowerCase()}).length}
     function render(){var s=q.value.trim().toLowerCase();var list=all.filter(function(b){return (!L||b[0].toUpperCase()===L)&&(!s||b.toLowerCase().indexOf(s)>-1)});
-      grid.innerHTML=list.map(function(b){var n=count(b);return '<a class="bcard" href="'+(n?pageUrl('catalogo',{marca:b}):waLink('Hola Loga, quiero cotizar productos de la marca '+b))+'"'+(n?'':' target="_blank" rel="noopener"')+'><span class="ini">'+esc(b.split(/\s/).map(function(w){return w[0]}).join('').slice(0,2).toUpperCase())+'</span><b>'+esc(b)+'</b><span>'+(n?n+' producto'+(n===1?'':'s')+' en línea':'Cotización con asesor')+'</span><span class="tag">Distribuidor autorizado</span></a>'}).join('')||'<p style="grid-column:1/-1;color:var(--muted)">Sin resultados.</p>';
+      grid.innerHTML=list.map(function(b){var n=count(b);return '<a class="bcard" href="'+(n?pageUrl('catalogo',{marca:b}):waLink('Hola Loga, quiero cotizar productos de la marca '+b))+'"'+(n?'':' target="_blank" rel="noopener"')+'>'+brandMark(b)+'<b>'+esc(b)+'</b><span>'+(n?n+' producto'+(n===1?'':'s')+' en línea':'Cotización con asesor')+'</span><span class="tag">Distribuidor autorizado</span></a>'}).join('')||'<p style="grid-column:1/-1;color:var(--muted)">Sin resultados.</p>';
       $$('[data-l]',letters).forEach(function(b){b.classList.toggle('on',b.getAttribute('data-l')===L)});
     }
     letters.addEventListener('click',function(e){var b=e.target.closest('[data-l]');if(!b)return;L=b.getAttribute('data-l');render()});

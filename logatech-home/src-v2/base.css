@@ -1,8 +1,8 @@
 /* ---------- Variables de marca (cámbialas aquí y todo se actualiza) ---------- */
 #lg1, #lg1-modal, #lg1-quote{
-  /* === COLORES DE MARCA LOGATECH (tomados del logotipo). Azul = principal · Naranja = secundario. Cámbialos aquí === */
-  --brand-blue:#2F7FD3; --brand-blue-d:#1F5FBF; --brand-blue-l:#4A9EDA; --brand-orange:#E08A2E; --brand-orange-d:#C46F1C; --brand-green:#5FA33A; --brand-red:#C62A1E; --brand-ink:#12305E;
-  --brand-grad:linear-gradient(90deg,#1F5FBF 0%,#4A9EDA 60%,#E08A2E 100%);
+  /* === COLORES DE MARCA LOGATECH (tomados del logotipo). Azul = principal · Verde = secundario (el naranja se retiró a petición del cliente). Cámbialos aquí === */
+  --brand-blue:#2F7FD3; --brand-blue-d:#1F5FBF; --brand-blue-l:#4A9EDA; --brand-orange:#5FA33A; --brand-orange-d:#3F8A31; /* alias históricos: ahora verdes */ --brand-green:#5FA33A; --brand-red:#C62A1E; --brand-ink:#12305E;
+  --brand-grad:linear-gradient(90deg,#1F5FBF 0%,#4A9EDA 60%,#5FA33A 100%);
   --navy:var(--brand-ink); --blue:var(--brand-blue-d); --blue-d:#174A99; --green:var(--brand-green); --green-d:#3F8A31; --lime:var(--brand-orange); --teal:var(--brand-blue); --grad:var(--brand-grad); --orange:var(--brand-orange); --orange-d:var(--brand-orange-d);
   --ink:#1B2430; --muted:#5F6B7A; --line:#E3E9EF; --bg:#F5F8FB; --white:#fff;
   --font-h:'Montserrat',Arial,sans-serif; --font-b:'Open Sans',Arial,sans-serif;
@@ -19,7 +19,7 @@
 #lg1 .h-font{font-family:var(--font-h)}
 #lg1 .btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:6px;padding:12px 20px;font:600 14px var(--font-h);transition:.2s;white-space:nowrap}
 #lg1 .btn-blue{background:var(--blue);color:#fff}#lg1 .btn-blue:hover{background:var(--blue-d)}
-#lg1 .btn-green{background:var(--orange-d);color:#fff}#lg1 .btn-green:hover{background:#A85C14;box-shadow:0 8px 20px rgba(224,138,46,.35)}
+#lg1 .btn-green{background:var(--orange-d);color:#fff}#lg1 .btn-green:hover{background:#2F7026;box-shadow:0 8px 20px rgba(95,163,58,.35)}
 #lg1 .btn-line{background:#fff;color:var(--blue);border:2px solid var(--blue)}#lg1 .btn-line:hover{background:var(--blue);color:#fff}
 #lg1 .eyebrow{font:700 12px var(--font-h);letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
 #lg1 .sec-title{font:800 clamp(24px,3vw,34px)/1.15 var(--font-h);color:var(--navy)}
@@ -37,14 +37,14 @@
 
 /* ---------- Header ---------- */
 #lg1 .header{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:50}
-#lg1 .header .wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:28px;min-height:88px}
+#lg1 .header .wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:28px;min-height:100px}
 #lg1 .logo{display:flex;align-items:center;gap:10px}
-#lg1 .logo img{height:54px;width:auto}
+#lg1 .logo img{height:68px;width:auto}
 #lg1 .logo-fallback{display:flex;align-items:center;gap:10px}
-#lg1 .logo-fallback .mark{width:auto;height:48px}
-#lg1 .logo-fallback .wm{font:800 26px/1 var(--font-h);color:var(--navy);letter-spacing:-.02em}
+#lg1 .logo-fallback .mark{width:auto;height:66px}
+#lg1 .logo-fallback .wm{font:800 38px/1 var(--font-h);color:var(--navy);letter-spacing:-.02em}
 #lg1 .logo-fallback .wm span{color:var(--blue)}
-#lg1 .logo-fallback small{display:block;font:500 10px/1.2 var(--font-b);color:var(--muted);letter-spacing:.04em;margin-top:3px}
+#lg1 .logo-fallback small{display:block;font:600 10.5px/1.2 var(--font-b);color:var(--blue);letter-spacing:.06em;margin-top:4px;text-transform:uppercase;white-space:nowrap}
 #lg1 .search{display:flex;border:2px solid var(--blue);border-radius:8px;overflow:hidden;height:48px}
 #lg1 .search select{border:0;background:var(--bg);padding:0 12px;font:500 13px var(--font-b);color:var(--ink);border-right:1px solid var(--line);max-width:190px}
 #lg1 .search input{flex:1;border:0;padding:0 14px;font:400 14px var(--font-b);min-width:0;outline:none}
@@ -70,17 +70,18 @@
 #lg1 .catnav a.hl{color:var(--green-d)}
 
 /* ---------- HERO SLIDER (4 audiencias) ---------- */
-#lg1 .hero{background:var(--bg);padding:26px 0 30px}
-#lg1 .slider{position:relative;border-radius:16px;overflow:hidden;background:var(--navy);box-shadow:var(--shadow);min-height:480px}
+#lg1 .hero{background:var(--bg);padding:0 0 30px}
+#lg1 .hero .wrap{max-width:none;padding:0}
+#lg1 .slider{position:relative;border-radius:0;overflow:hidden;background:var(--navy);box-shadow:var(--shadow);min-height:520px}
 #lg1 .slide{position:absolute;inset:0;display:grid;grid-template-columns:1.05fr .95fr;opacity:0;visibility:hidden;transform:translateX(60px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1),visibility 0s .7s}
 #lg1 .slide.active{opacity:1;visibility:visible;transform:none;transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1),visibility 0s}
 #lg1 .slide.leaving{opacity:0;visibility:visible;transform:translateX(-60px)}
-#lg1 .slide-txt{padding:56px 60px 84px;color:#fff;display:flex;flex-direction:column;justify-content:center;gap:18px;position:relative;z-index:2}
+#lg1 .slide-txt{padding:64px 48px 90px max(48px,calc((100vw - 1240px)/2 + 20px));color:#fff;display:flex;flex-direction:column;justify-content:center;gap:18px;position:relative;z-index:2}
 #lg1 .slide-txt .tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:6px 12px;border-radius:99px;font:600 12px var(--font-h);letter-spacing:.08em;text-transform:uppercase;width:max-content}
 #lg1 .slide-txt .tag i{width:8px;height:8px;border-radius:50%;background:var(--lime);display:inline-block}
 #lg1 .slide-txt h2{font:800 clamp(28px,3.6vw,46px)/1.1 var(--font-h);letter-spacing:-.01em}
-#lg1 .slide-txt h2 em{font-style:normal;color:#E08A2E}
-#lg1 .slide-txt p{font-size:16px;color:#D6E4F0;max-width:520px}
+#lg1 .slide-txt h2 em{font-style:normal;color:#8CD16A}
+#lg1 .slide-txt p{font-size:16px;color:#D6E4F0;max-width:560px}
 #lg1 .slide-txt .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
 #lg1 .slide-txt ul{display:flex;gap:18px;flex-wrap:wrap;margin-top:10px}
 #lg1 .slide-txt li{font-size:13px;color:#B9CFE3;display:flex;align-items:center;gap:6px}
@@ -108,7 +109,7 @@
 #lg1 .arrow:hover{background:var(--green);color:#fff}
 #lg1 .arrow svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.5}
 #lg1 .arrow.prev{left:16px}#lg1 .arrow.next{right:16px}
-#lg1 .dots{position:absolute;left:60px;bottom:22px;display:flex;gap:8px;z-index:5}
+#lg1 .dots{position:absolute;left:max(48px,calc((100vw - 1240px)/2 + 20px));bottom:22px;display:flex;gap:8px;z-index:5}
 #lg1 .dots button{width:34px;height:4px;border-radius:2px;border:0;background:rgba(255,255,255,.35);padding:0;overflow:hidden;position:relative}
 #lg1 .dots button i{position:absolute;inset:0;background:var(--lime);transform:scaleX(0);transform-origin:left}
 #lg1 .dots button.on i{animation:lg1prog 6s linear forwards}
@@ -172,7 +173,7 @@
 #lg1 .ccard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px 22px;display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden;transition:.25s;cursor:pointer}
 #lg1 .ccard::after{content:"";position:absolute;right:-40px;top:-40px;width:130px;height:130px;border-radius:50%;background:var(--bg);transition:.35s}
 #lg1 .ccard:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
-#lg1 .ccard:hover::after{background:#FDF1E3;transform:scale(1.25)}
+#lg1 .ccard:hover::after{background:#E8F6EA;transform:scale(1.25)}
 #lg1 .ccard .pic{margin:-24px -22px 4px;height:150px;overflow:hidden;position:relative;z-index:1;background:var(--bg)}
 #lg1 .ccard .pic img.ph{width:100%;height:100%;object-fit:cover;transition:.5s}
 #lg1 .ccard:hover .pic img.ph{transform:scale(1.06)}
@@ -203,7 +204,7 @@
 #lg1 .story .pic .cap{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.95);border-radius:8px;padding:8px 12px;font:700 12px var(--font-h);color:var(--navy)}
 #lg1 .story .pic.nophoto{display:none}
 #lg1 .story .panel{background:var(--navy);border-radius:16px;padding:34px;color:#fff;box-shadow:var(--shadow);position:relative;overflow:hidden}
-#lg1 .story .panel::before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(224,138,46,.35),transparent 70%);right:-80px;top:-80px}
+#lg1 .story .panel::before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(95,163,58,.35),transparent 70%);right:-80px;top:-80px}
 #lg1 .story .panel h3{font:800 22px var(--font-h);margin-bottom:14px}
 #lg1 .story .panel li{display:flex;gap:12px;padding:12px 0;border-top:1px solid rgba(255,255,255,.12);font-size:14px;color:#D6E4F0}
 #lg1 .story .panel li b{color:#fff}
@@ -276,7 +277,7 @@
 #lg1-modal .buy .qty button{width:34px;height:34px;border:0;background:var(--bg);font-size:18px;cursor:pointer}
 #lg1-modal .buy .qty input{width:46px;text-align:center;border:0;font:600 14px var(--font-b)}
 #lg1-modal .buy .btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;border:0;border-radius:99px;padding:12px;font:700 14px var(--font-h);cursor:pointer;margin-bottom:8px;transition:.2s}
-#lg1-modal .buy .b1{background:var(--orange-d);color:#fff}#lg1-modal .buy .b1:hover{background:#A85C14}
+#lg1-modal .buy .b1{background:var(--orange-d);color:#fff}#lg1-modal .buy .b1:hover{background:#2F7026}
 #lg1-modal .buy .b2{background:var(--blue);color:#fff}#lg1-modal .buy .b2:hover{background:var(--blue-d)}
 #lg1-modal .buy .b3{background:#fff;color:var(--navy);border:1px solid var(--line)}#lg1-modal .buy .b3:hover{border-color:var(--navy)}
 #lg1-modal .buy .btn svg{width:16px;height:16px;fill:#fff}
@@ -324,7 +325,7 @@
   #lg1-modal .buy{order:4;grid-column:1/-1;position:static}
 }
 @media (max-width:640px){
-  #lg1 .topbar ul li:nth-child(n+2){display:none}
+  #lg1 .logo-fallback .mark{height:44px}#lg1 .logo-fallback .wm{font-size:24px}#lg1 .logo-fallback small{font-size:7.5px;letter-spacing:.02em;white-space:normal;max-width:150px}#lg1 .header .wrap{gap:10px 12px}
   #lg1 .hdr-actions .wa-btn span{display:none}
   #lg1 .search select{display:none}
   #lg1 .slide-txt{padding:36px 22px 64px}

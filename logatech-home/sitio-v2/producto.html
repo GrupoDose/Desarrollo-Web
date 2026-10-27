@@ -17,9 +17,9 @@
 <style>
 /* ---------- Variables de marca (cámbialas aquí y todo se actualiza) ---------- */
 #lg1, #lg1-modal, #lg1-quote{
-  /* === COLORES DE MARCA LOGATECH (tomados del logotipo). Azul = principal · Naranja = secundario. Cámbialos aquí === */
-  --brand-blue:#2F7FD3; --brand-blue-d:#1F5FBF; --brand-blue-l:#4A9EDA; --brand-orange:#E08A2E; --brand-orange-d:#C46F1C; --brand-green:#5FA33A; --brand-red:#C62A1E; --brand-ink:#12305E;
-  --brand-grad:linear-gradient(90deg,#1F5FBF 0%,#4A9EDA 60%,#E08A2E 100%);
+  /* === COLORES DE MARCA LOGATECH (tomados del logotipo). Azul = principal · Verde = secundario (el naranja se retiró a petición del cliente). Cámbialos aquí === */
+  --brand-blue:#2F7FD3; --brand-blue-d:#1F5FBF; --brand-blue-l:#4A9EDA; --brand-orange:#5FA33A; --brand-orange-d:#3F8A31; /* alias históricos: ahora verdes */ --brand-green:#5FA33A; --brand-red:#C62A1E; --brand-ink:#12305E;
+  --brand-grad:linear-gradient(90deg,#1F5FBF 0%,#4A9EDA 60%,#5FA33A 100%);
   --navy:var(--brand-ink); --blue:var(--brand-blue-d); --blue-d:#174A99; --green:var(--brand-green); --green-d:#3F8A31; --lime:var(--brand-orange); --teal:var(--brand-blue); --grad:var(--brand-grad); --orange:var(--brand-orange); --orange-d:var(--brand-orange-d);
   --ink:#1B2430; --muted:#5F6B7A; --line:#E3E9EF; --bg:#F5F8FB; --white:#fff;
   --font-h:'Montserrat',Arial,sans-serif; --font-b:'Open Sans',Arial,sans-serif;
@@ -36,7 +36,7 @@
 #lg1 .h-font{font-family:var(--font-h)}
 #lg1 .btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:6px;padding:12px 20px;font:600 14px var(--font-h);transition:.2s;white-space:nowrap}
 #lg1 .btn-blue{background:var(--blue);color:#fff}#lg1 .btn-blue:hover{background:var(--blue-d)}
-#lg1 .btn-green{background:var(--orange-d);color:#fff}#lg1 .btn-green:hover{background:#A85C14;box-shadow:0 8px 20px rgba(224,138,46,.35)}
+#lg1 .btn-green{background:var(--orange-d);color:#fff}#lg1 .btn-green:hover{background:#2F7026;box-shadow:0 8px 20px rgba(95,163,58,.35)}
 #lg1 .btn-line{background:#fff;color:var(--blue);border:2px solid var(--blue)}#lg1 .btn-line:hover{background:var(--blue);color:#fff}
 #lg1 .eyebrow{font:700 12px var(--font-h);letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
 #lg1 .sec-title{font:800 clamp(24px,3vw,34px)/1.15 var(--font-h);color:var(--navy)}
@@ -54,14 +54,14 @@
 
 /* ---------- Header ---------- */
 #lg1 .header{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:50}
-#lg1 .header .wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:28px;min-height:88px}
+#lg1 .header .wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:28px;min-height:100px}
 #lg1 .logo{display:flex;align-items:center;gap:10px}
-#lg1 .logo img{height:54px;width:auto}
+#lg1 .logo img{height:68px;width:auto}
 #lg1 .logo-fallback{display:flex;align-items:center;gap:10px}
-#lg1 .logo-fallback .mark{width:auto;height:48px}
-#lg1 .logo-fallback .wm{font:800 26px/1 var(--font-h);color:var(--navy);letter-spacing:-.02em}
+#lg1 .logo-fallback .mark{width:auto;height:66px}
+#lg1 .logo-fallback .wm{font:800 38px/1 var(--font-h);color:var(--navy);letter-spacing:-.02em}
 #lg1 .logo-fallback .wm span{color:var(--blue)}
-#lg1 .logo-fallback small{display:block;font:500 10px/1.2 var(--font-b);color:var(--muted);letter-spacing:.04em;margin-top:3px}
+#lg1 .logo-fallback small{display:block;font:600 10.5px/1.2 var(--font-b);color:var(--blue);letter-spacing:.06em;margin-top:4px;text-transform:uppercase;white-space:nowrap}
 #lg1 .search{display:flex;border:2px solid var(--blue);border-radius:8px;overflow:hidden;height:48px}
 #lg1 .search select{border:0;background:var(--bg);padding:0 12px;font:500 13px var(--font-b);color:var(--ink);border-right:1px solid var(--line);max-width:190px}
 #lg1 .search input{flex:1;border:0;padding:0 14px;font:400 14px var(--font-b);min-width:0;outline:none}
@@ -87,17 +87,18 @@
 #lg1 .catnav a.hl{color:var(--green-d)}
 
 /* ---------- HERO SLIDER (4 audiencias) ---------- */
-#lg1 .hero{background:var(--bg);padding:26px 0 30px}
-#lg1 .slider{position:relative;border-radius:16px;overflow:hidden;background:var(--navy);box-shadow:var(--shadow);min-height:480px}
+#lg1 .hero{background:var(--bg);padding:0 0 30px}
+#lg1 .hero .wrap{max-width:none;padding:0}
+#lg1 .slider{position:relative;border-radius:0;overflow:hidden;background:var(--navy);box-shadow:var(--shadow);min-height:520px}
 #lg1 .slide{position:absolute;inset:0;display:grid;grid-template-columns:1.05fr .95fr;opacity:0;visibility:hidden;transform:translateX(60px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1),visibility 0s .7s}
 #lg1 .slide.active{opacity:1;visibility:visible;transform:none;transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1),visibility 0s}
 #lg1 .slide.leaving{opacity:0;visibility:visible;transform:translateX(-60px)}
-#lg1 .slide-txt{padding:56px 60px 84px;color:#fff;display:flex;flex-direction:column;justify-content:center;gap:18px;position:relative;z-index:2}
+#lg1 .slide-txt{padding:64px 48px 90px max(48px,calc((100vw - 1240px)/2 + 20px));color:#fff;display:flex;flex-direction:column;justify-content:center;gap:18px;position:relative;z-index:2}
 #lg1 .slide-txt .tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:6px 12px;border-radius:99px;font:600 12px var(--font-h);letter-spacing:.08em;text-transform:uppercase;width:max-content}
 #lg1 .slide-txt .tag i{width:8px;height:8px;border-radius:50%;background:var(--lime);display:inline-block}
 #lg1 .slide-txt h2{font:800 clamp(28px,3.6vw,46px)/1.1 var(--font-h);letter-spacing:-.01em}
-#lg1 .slide-txt h2 em{font-style:normal;color:#E08A2E}
-#lg1 .slide-txt p{font-size:16px;color:#D6E4F0;max-width:520px}
+#lg1 .slide-txt h2 em{font-style:normal;color:#8CD16A}
+#lg1 .slide-txt p{font-size:16px;color:#D6E4F0;max-width:560px}
 #lg1 .slide-txt .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
 #lg1 .slide-txt ul{display:flex;gap:18px;flex-wrap:wrap;margin-top:10px}
 #lg1 .slide-txt li{font-size:13px;color:#B9CFE3;display:flex;align-items:center;gap:6px}
@@ -125,7 +126,7 @@
 #lg1 .arrow:hover{background:var(--green);color:#fff}
 #lg1 .arrow svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.5}
 #lg1 .arrow.prev{left:16px}#lg1 .arrow.next{right:16px}
-#lg1 .dots{position:absolute;left:60px;bottom:22px;display:flex;gap:8px;z-index:5}
+#lg1 .dots{position:absolute;left:max(48px,calc((100vw - 1240px)/2 + 20px));bottom:22px;display:flex;gap:8px;z-index:5}
 #lg1 .dots button{width:34px;height:4px;border-radius:2px;border:0;background:rgba(255,255,255,.35);padding:0;overflow:hidden;position:relative}
 #lg1 .dots button i{position:absolute;inset:0;background:var(--lime);transform:scaleX(0);transform-origin:left}
 #lg1 .dots button.on i{animation:lg1prog 6s linear forwards}
@@ -189,7 +190,7 @@
 #lg1 .ccard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px 22px;display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden;transition:.25s;cursor:pointer}
 #lg1 .ccard::after{content:"";position:absolute;right:-40px;top:-40px;width:130px;height:130px;border-radius:50%;background:var(--bg);transition:.35s}
 #lg1 .ccard:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
-#lg1 .ccard:hover::after{background:#FDF1E3;transform:scale(1.25)}
+#lg1 .ccard:hover::after{background:#E8F6EA;transform:scale(1.25)}
 #lg1 .ccard .pic{margin:-24px -22px 4px;height:150px;overflow:hidden;position:relative;z-index:1;background:var(--bg)}
 #lg1 .ccard .pic img.ph{width:100%;height:100%;object-fit:cover;transition:.5s}
 #lg1 .ccard:hover .pic img.ph{transform:scale(1.06)}
@@ -220,7 +221,7 @@
 #lg1 .story .pic .cap{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.95);border-radius:8px;padding:8px 12px;font:700 12px var(--font-h);color:var(--navy)}
 #lg1 .story .pic.nophoto{display:none}
 #lg1 .story .panel{background:var(--navy);border-radius:16px;padding:34px;color:#fff;box-shadow:var(--shadow);position:relative;overflow:hidden}
-#lg1 .story .panel::before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(224,138,46,.35),transparent 70%);right:-80px;top:-80px}
+#lg1 .story .panel::before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(95,163,58,.35),transparent 70%);right:-80px;top:-80px}
 #lg1 .story .panel h3{font:800 22px var(--font-h);margin-bottom:14px}
 #lg1 .story .panel li{display:flex;gap:12px;padding:12px 0;border-top:1px solid rgba(255,255,255,.12);font-size:14px;color:#D6E4F0}
 #lg1 .story .panel li b{color:#fff}
@@ -293,7 +294,7 @@
 #lg1-modal .buy .qty button{width:34px;height:34px;border:0;background:var(--bg);font-size:18px;cursor:pointer}
 #lg1-modal .buy .qty input{width:46px;text-align:center;border:0;font:600 14px var(--font-b)}
 #lg1-modal .buy .btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;border:0;border-radius:99px;padding:12px;font:700 14px var(--font-h);cursor:pointer;margin-bottom:8px;transition:.2s}
-#lg1-modal .buy .b1{background:var(--orange-d);color:#fff}#lg1-modal .buy .b1:hover{background:#A85C14}
+#lg1-modal .buy .b1{background:var(--orange-d);color:#fff}#lg1-modal .buy .b1:hover{background:#2F7026}
 #lg1-modal .buy .b2{background:var(--blue);color:#fff}#lg1-modal .buy .b2:hover{background:var(--blue-d)}
 #lg1-modal .buy .b3{background:#fff;color:var(--navy);border:1px solid var(--line)}#lg1-modal .buy .b3:hover{border-color:var(--navy)}
 #lg1-modal .buy .btn svg{width:16px;height:16px;fill:#fff}
@@ -341,7 +342,7 @@
   #lg1-modal .buy{order:4;grid-column:1/-1;position:static}
 }
 @media (max-width:640px){
-  #lg1 .topbar ul li:nth-child(n+2){display:none}
+  #lg1 .logo-fallback .mark{height:44px}#lg1 .logo-fallback .wm{font-size:24px}#lg1 .logo-fallback small{font-size:7.5px;letter-spacing:.02em;white-space:normal;max-width:150px}#lg1 .header .wrap{gap:10px 12px}
   #lg1 .hdr-actions .wa-btn span{display:none}
   #lg1 .search select{display:none}
   #lg1 .slide-txt{padding:36px 22px 64px}
@@ -370,6 +371,25 @@
 #lg1 .mainnav{display:flex;gap:2px}
 #lg1 .mainnav a{padding:9px 11px;font:700 13.5px var(--font-h);color:var(--ink);border-radius:6px;white-space:nowrap}
 #lg1 .mainnav a:hover,#lg1 .mainnav a.cur{background:var(--bg);color:var(--blue)}
+#lg1 .mm{position:static}
+#lg1 .mm-btn{display:inline-flex;align-items:center;gap:6px}
+#lg1 .mm-btn svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.5;transition:.2s}
+#lg1 .mm:hover .mm-btn svg,#lg1 .mm.open .mm-btn svg{transform:rotate(180deg)}
+#lg1 .mm-panel{position:absolute;left:0;right:0;top:100%;background:#fff;border-top:3px solid var(--green);box-shadow:0 24px 50px rgba(18,48,94,.18);padding:26px 0 0;opacity:0;visibility:hidden;transform:translateY(8px);transition:.22s;z-index:60}
+#lg1 .mm:hover .mm-panel,#lg1 .mm.open .mm-panel,#lg1 .mm:focus-within .mm-panel{opacity:1;visibility:visible;transform:none}
+#lg1 .mm-grid{max-width:1240px;margin:0 auto;padding:0 20px 22px;display:grid;grid-template-columns:repeat(5,1fr);gap:22px 24px}
+#lg1 .mm-col{display:flex;flex-direction:column;gap:2px}
+#lg1 .mm-col a{font:400 13px/1.35 var(--font-b);color:var(--ink);padding:4px 0;border-radius:0;white-space:normal}
+#lg1 .mm-col a:hover{background:none;color:var(--blue);text-decoration:underline}
+#lg1 .mm-col .mm-h{font:700 12px var(--font-h);letter-spacing:.1em;text-transform:uppercase;color:var(--green-d);padding:0 0 8px;margin-bottom:4px;border-bottom:1px solid var(--line)}
+#lg1 .mm-col .mm-h:hover{color:var(--blue);text-decoration:none}
+#lg1 .mm-col .mm-more{font:700 12px var(--font-h);color:var(--blue)}
+#lg1 .mm-foot{background:var(--bg);border-top:1px solid var(--line)}
+#lg1 .mm-foot{display:flex;gap:28px;justify-content:center;padding:12px 20px}
+#lg1 .mm-foot a{font:700 13px var(--font-h);color:var(--navy);padding:4px 0}
+#lg1 .mm-foot a:hover{background:none;color:var(--blue)}
+#lg1 .bcard .blogo{height:60px;max-width:150px;object-fit:contain;margin:0 auto 2px}
+#lg1 .brand img.blogo{height:40px;max-width:150px;object-fit:contain}
 #lg1 .burger{display:none;width:42px;height:42px;border:1px solid var(--line);border-radius:8px;background:#fff;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0}
 #lg1 .burger span{width:20px;height:2px;background:var(--navy);border-radius:2px;transition:.2s}
 #lg1 .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -460,7 +480,7 @@
 #lg1 .filters .fc .sub.on{background:#EAF2FB;color:var(--blue);font-weight:700}
 #lg1 .filters label input{accent-color:var(--blue);margin-right:6px}
 #lg1 .filters label span{flex:1}
-#lg1 .filters .brands{max-height:260px;overflow:auto}
+#lg1 .filters .brands{max-height:none;overflow:visible}
 #lg1 .filters .help{background:var(--navy);color:#fff;border-radius:var(--radius);padding:18px}
 #lg1 .filters .help b{display:block;font:800 15px var(--font-h);margin-bottom:6px}
 #lg1 .filters .help p{font-size:13px;color:#D6E4F0;margin-bottom:12px}
@@ -527,7 +547,7 @@
 #lg1 .pp .buy .qty button{width:34px;height:34px;border:0;background:var(--bg);font-size:18px;cursor:pointer}
 #lg1 .pp .buy .qty input{width:46px;text-align:center;border:0;font:600 14px var(--font-b)}
 #lg1 .pp .buy .btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;border:0;border-radius:99px;padding:12px;font:700 14px var(--font-h);cursor:pointer;margin-bottom:8px;transition:.2s}
-#lg1 .pp .buy .b1{background:var(--orange-d);color:#fff}#lg1 .pp .buy .b1:hover{background:#A85C14}
+#lg1 .pp .buy .b1{background:var(--orange-d);color:#fff}#lg1 .pp .buy .b1:hover{background:#2F7026}
 #lg1 .pp .buy .b2{background:var(--blue);color:#fff}#lg1 .pp .buy .b2:hover{background:var(--blue-d)}
 #lg1 .pp .buy .b3{background:#fff;color:var(--navy);border:1px solid var(--line)}#lg1 .pp .buy .b3:hover{border-color:var(--navy)}
 #lg1 .pp .buy .btn svg{width:16px;height:16px;fill:#fff}
@@ -562,10 +582,10 @@
 #lg1 .val .ic svg{width:26px;height:26px;fill:none;stroke:var(--blue);stroke-width:1.8}
 #lg1 .val h3{font:800 17px var(--font-h);color:var(--navy)}
 #lg1 .val p{font-size:14px;color:var(--muted)}
-#lg1 .val.o .ic{background:#FDF1E3}#lg1 .val.o .ic svg{stroke:var(--orange-d)}
+#lg1 .val.o .ic{background:#E8F6EA}#lg1 .val.o .ic svg{stroke:var(--orange-d)}
 #lg1 .nums{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 #lg1 .nums div{background:var(--navy);color:#fff;border-radius:var(--radius);padding:24px;position:relative;overflow:hidden}
-#lg1 .nums div::after{content:"";position:absolute;right:-30px;top:-30px;width:110px;height:110px;border-radius:50%;background:rgba(224,138,46,.25)}
+#lg1 .nums div::after{content:"";position:absolute;right:-30px;top:-30px;width:110px;height:110px;border-radius:50%;background:rgba(95,163,58,.25)}
 #lg1 .nums b{display:block;font:800 36px/1 var(--font-h);margin-bottom:8px;color:var(--orange)}
 #lg1 .nums span{font-size:13.5px;color:#D6E4F0}
 #lg1 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:st}
@@ -604,7 +624,7 @@
 #lg1 .brandgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
 #lg1 .bcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px 16px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px;transition:.2s;color:var(--navy)}
 #lg1 .bcard:hover{border-color:var(--blue);box-shadow:var(--shadow);transform:translateY(-3px)}
-#lg1 .bcard .ini{width:54px;height:54px;border-radius:50%;background:var(--bg);display:flex;align-items:center;justify-content:center;font:800 18px var(--font-h);color:var(--blue)}
+#lg1 .bcard .ini{width:60px;height:60px;border-radius:50%;background:var(--bg);display:flex;align-items:center;justify-content:center;font:800 18px var(--font-h);color:var(--blue)}
 #lg1 .bcard b{font:800 15px var(--font-h)}
 #lg1 .bcard span{font-size:12px;color:var(--muted)}
 #lg1 .bcard .tag{font:700 10px var(--font-h);letter-spacing:.08em;text-transform:uppercase;color:var(--green-d);background:#E8F6EA;border-radius:4px;padding:3px 7px}
@@ -670,32 +690,27 @@
 #lg1-modal .related .r{position:relative}#lg1-modal .related .r .noimg{position:relative;width:44px;height:44px;flex:none;border-radius:6px}#lg1-modal .related .r .noimg span{display:none}#lg1-modal .related .r .noimg svg{width:20px;height:20px}
 #lg1-quote .qim{position:relative}
 #lg1 .specnote,#lg1-modal .specnote{font-size:12.5px;color:var(--muted);margin:10px 0 0;line-height:1.5}
-#lg1 .pp .info .flags span.w,#lg1-modal .info .flags span.w{background:#FDF1E3;color:#9A5A10}
+#lg1 .pp .info .flags span.w,#lg1-modal .info .flags span.w{background:#EEF2F7;color:var(--navy);border:1px dashed #B8C4D2}
 #lg1-quote .qq .un{font:600 12px var(--font-b);color:var(--muted);padding:0 10px;border-left:1px solid var(--line);display:flex;align-items:center}
 #lg1-quote .qq{flex-wrap:wrap}
 #lg1 .pp .buy .stock,#lg1-modal .buy .stock{color:var(--muted);font:600 13px var(--font-b)}
+
+/* ---------- v3: fotos reales de producto y logotipos (evitar desbordes en móvil) ---------- */
+#lg1 .cat-layout>div,#lg1 .pgrid,#lg1 .card,#lg1 .bcard,#lg1 .brandgrid{min-width:0}
+#lg1 .card .img img.ph{width:100%;height:100%;object-fit:contain;background:#fff}
+#lg1 .bcard .blogo{max-width:100%}
+#lg1-quote .qim img.ph,#lg1-modal .thumbs img.ph,#lg1-modal .main img.ph,#lg1 .pp .thumbs img.ph,#lg1 .pp .main img.ph{object-fit:contain;background:#fff}
+#lg1 .pager{flex-wrap:wrap;justify-content:center;gap:6px}
 </style>
 
 <div id="lg1" data-current="producto">
-  <!-- TOP BAR -->
-  <div class="topbar">
-    <div class="wrap">
-      <ul>
-        <li><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg><a href="tel:+528133760911">81 3376 0911</a></li>
-        <li><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg><a href="mailto:ventas@logatech.com.mx">ventas@logatech.com.mx</a></li>
-        <li><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>San Nicolás de los Garza, N.L.</li>
-      </ul>
-      <div class="promo">Pedido mínimo $5,000 MXN · Entrega local sin costo y envío foráneo gratis a partir de este monto · Lun–Vie 8:30–17:30</div>
-    </div>
-  </div>
-
   <!-- HEADER -->
   <header class="header">
     <div class="wrap">
       <button class="burger" type="button" aria-label="Menú" aria-expanded="false" data-burger><span></span><span></span><span></span></button>
       <a class="logo" href="#" data-page="inicio" aria-label="Loga Soluciones Científicas para Laboratorio" data-logo></a>
       <nav class="mainnav">
-        <a href="#" data-page="catalogo">Catálogo</a><a href="#" data-page="marcas">Marcas</a><a href="#" data-page="servicio">Servicio técnico</a><a href="#" data-page="envios">Envíos y crédito</a><a href="#" data-page="nosotros">Nosotros</a><a href="#" data-page="contacto">Contacto</a>
+        <div class="mm" data-mm><a href="#" data-page="catalogo" class="mm-btn" aria-haspopup="true" aria-expanded="false">Productos <svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></a><div class="mm-panel" data-megamenu></div></div><a href="#" data-page="marcas">Marcas</a><a href="#" data-page="servicio">Servicio técnico</a><a href="#" data-page="envios">Envíos y crédito</a><a href="#" data-page="nosotros">Nosotros</a><a href="#" data-page="contacto">Contacto</a>
       </nav>
       <form class="search" data-search>
         <select aria-label="Categoría" data-catselect></select>
@@ -713,13 +728,6 @@
     <nav class="mobile-nav" data-mobile-nav></nav>
   </header>
 
-  <!-- NAV CATEGORÍAS -->
-  <nav class="catnav" aria-label="Categorías">
-    <div class="wrap">
-      <a class="all" href="#" data-page="catalogo"><svg viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>Todas las categorías</a>
-      <span class="cats" data-catnav></span>
-    </div>
-  </nav>
 
 
   <section class="pp"><div class="wrap" data-pp></div></section>
@@ -769,7 +777,7 @@
       <a class="btn b1" href="#" target="_blank" rel="noopener" data-qwa><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>Enviar por WhatsApp</a>
       <a class="btn b3" href="#" data-qmail>Enviar por correo</a>
       <button class="lnk" type="button" data-qclear>Vaciar cotización</button>
-      <small>Al enviar se abre WhatsApp o tu correo con el mensaje; revísalo y envíalo para completar la solicitud. Pedido mínimo de $5,000 MXN. Entrega local sin costo y envío foráneo gratis a partir de este monto. Consulta cobertura y condiciones con tu asesor. Atención de lunes a viernes de 8:30 a 17:30 h.</small>
+      <small>Al enviar se abre WhatsApp o tu correo con el mensaje; revísalo y envíalo para completar la solicitud. Envíos a toda la República Mexicana. Entrega local sin costo. Consulta con tu asesor cómo llevarte el flete gratis. Atención de lunes a viernes de 8:30 a 17:30 h.</small>
     </div>
   </div>
 </div>
@@ -784,12 +792,14 @@
     email: 'ventas@logatech.com.mx',
     currency: 'MXN',
     /* Rutas de las páginas. Para WordPress cambia cada valor por el slug real, ej. catalogo:'/catalogo/' */
+    logoBase: 'logos/',          // carpeta de logotipos de marcas
+    imgBase: 'img/productos/',   // carpeta de fotos de producto (archivos nombrados por clave)          // carpeta de logotipos de marcas (en WordPress se sustituye por las URLs de Medios)
     pages: { inicio:'inicio.html', catalogo:'catalogo.html', producto:'producto.html', nosotros:'nosotros.html', marcas:'marcas.html', servicio:'servicio-tecnico.html', envios:'envios-y-credito.html', contacto:'contacto.html' }
   };
 
   /* ===================== CATEGORÍAS (cuestionario A3.1 / A3.2) ===================== */
   var CATEGORIES = [
-    {id:'pruebas-rapidas',name:'Pruebas rápidas',short:'Pruebas de diagnóstico inmunocromatográfico.',art:'cassette',photo:'cat_pr',subs:['Enfermedades infecciosas','Hepáticas','Tumorales e inflamatorias','Fertilidad','Vectoriales','Resistencia a antibióticos','Sepsis','Salud general']},
+    {id:'pruebas-rapidas',name:'Pruebas rápidas',short:'Pruebas de diagnóstico inmunocromatográfico.',art:'cassette',photo:'cat_pr',subs:['Respiratorias','Entéricas','Intestinales','Transmisión sexual','Vectoriales','Hepáticas','Fertilidad','Marcadores tumorales','Salud general','Alergias','Hemoclasificadores','Drogas de abuso']},
     {id:'antidoping',name:'Antidoping',short:'Pruebas de drogas en orina y saliva.',art:'cup',photo:'cat_ad',subs:['Pruebas individuales en orina','Frasco integrado','Cassette individual','Paneles y frascos multidrogas','Pruebas en saliva']},
     {id:'point-of-care',name:'Point of care',short:'Pruebas junto al paciente.',art:'kit',photo:'cat_eq',subs:['Química seca','Turbidimetría','HbA1c','Monitoreo portátil','Coagulación']},
     {id:'cuidados-criticos',name:'Cuidados críticos',short:'Gasometría, electrolitos y marcadores cardiacos.',art:'kit',photo:'hospital',subs:['Multiparamétrico','Cardio y sepsis','Electrolitos','Gasometría']},
@@ -803,7 +813,9 @@
   var CAT_HOME = ['pruebas-rapidas','antidoping','reactivos','equipos']; // las 4 destacadas en inicio
 
   /* ===================== MARCAS (cuestionario A5.1) ===================== */
-  var BRANDS = ['MCD LAB','HYCEL','JALMEK','BD','FERMONT','COPAN','YAMATO','GH MEDICAL','Thermo Scientific','Eppendorf','VELAB','CERTUM','SD Biosensor','Instant View','ARTRON','Life Lock','Dräger','Sentech','Mission','ELITech Group','Voule','MNCHIP','Maglumi','Corning','Wiener Lab','Spinreact','Bio-Rad','Falcon','Licon','Leica','Simport','QuidelOrtho','Alfa','CerTest','Vircell','Dymind','Diagon','GeneProof','i-SENS','Immunostics','Response Biomedical','Sugentech','bioMérieux'];
+  var BRANDS = ['MCD LAB','HYCEL','JALMEK','BD','FERMONT','COPAN','YAMATO','GH MEDICAL','Thermo Scientific','Eppendorf','VELAB','CERTUM','SD Biosensor','Instant View','ARTRON','Lifeloc','Dräger','Sentech','Mission','ELITech Group','BOULE','MNCHIP','Maglumi','Corning','Wiener Lab','Spinreact','Bio-Rad','Falcon','Licon','Leica','Simport','QuidelOrtho','Alfa','CerTest','Vircell','Dymind','Diagon','GeneProof','i-SENS','Immunostics','Response Biomedical','Sugentech','bioMérieux'];
+  /* Logotipos de marcas (carpeta "Fotos Marcas" del cliente). Clave = nombre en BRANDS; valor = archivo en CFG.logoBase */
+  var BRAND_LOGOS = {'MCD LAB':'mcd-lab.png','HYCEL':'hycel.png','JALMEK':'jalmek.png','BD':'bd.png','FERMONT':'fermont.png','COPAN':'copan.png','YAMATO':'yamato.png','GH MEDICAL':'gh-medical.png','Thermo Scientific':'thermo-scientific.png','Eppendorf':'eppendorf.png','VELAB':'velab.png','CERTUM':'certum.png','SD Biosensor':'sd-biosensor.png','Instant View':'instant-view.png','ARTRON':'artron.png','Lifeloc':'lifeloc.png','Sentech':'sentech.png','Mission':'mission.png','ELITech Group':'elitech-group.png','MNCHIP':'mnchip.png','Maglumi':'snibe-maglumi.png','Corning':'corning.png','Wiener Lab':'wiener-lab.png','Spinreact':'spinreact.png','Bio-Rad':'bio-rad.png','Falcon':'falcon.png','Licon':'licon.png','Leica':'leica-biosystems.png','Simport':'simport.png','QuidelOrtho':'quidelortho.png','Alfa':'alfa-scientific-designs.png','CerTest':'certest.png','Vircell':'vircell.png','Dymind':'dymind.png','Diagon':'diagon.png','GeneProof':'geneproof.png','i-SENS':'i-sens.svg','Immunostics':'immunostics.png','Response Biomedical':'response-biomedical.png','Sugentech':'sugentech.png','bioMérieux':'biomerieux.png'};
   var BRANDS_HOME = ['BD','Thermo Scientific','Eppendorf','Corning','Bio-Rad','Leica','Dräger','bioMérieux','MCD LAB','HYCEL','JALMEK','COPAN','CERTUM','SD Biosensor','ARTRON','Spinreact','Wiener Lab','QuidelOrtho','Maglumi','Mission','Sugentech','GH MEDICAL','FERMONT','YAMATO'];
 
   /* ===================== PRODUCTOS (cuestionario A4.1: los más vendidos) =====================
@@ -812,7 +824,7 @@
      pres:null  → "Consultar presentación con un asesor".  img:null → marcador "Imagen del producto pendiente".
      unit: palabra para contar en el cotizador (unidad, envase, kit). skuPending: clave por confirmar con el fabricante.
      pending: lo que falta confirmar. */
-  var POL='Pedido mínimo de $5,000 MXN. Entrega local sin costo y envío foráneo gratis a partir de este monto. Consulta cobertura y condiciones con tu asesor.';
+  var POL='Envíos a toda la República Mexicana. Entrega local sin costo. Consulta con tu asesor cómo llevarte el flete gratis.';
   function P(o){o.price=null;if(o.img===undefined)o.img=null;if(o.pres===undefined)o.pres=null;if(!o.unit)o.unit='unidad';if(!o.specs)o.specs={};if(!o.bullets)o.bullets=[];if(!o.pending)o.pending=[];if(o.cold===undefined)o.cold=false;return o}
   var PRODUCTS = [
     P({id:'DOA164',name:'Panel multidrogas 6 parámetros',brand:'CERTUM',sku:'DOA164',cat:'antidoping',sub:'Paneles y frascos multidrogas',art:'cup',badge:'Más vendido',home:true,
@@ -834,16 +846,16 @@
     P({id:'DAM-101',name:'Detección de anfetamina (AMP 1000 ng/mL)',brand:'CERTUM',sku:'DAM-101',cat:'antidoping',sub:'Pruebas individuales en orina',art:'cassette',
       specs:{'Analito':'AMP','Punto de corte':'1000 ng/mL'},desc:'Prueba individual para detección cualitativa de anfetamina.',pending:['Formato, muestra, tiempo y almacenamiento','Presentación']}),
 
-    P({id:'CAGD025E',name:'SGTi-flex COVID-19 / Influenza A/B Ag Duo',brand:'Sugentech',sku:'CAGD025E',cat:'pruebas-rapidas',sub:'Enfermedades infecciosas',art:'cassette',home:true,
-      specs:{'Tipo':'Prueba de antígeno dual COVID-19 e Influenza A/B'},desc:'Prueba rápida de antígeno para SARS-CoV-2 e Influenza A/B en un mismo dispositivo.',pending:['Tipo de muestra, tiempo de lectura y almacenamiento','Presentación y accesorios incluidos','Registro sanitario']}),
+    P({img:'CAGD025E.jpg',unit:'caja',pres:'Caja con 25 pruebas',id:'CAGD025E',name:'SGTi-flex COVID-19 / Influenza A/B Ag Duo',brand:'Sugentech',sku:'CAGD025E',cat:'pruebas-rapidas',sub:'Respiratorias',art:'cassette',home:true,
+      specs:{'Tipo':'Prueba de antígeno dual COVID-19 e Influenza A/B'},desc:'Prueba rápida de antígeno para SARS-CoV-2 e Influenza A/B en un mismo dispositivo.',pending:['Tipo de muestra, tiempo de lectura y almacenamiento','Registro sanitario']}),
     P({id:'166561',name:'Prueba rápida Influenza Ag A/B/A(H1N1) pandémica',brand:'SD Biosensor',sku:'166561',cat:'pruebas-rapidas',sub:'Enfermedades infecciosas',art:'cassette',
       specs:{'Tipo':'Prueba de antígeno Influenza A, B y A(H1N1) pandémica'},desc:'Prueba rápida de antígeno para influenza con diferenciación de A(H1N1) pandémica.',pending:['Tipo de muestra, tiempo de lectura y almacenamiento','Presentación','Marca: el listado dice "SD"; confirmar si es SD Biosensor']}),
-    P({id:'FHC-201',name:'Embarazo Combo (hCG 25 mIU/mL) orina/suero en tiras',brand:'CERTUM',sku:'FHC-201',cat:'pruebas-rapidas',sub:'Fertilidad',art:'cassette',
-      specs:{'Analito':'hCG','Sensibilidad':'25 mIU/mL','Muestra':'Orina / suero','Formato':'Tira'},desc:'Prueba rápida de embarazo en tira para orina o suero.',pending:['Tiempo de lectura y almacenamiento','Presentación']}),
-    P({id:'IDEC-425',name:'Dengue Combo Duo IgG/IgM + NS1 en cassette',brand:'CERTUM',sku:'IDEC-425',cat:'pruebas-rapidas',sub:'Vectoriales',art:'cassette',badge:'Temporada',home:true,
-      specs:{'Analitos':'Anticuerpos IgG/IgM y antígeno NS1','Formato':'Cassette'},desc:'Prueba rápida combinada para dengue: antígeno NS1 y anticuerpos IgG/IgM.',pending:['Tipo de muestra, tiempo de lectura y almacenamiento','Presentación','Registro sanitario']}),
-    P({id:'02-7602',name:'Prueba de sangre oculta en heces (FOB) en cassette',brand:'Instant View',sku:'02-7602',cat:'pruebas-rapidas',sub:'Salud general',art:'cassette',
-      specs:{'Analito':'Sangre oculta en heces (FOB)','Formato':'Cassette'},desc:'Prueba rápida para detección de sangre oculta en heces.',pending:['Método, tiempo de lectura y almacenamiento','Presentación']}),
+    P({img:'FHC-201-A.jpg',unit:'caja',pres:'Caja con 50 pruebas',id:'FHC-201',name:'Embarazo Combo (hCG 25 mIU/mL) orina/suero en tiras',brand:'CERTUM',sku:'FHC-201-A',cat:'pruebas-rapidas',sub:'Fertilidad',art:'cassette',
+      specs:{'Analito':'hCG','Sensibilidad':'25 mIU/mL','Muestra':'Orina / suero','Formato':'Tira'},desc:'Prueba rápida de embarazo en tira para orina o suero.',pending:['Tiempo de lectura y almacenamiento']}),
+    P({img:'IDEC-425.jpg',unit:'caja',pres:'Caja con 25 pruebas',id:'IDEC-425',name:'Dengue Combo Duo IgG/IgM + NS1 en cassette',brand:'CERTUM',sku:'IDEC-425',cat:'pruebas-rapidas',sub:'Vectoriales',art:'cassette',badge:'Temporada',home:true,
+      specs:{'Analitos':'Anticuerpos IgG/IgM y antígeno NS1','Formato':'Cassette'},desc:'Prueba rápida combinada para dengue: antígeno NS1 y anticuerpos IgG/IgM.',pending:['Tipo de muestra, tiempo de lectura y almacenamiento','Registro sanitario']}),
+    P({img:'02-7602.jpg',unit:'caja',pres:'Caja con 20 pruebas',id:'02-7602',name:'Prueba de sangre oculta en heces (FOB) en cassette',brand:'Instant View',sku:'02-7602',cat:'pruebas-rapidas',sub:'Entéricas',art:'cassette',
+      specs:{'Analito':'Sangre oculta en heces (FOB)','Formato':'Cassette'},desc:'Prueba rápida para detección de sangre oculta en heces.',pending:['Método, tiempo de lectura y almacenamiento']}),
 
     P({id:'368171',name:'Tubo Vacutainer® EDTA K2, tapa lila, 4 ml',brand:'BD',sku:'368171',skuPending:true,cat:'consumibles',sub:'Tubos de toma de muestra',art:'tube',badge:'Pedido recurrente',home:true,
       specs:{'Aditivo':'EDTA K2','Volumen nominal':'4 ml','Tapa':'Lila'},desc:'Tubo de toma de muestra con EDTA K2 para hematología.',pending:['Clave 368171 no localizada en bd.com (EUA); el equivalente listado ahí es 367861 (13 × 75 mm, 4 ml, K2EDTA 7.2 mg, tapa lila Hemogard). Confirmar clave con BD México','Dimensiones, material y presentación (caja/empaque)']}),
@@ -884,10 +896,122 @@
     P({id:'917',name:'Xilol (dimetilbenceno) 19 L',brand:'HYCEL',sku:'917',cat:'reactivos',sub:'Solventes y sales',art:'bottle',unit:'envase',
       specs:{'Volumen':'19 L'},desc:'Xilol para histología y usos de laboratorio.',pending:['Grado y tipo de envase']}),
 
-    P({id:'IISC-425',name:'BioFire® FilmArray® Respiratory Panel 2 (RP2)',brand:'bioMérieux',sku:'IISC-425',skuPending:true,cat:'diagnostico-molecular',sub:'PCR tiempo real',art:'kit',unit:'kit',cold:false,
+    P({id:'BIOFIRE-RP2',name:'BioFire® FilmArray® Respiratory Panel 2 (RP2)',brand:'bioMérieux',sku:'Por confirmar',skuPending:true,cat:'diagnostico-molecular',sub:'PCR tiempo real',art:'kit',unit:'kit',cold:false,
       specs:{'Tecnología':'PCR multiplex (panel sindrómico respiratorio)','Almacenamiento':'15–25 °C. No refrigerar (instructivo del fabricante)','Equipo requerido':'Sistema BioFire® FilmArray®'},
       desc:'Panel molecular respiratorio para el sistema BioFire® FilmArray®. Se almacena a temperatura ambiente (15–25 °C) y no debe refrigerarse, según el instructivo del fabricante.',
-      pending:['Confirmar modelo vendido: RP2 (RFIT-PRT-0522) o RP2.1/RP2.1plus; la clave "IISC-425" del cuestionario no coincide con las referencias de bioMérieux','Número de pruebas por kit y patógenos incluidos','Registro sanitario']})
+      pending:['Confirmar modelo vendido: RP2 (RFIT-PRT-0522) o RP2.1/RP2.1plus; la clave IISC-425 del cuestionario corresponde en el listado del cliente a la prueba CERTUM Sífilis/VIH, por lo que la clave del BioFire queda por confirmar','Número de pruebas por kit y patógenos incluidos','Registro sanitario']}),
+
+    /* ===== Pruebas rápidas · listado 'Pruebas rapidas.xlsx' del cliente (presentación y foto por clave) ===== */
+    P({id:'D2-25',name:'Prueba rápida para la detección de alérgenos de ácaros del polvos',brand:'CERTUM',sku:'D2-25',cat:'pruebas-rapidas',sub:'Alergias',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'ALERGIAS-GENERICO.jpg',desc:'Prueba rápida para la detección de alérgenos de ácaros del polvos',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'D2-40',name:'Prueba rápida para la detección de alérgenos de ácaros del polvos',brand:'CERTUM',sku:'D2-40',cat:'pruebas-rapidas',sub:'Alergias',art:'cassette',pres:'Caja con 40 pruebas',unit:'caja',img:'ALERGIAS-GENERICO.jpg',desc:'Prueba rápida para la detección de alérgenos de ácaros del polvos',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'E1-CAT-25',name:'Prueba rápida para la detección de alérgenos de epitelio de gato (sIgE)',brand:'CERTUM',sku:'E1-CAT-25',cat:'pruebas-rapidas',sub:'Alergias',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'ALERGIAS-GENERICO.jpg',desc:'Prueba rápida para la detección de alérgenos de epitelio de gato (sIgE)',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'E1-CAT-40',name:'Prueba rápida para la detección de alérgenos de epitelio de gato (sIgE)',brand:'CERTUM',sku:'E1-CAT-40',cat:'pruebas-rapidas',sub:'Alergias',art:'cassette',pres:'Caja con 40 pruebas',unit:'caja',img:'E1-CAT-40.jpg',desc:'Prueba rápida para la detección de alérgenos de epitelio de gato (sIgE)',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'E5-DOG-25',name:'Prueba rápida para la detección de alérgenos de epitelio de perro (sIgE)',brand:'CERTUM',sku:'E5-DOG-25',cat:'pruebas-rapidas',sub:'Alergias',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'ALERGIAS-GENERICO.jpg',desc:'Prueba rápida para la detección de alérgenos de epitelio de perro (sIgE)',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'E5-DOG-40',name:'Prueba rápida para la detección de alérgenos de epitelio de perro (sIgE)',brand:'CERTUM',sku:'E5-DOG-40',cat:'pruebas-rapidas',sub:'Alergias',art:'cassette',pres:'Caja con 40 pruebas',unit:'caja',img:'ALERGIAS-GENERICO.jpg',desc:'Prueba rápida para la detección de alérgenos de epitelio de perro (sIgE)',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'F1-25',name:'Prueba rápida para la determinación cuantitativa de Inmunoglobulina E específica (sIgE) para alergia a la clara de…',brand:'CERTUM',sku:'F1-25',cat:'pruebas-rapidas',sub:'Alergias',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'ALERGIAS-GENERICO.jpg',desc:'Prueba rápida para la determinación cuantitativa de Inmunoglobulina E específica (sIgE) para alergia a la clara de huevo',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'F13-25',name:'Prueba rápida para la determinación cuantitativa de Inmunoglobulina E específica (sIgE) para alergia al maní',brand:'CERTUM',sku:'F13-25',cat:'pruebas-rapidas',sub:'Alergias',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'ALERGIAS-GENERICO.jpg',desc:'Prueba rápida para la determinación cuantitativa de Inmunoglobulina E específica (sIgE) para alergia al maní',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'F13-40',name:'Prueba rápida para la determinación cuantitativa de Inmunoglobulina E específica (sIgE) para alergia al maní',brand:'CERTUM',sku:'F13-40',cat:'pruebas-rapidas',sub:'Alergias',art:'cassette',pres:'Caja con 40 pruebas',unit:'caja',img:'ALERGIAS-GENERICO.jpg',desc:'Prueba rápida para la determinación cuantitativa de Inmunoglobulina E específica (sIgE) para alergia al maní',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'F1-40',name:'Prueba rápida para la determinación cuantitativa de Inmunoglobulina E específica (sIgE) para alergia a la clara de…',brand:'CERTUM',sku:'F1-40',cat:'pruebas-rapidas',sub:'Alergias',art:'cassette',pres:'Caja con 40 pruebas',unit:'caja',img:'ALERGIAS-GENERICO.jpg',desc:'Prueba rápida para la determinación cuantitativa de Inmunoglobulina E específica (sIgE) para alergia a la clara de huevo',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'F14-25',name:'Prueba rápida para la determinación cuantitativa de Inmunoglobulina E específica (sIgE) para alergia a la soya',brand:'CERTUM',sku:'F14-25',cat:'pruebas-rapidas',sub:'Alergias',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'ALERGIAS-GENERICO.jpg',desc:'Prueba rápida para la determinación cuantitativa de Inmunoglobulina E específica (sIgE) para alergia a la soya',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'F14-40',name:'Prueba rápida para la determinación cuantitativa de Inmunoglobulina E específica (sIgE) para alergia a la soya',brand:'CERTUM',sku:'F14-40',cat:'pruebas-rapidas',sub:'Alergias',art:'cassette',pres:'Caja con 40 pruebas',unit:'caja',img:'ALERGIAS-GENERICO.jpg',desc:'Prueba rápida para la determinación cuantitativa de Inmunoglobulina E específica (sIgE) para alergia a la soya',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'F2-25',name:'Prueba rápida para la determinación cuantitativa de Inmunoglobulina E específica (sIgE) para alergia a la leche',brand:'CERTUM',sku:'F2-25',cat:'pruebas-rapidas',sub:'Alergias',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'ALERGIAS-GENERICO.jpg',desc:'Prueba rápida para la determinación cuantitativa de Inmunoglobulina E específica (sIgE) para alergia a la leche',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'F2-40',name:'Prueba rápida para la determinación cuantitativa de Inmunoglobulina E específica (sIgE) para alergia a la leche',brand:'CERTUM',sku:'F2-40',cat:'pruebas-rapidas',sub:'Alergias',art:'cassette',pres:'Caja con 40 pruebas',unit:'caja',img:'ALERGIAS-GENERICO.jpg',desc:'Prueba rápida para la determinación cuantitativa de Inmunoglobulina E específica (sIgE) para alergia a la leche',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'F24-25',name:'Prueba rápida para la determinación cuantitativa de Inmunoglobulina E específica (sIgE) para alergia al camarón',brand:'CERTUM',sku:'F24-25',cat:'pruebas-rapidas',sub:'Alergias',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'ALERGIAS-GENERICO.jpg',desc:'Prueba rápida para la determinación cuantitativa de Inmunoglobulina E específica (sIgE) para alergia al camarón',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'F24-40',name:'Prueba rápida para la determinación cuantitativa de Inmunoglobulina E específica (sIgE) para alergia al camarón',brand:'CERTUM',sku:'F24-40',cat:'pruebas-rapidas',sub:'Alergias',art:'cassette',pres:'Caja con 40 pruebas',unit:'caja',img:'ALERGIAS-GENERICO.jpg',desc:'Prueba rápida para la determinación cuantitativa de Inmunoglobulina E específica (sIgE) para alergia al camarón',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'G6-W23-25',name:'Prueba rápida para la detección de alérgenos de hierba timotea',brand:'CERTUM',sku:'G6-W23-25',cat:'pruebas-rapidas',sub:'Alergias',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'ALERGIAS-GENERICO.jpg',desc:'Prueba rápida para la detección de alérgenos de hierba timotea',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'G6-W23-40',name:'Prueba rápida para la detección de alérgenos de hierba timotea',brand:'CERTUM',sku:'G6-W23-40',cat:'pruebas-rapidas',sub:'Alergias',art:'cassette',pres:'Caja con 40 pruebas',unit:'caja',img:'ALERGIAS-GENERICO.jpg',desc:'Prueba rápida para la detección de alérgenos de hierba timotea',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'T7-W23-25',name:'Prueba rápida para la detección de alérgenos de roble blanco',brand:'CERTUM',sku:'T7-W23-25',cat:'pruebas-rapidas',sub:'Alergias',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'ALERGIAS-GENERICO.jpg',desc:'Prueba rápida para la detección de alérgenos de roble blanco',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'T7-W23-40',name:'Prueba rápida para la detección de alérgenos de roble blanco',brand:'CERTUM',sku:'T7-W23-40',cat:'pruebas-rapidas',sub:'Alergias',art:'cassette',pres:'Caja con 40 pruebas',unit:'caja',img:'ALERGIAS-GENERICO.jpg',desc:'Prueba rápida para la detección de alérgenos de roble blanco',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'W1-W23-25',name:'Prueba rápida para la detección de alérgenos de ambrosía corta',brand:'CERTUM',sku:'W1-W23-25',cat:'pruebas-rapidas',sub:'Alergias',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'ALERGIAS-GENERICO.jpg',desc:'Prueba rápida para la detección de alérgenos de ambrosía corta',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'W1-W23-40',name:'Prueba rápida para la detección de alérgenos de ambrosía corta',brand:'CERTUM',sku:'W1-W23-40',cat:'pruebas-rapidas',sub:'Alergias',art:'cassette',pres:'Caja con 40 pruebas',unit:'caja',img:'ALERGIAS-GENERICO.jpg',desc:'Prueba rápida para la detección de alérgenos de ambrosía corta',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'W6-25',name:'Prueba rápida para la detección de alérgenos de artemisa',brand:'CERTUM',sku:'W6-25',cat:'pruebas-rapidas',sub:'Alergias',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'ALERGIAS-GENERICO.jpg',desc:'Prueba rápida para la detección de alérgenos de artemisa',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'W6-40',name:'Prueba rápida para la detección de alérgenos de artemisa',brand:'CERTUM',sku:'W6-40',cat:'pruebas-rapidas',sub:'Alergias',art:'cassette',pres:'Caja con 40 pruebas',unit:'caja',img:'ALERGIAS-GENERICO.jpg',desc:'Prueba rápida para la detección de alérgenos de artemisa',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'COT/40',name:'Prueba para deteccion de Cotinina en Cassette',brand:'Seratec',sku:'COT/40',cat:'pruebas-rapidas',sub:'Drogas de abuso',art:'cassette',pres:'Caja con 40 pruebas',unit:'caja',img:'COT40.jpg',specs:{'Formato':'Cassette'},desc:'Prueba para deteccion de Cotinina en Cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'A03-17-422',name:'Prueba Artron para detección de rotavirus y adenovirus combo en cassette',brand:'ARTRON',sku:'A03-17-422',cat:'pruebas-rapidas',sub:'Entéricas',art:'cassette',pres:'Caja con 30 pruebas',unit:'caja',img:'A03-17-422.jpg',specs:{'Formato':'Cassette'},desc:'Prueba Artron para detección de rotavirus y adenovirus combo en cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'CA820001V',name:'Prueba para detección de campylobacter',brand:'CerTest',sku:'CA820001V',cat:'pruebas-rapidas',sub:'Entéricas',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'CA820001V.jpg',desc:'Prueba para detección de campylobacter',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'E820001V',name:'Prueba para detección de E. Coli (O157:H7) en cassette',brand:'CerTest',sku:'E820001V',cat:'pruebas-rapidas',sub:'Entéricas',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'E820001V.jpg',specs:{'Formato':'Cassette'},desc:'Prueba para detección de E. Coli (O157:H7) en cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'EH820001V',name:'Prueba Entamoeba Card kit',brand:'CerTest',sku:'EH820001V',cat:'pruebas-rapidas',sub:'Entéricas',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'EH820001V.jpg',desc:'Prueba Entamoeba Card kit',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'GD820001V',name:'Prueba de Clostridum difficile Ag-GDH',brand:'CerTest',sku:'GD820001V',cat:'pruebas-rapidas',sub:'Entéricas',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'GD820001V.jpg',desc:'Prueba de Clostridum difficile Ag-GDH',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'GX872001V',name:'Prueba para detección de Clostridium Difficile (GDH/Toxina A/Toxina B) en Cassette',brand:'CerTest',sku:'GX872001V',cat:'pruebas-rapidas',sub:'Entéricas',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'GX872001V.jpg',specs:{'Formato':'Cassette'},desc:'Prueba para detección de Clostridium Difficile (GDH/Toxina A/Toxina B) en Cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'NV882001V',name:'Prueba para detección de Norovirus Gen1 + Gen2',brand:'CerTest',sku:'NV882001V',cat:'pruebas-rapidas',sub:'Entéricas',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'NV882001V.jpg',desc:'Prueba para detección de Norovirus Gen1 + Gen2',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'NW882001V',name:'Prueba para detección de Crypto + Giardia en Cassette',brand:'CerTest',sku:'NW882001V',cat:'pruebas-rapidas',sub:'Entéricas',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'NW882001V.jpg',specs:{'Formato':'Cassette'},desc:'Prueba para detección de Crypto + Giardia en Cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'P220001',name:'Control positivo para H. Pylori kit',brand:'CerTest',sku:'P220001',cat:'pruebas-rapidas',sub:'Entéricas',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'GENERICO-CERTEST.jpg',desc:'Control positivo para H. Pylori kit',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'P820001V',name:'Prueba para detección de Helicobacter Pylori (H. Pylori) en cassette',brand:'CerTest',sku:'P820001V',cat:'pruebas-rapidas',sub:'Entéricas',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'P820001V.jpg',specs:{'Formato':'Cassette'},desc:'Prueba para detección de Helicobacter Pylori (H. Pylori) en cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'R200001P',name:'Control positivo p/ Rotavirus',brand:'CerTest',sku:'R200001P',cat:'pruebas-rapidas',sub:'Entéricas',art:'cassette',pres:'Pieza individual',unit:'pieza',img:'GENERICO-CERTEST.jpg',desc:'Control positivo p/ Rotavirus',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'R820001V',name:'Prueba para deteccion de rotavirus en cassette',brand:'CerTest',sku:'R820001V',cat:'pruebas-rapidas',sub:'Entéricas',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'R820001V.jpg',specs:{'Formato':'Cassette'},desc:'Prueba para deteccion de rotavirus en cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'TA200001P',name:'Control positivo C. difficile Tox A',brand:'CerTest',sku:'TA200001P',cat:'pruebas-rapidas',sub:'Entéricas',art:'cassette',pres:'Pieza individual',unit:'pieza',img:'GENERICO-CERTEST.jpg',desc:'Control positivo C. difficile Tox A',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'TA220001',name:'Control positivo C. difficile Tox A',brand:'CerTest',sku:'TA220001',cat:'pruebas-rapidas',sub:'Entéricas',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'GENERICO-CERTEST.jpg',desc:'Control positivo C. difficile Tox A',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'TB200001P',name:'Control positivo C. difficile Tox B',brand:'CerTest',sku:'TB200001P',cat:'pruebas-rapidas',sub:'Entéricas',art:'cassette',pres:'Pieza individual',unit:'pieza',img:'GENERICO-CERTEST.jpg',desc:'Control positivo C. difficile Tox B',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'05-9494',name:'Prueba de H. Pylori Contiene 25 pruebas rapidas de anticuerpos en Cassette para muestras de Sangre Entera / Suero…',brand:'Instant View',sku:'05-9494',cat:'pruebas-rapidas',sub:'Entéricas',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'05-9494.jpg',specs:{'Formato':'Cassette'},desc:'Prueba de H. Pylori Contiene 25 pruebas rapidas de anticuerpos en Cassette para muestras de Sangre Entera / Suero / Plasma Humano',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'A01-01-222',name:'Prueba de Embarazo para deteccion de Gonadotropina Corionica Humana (hCG) en Cassette',brand:'ARTRON',sku:'A01-01-222',cat:'pruebas-rapidas',sub:'Fertilidad',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'A01-01-222.jpg',specs:{'Formato':'Cassette'},desc:'Prueba de Embarazo para deteccion de Gonadotropina Corionica Humana (hCG) en Cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'FHC-202',name:'Prueba de Embarazo para deteccion de Gonadotropina Corionica Humana sensibilidad 25 mUI/mL (hCG) en Cassette',brand:'CERTUM',sku:'FHC-202',cat:'pruebas-rapidas',sub:'Fertilidad',art:'cassette',pres:'Caja con 40 pruebas',unit:'caja',img:'FHC-202.jpg',specs:{'Formato':'Cassette'},desc:'Prueba de Embarazo para deteccion de Gonadotropina Corionica Humana sensibilidad 25 mUI/mL (hCG) en Cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'FHC-U202',name:'Prueba de Embarazo para deteccion de Gonadotropina Corionica Humana sensibilidad 10mUI/mL (hCG) en Cassette',brand:'CERTUM',sku:'FHC-U202',cat:'pruebas-rapidas',sub:'Fertilidad',art:'cassette',pres:'Caja con 40 pruebas',unit:'caja',img:'FHC-U202.jpg',specs:{'Formato':'Cassette'},desc:'Prueba de Embarazo para deteccion de Gonadotropina Corionica Humana sensibilidad 10mUI/mL (hCG) en Cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'FIG-502',name:'Prueba rapida iGFBP/1 secreción vaginal',brand:'CERTUM',sku:'FIG-502',cat:'pruebas-rapidas',sub:'Fertilidad',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'FIG-502.jpg',desc:'Prueba rapida iGFBP/1 secreción vaginal',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'02-2484',name:'Prueba Gonadotropina Corionica Humana (hCG)',brand:'Instant View',sku:'02-2484',cat:'pruebas-rapidas',sub:'Fertilidad',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'02-2484.jpg',desc:'Prueba Gonadotropina Corionica Humana (hCG)',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'02-2488',name:'Prueba de Embarazo para deteccion de Gonadotropina Corionica Humana (hCG) en Tira (25 mIU/mL)',brand:'Instant View',sku:'02-2488',cat:'pruebas-rapidas',sub:'Fertilidad',art:'cassette',pres:'Caja con 50 pruebas',unit:'caja',img:'02-2488.jpg',specs:{'Formato':'Tira'},desc:'Prueba de Embarazo para deteccion de Gonadotropina Corionica Humana (hCG) en Tira (25 mIU/mL)',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'1-PG-C',name:'Prueba de Embarazo para detección de Gonadotropina Coriónica Humana (hCG) en Cassette',brand:'Provisión',sku:'1-PG-C',cat:'pruebas-rapidas',sub:'Fertilidad',art:'cassette',pres:'Caja con 40 pruebas',unit:'caja',img:'1-PG-C.jpg',specs:{'Formato':'Cassette'},desc:'Prueba de Embarazo para detección de Gonadotropina Coriónica Humana (hCG) en Cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'1-PG-T',name:'Prueba de Embarazo para detección de Gonadotropina Coriónica Humana (hCG) en Tira',brand:'Provisión',sku:'1-PG-T',cat:'pruebas-rapidas',sub:'Fertilidad',art:'cassette',pres:'Caja con 50 pruebas',unit:'caja',img:'1-PG-T.jpg',specs:{'Formato':'Tira'},desc:'Prueba de Embarazo para detección de Gonadotropina Coriónica Humana (hCG) en Tira',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'OABD-402',name:'Prueba rápida de tipificación de sangre ABO y RhD en cassette',brand:'CERTUM',sku:'OABD-402',cat:'pruebas-rapidas',sub:'Hemoclasificadores',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'OABD-402.jpg',specs:{'Formato':'Cassette'},desc:'Prueba rápida de tipificación de sangre ABO y RhD en cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'IHA-402',name:'Prueba para detección de anticuerpos (IgM) de Hepatitis A en cassette',brand:'CERTUM',sku:'IHA-402',cat:'pruebas-rapidas',sub:'Hepáticas',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'IHA-402.jpg',specs:{'Formato':'Cassette'},desc:'Prueba para detección de anticuerpos (IgM) de Hepatitis A en cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'IHBsg-402',name:'Prueba para detección del Antígeno de Hepatitis B (HBsAg) en cassette',brand:'CERTUM',sku:'IHBsg-402',cat:'pruebas-rapidas',sub:'Hepáticas',art:'cassette',pres:'Caja con 40 pruebas',unit:'caja',img:'IHBsg-402.jpg',specs:{'Formato':'Cassette'},desc:'Prueba para detección del Antígeno de Hepatitis B (HBsAg) en cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'IHC-402',name:'Prueba para detección de anticuerpos de Hepatitis C en cassette',brand:'CERTUM',sku:'IHC-402',cat:'pruebas-rapidas',sub:'Hepáticas',art:'cassette',pres:'Caja con 40 pruebas',unit:'caja',img:'IHC-402.jpg',specs:{'Formato':'Cassette'},desc:'Prueba para detección de anticuerpos de Hepatitis C en cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'IVCAB-625',name:'Prueba para detección cualitativa de Vibrio cholerae O1 y O139, en heces humanas',brand:'CERTUM',sku:'IVCAB-625',cat:'pruebas-rapidas',sub:'Intestinales',art:'cassette',pres:'Caja con 10 pruebas',unit:'caja',img:'IVCAB-625.jpg',desc:'Prueba para detección cualitativa de Vibrio cholerae O1 y O139, en heces humanas',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'A03-23-222',name:'Procalcitonina (Suero/Plasma)',brand:'ARTRON',sku:'A03-23-222',cat:'pruebas-rapidas',sub:'Marcadores tumorales',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'A03-23-222.jpg',desc:'Procalcitonina (Suero/Plasma)',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'CC882001F',name:'Prueba de Calprotectina 50 + 200',brand:'CerTest',sku:'CC882001F',cat:'pruebas-rapidas',sub:'Marcadores tumorales',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'CC882001F.jpg',desc:'Prueba de Calprotectina 50 + 200',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'CL882001F',name:'Prueba de Calprotectina y Lactoferrina',brand:'CerTest',sku:'CL882001F',cat:'pruebas-rapidas',sub:'Marcadores tumorales',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'CL882001F.jpg',desc:'Prueba de Calprotectina y Lactoferrina',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'CP220001',name:'Control positivo para calprotectina',brand:'CerTest',sku:'CP220001',cat:'pruebas-rapidas',sub:'Marcadores tumorales',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'GENERICO-CERTEST.jpg',desc:'Control positivo para calprotectina',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'F200201P',name:'Control positivo p/ Hemoglobina/FOB (INDIVIDUAL)',brand:'CerTest',sku:'F200201P',cat:'pruebas-rapidas',sub:'Marcadores tumorales',art:'cassette',pres:'Pieza individual',unit:'pieza',img:'GENERICO-CERTEST.jpg',desc:'Control positivo p/ Hemoglobina/FOB (INDIVIDUAL)',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'FT882001F',name:'Prueba para deteccion de FOB+Transferrina en heces kit',brand:'CerTest',sku:'FT882001F',cat:'pruebas-rapidas',sub:'Marcadores tumorales',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'FT882001F.jpg',desc:'Prueba para deteccion de FOB+Transferrina en heces kit',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'TAF-402',name:'AFP Rapid Test - Pruebas de AlphaFetoproteina (AFP) en Cassette (Sangre Entera)',brand:'CERTUM',sku:'TAF-402',cat:'pruebas-rapidas',sub:'Marcadores tumorales',art:'cassette',pres:'Caja con 40 pruebas',unit:'caja',img:'TAF-402.jpg',specs:{'Formato':'Cassette'},desc:'AFP Rapid Test - Pruebas de AlphaFetoproteina (AFP) en Cassette (Sangre Entera)',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'TCE-402',name:'Pruebas de Antigeno en Cassette Carcinoembrionario (CEA) (Sangre Entera)',brand:'CERTUM',sku:'TCE-402',cat:'pruebas-rapidas',sub:'Marcadores tumorales',art:'cassette',pres:'Caja con 40 pruebas',unit:'caja',img:'TCE-402.jpg',specs:{'Formato':'Cassette'},desc:'Pruebas de Antigeno en Cassette Carcinoembrionario (CEA) (Sangre Entera)',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'TPS-402',name:'PSA Antigeno Prostatico Especifico Semi-Cuantitativo Prueba Rapida Cassete (Sangre entera/Suero/Plasma)',brand:'CERTUM',sku:'TPS-402',cat:'pruebas-rapidas',sub:'Marcadores tumorales',art:'cassette',pres:'Caja con 40 pruebas',unit:'caja',img:'TPS-402.jpg',desc:'PSA Antigeno Prostatico Especifico Semi-Cuantitativo Prueba Rapida Cassete (Sangre entera/Suero/Plasma)',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'05-8575',name:'Prueba de Troponina I para muestras en Sangre Entera / Suero Humano',brand:'Instant View',sku:'05-8575',cat:'pruebas-rapidas',sub:'Marcadores tumorales',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'05-8575.jpg',desc:'Prueba de Troponina I para muestras en Sangre Entera / Suero Humano',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'PSM400T/40',name:'Prueba Rapida Semicuantitativa de PSA (Antigeno Prostatico Especifico) en sangre, plasma o suero',brand:'Seratec',sku:'PSM400T/40',cat:'pruebas-rapidas',sub:'Marcadores tumorales',art:'cassette',pres:'Caja con 40 pruebas',unit:'caja',img:'PSM400T40.jpg',desc:'Prueba Rapida Semicuantitativa de PSA (Antigeno Prostatico Especifico) en sangre, plasma o suero',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'A03-15-422',name:'Prueba para detección de Rotavirus en cassette',brand:'ARTRON',sku:'A03-15-422',cat:'pruebas-rapidas',sub:'Respiratorias',art:'cassette',pres:'Caja con 30 pruebas',unit:'caja',img:'A03-15-422.jpg',specs:{'Formato':'Cassette'},desc:'Prueba para detección de Rotavirus en cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'AD220001',name:'Control positivo para Adenovirus kit c/20 controles',brand:'CerTest',sku:'AD220001',cat:'pruebas-rapidas',sub:'Respiratorias',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'GENERICO-CERTEST.jpg',desc:'Control positivo para Adenovirus kit c/20 controles',pending:['Imagen específica del producto (se muestra una imagen genérica de la línea)','Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'NL882201PC',name:'Prueba para detección de streptococcus pneumoniae y legionella combo en cassette',brand:'CerTest',sku:'NL882201PC',cat:'pruebas-rapidas',sub:'Respiratorias',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'NL882201PC.jpg',specs:{'Formato':'Cassette'},desc:'Prueba para detección de streptococcus pneumoniae y legionella combo en cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'RT872001V',name:'Prueba combo card para deteccion de Rotavirus, Adenovirus y Astrovirus en cassette',brand:'CerTest',sku:'RT872001V',cat:'pruebas-rapidas',sub:'Respiratorias',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'RT872001V.jpg',specs:{'Formato':'Cassette'},desc:'Prueba combo card para deteccion de Rotavirus, Adenovirus y Astrovirus en cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'RV820001PC',name:'RSV (antigeno Virus Respiratorio Sincital)',brand:'CerTest',sku:'RV820001PC',cat:'pruebas-rapidas',sub:'Respiratorias',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'RV820001PC.jpg',desc:'RSV (antigeno Virus Respiratorio Sincital)',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'SC820001PC',name:'Prueba para deteccion de antigenos (Ag) de SARS-COV-2 en cassette',brand:'CerTest',sku:'SC820001PC',cat:'pruebas-rapidas',sub:'Respiratorias',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'SC820001PC.jpg',specs:{'Formato':'Cassette'},desc:'Prueba para deteccion de antigenos (Ag) de SARS-COV-2 en cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'SV862001PC',name:'Prueba para la detección cualitativa simultánea de nucleoproteina de SARS',brand:'CerTest',sku:'SV862001PC',cat:'pruebas-rapidas',sub:'Respiratorias',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'SV862001PC.jpg',desc:'Prueba para la detección cualitativa simultánea de nucleoproteina de SARS',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'T820201PC',name:'Prueba para detección cualitativa de Estreptococo A en Cassette',brand:'CerTest',sku:'T820201PC',cat:'pruebas-rapidas',sub:'Respiratorias',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'T820201PC.jpg',specs:{'Formato':'Cassette'},desc:'Prueba para detección cualitativa de Estreptococo A en Cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'Z882001PC',name:'Prueba para detección de Influenza A+B en Cassette',brand:'CerTest',sku:'Z882001PC',cat:'pruebas-rapidas',sub:'Respiratorias',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'Z882001PC.jpg',specs:{'Formato':'Cassette'},desc:'Prueba para detección de Influenza A+B en Cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'ZV862001PC',name:'Prueba para la detección cualitativa de antígenos de Influenza tipo A y B, del Virus respiratorio Sincitial y de…',brand:'CerTest',sku:'ZV862001PC',cat:'pruebas-rapidas',sub:'Respiratorias',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'ZV862001PC.jpg',desc:'Prueba para la detección cualitativa de antígenos de Influenza tipo A y B, del Virus respiratorio Sincitial y de Adenovirus (kit de 20 test con hisopos + 20 viales)',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'ICOV-502',name:'COVID 19 Prueba en Cassette en Antigenos (Hisopo Nasofaringeo)',brand:'CERTUM',sku:'ICOV-502',cat:'pruebas-rapidas',sub:'Respiratorias',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'ICOV-502.jpg',specs:{'Formato':'Cassette'},desc:'COVID 19 Prueba en Cassette en Antigenos (Hisopo Nasofaringeo)',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'IDRC-301',name:'Prueba 3 en 1 para detección de anticuerpos (IgM) de Influenza (A, B) y Parainfluenza combo en panel',brand:'CERTUM',sku:'IDRC-301',cat:'pruebas-rapidas',sub:'Respiratorias',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'IDRC-301.jpg',specs:{'Formato':'Panel'},desc:'Prueba 3 en 1 para detección de anticuerpos (IgM) de Influenza (A, B) y Parainfluenza combo en panel',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'IDRC-501',name:'Prueba 5 en 1 para detección de anticuerpos (IgM) de Mycoplasma Pneumoniae, Chlamydia Pneumoniae, RSV, Adenovirus…',brand:'CERTUM',sku:'IDRC-501',cat:'pruebas-rapidas',sub:'Respiratorias',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'IDRC-501.jpg',specs:{'Formato':'Panel'},desc:'Prueba 5 en 1 para detección de anticuerpos (IgM) de Mycoplasma Pneumoniae, Chlamydia Pneumoniae, RSV, Adenovirus y Coxsackievirus Grupo B combo en panel',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'IINA-525',name:'Prueba Rápida de Cassette para la detección de Influenza tipo A, B y tipo A (H1N1)',brand:'CERTUM',sku:'IINA-525',cat:'pruebas-rapidas',sub:'Respiratorias',art:'cassette',pres:'Caja con 10 pruebas',unit:'caja',img:'IINA-525.jpg',specs:{'Formato':'Cassette'},desc:'Prueba Rápida de Cassette para la detección de Influenza tipo A, B y tipo A (H1N1)',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'INCP-402',name:'Prueba para detección de anticuerpos (IgG/IgM) de SARS-CoV-2 en cassette',brand:'CERTUM',sku:'INCP-402',cat:'pruebas-rapidas',sub:'Respiratorias',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'INCP-402.jpg',specs:{'Formato':'Cassette'},desc:'Prueba para detección de anticuerpos (IgG/IgM) de SARS-CoV-2 en cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'20193',name:'RSV (antigeno Virus Respiratorio Sincital)',brand:'QuidelOrtho',sku:'20193',cat:'pruebas-rapidas',sub:'Respiratorias',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'20193.jpg',desc:'RSV (antigeno Virus Respiratorio Sincital)',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'20122IN',name:'Prueba para Deteccion de Estreptococo A en Cassette',brand:'QuidelOrtho',sku:'20122IN',cat:'pruebas-rapidas',sub:'Respiratorias',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'20122IN.jpg',specs:{'Formato':'Cassette'},desc:'Prueba para Deteccion de Estreptococo A en Cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'20183IN',name:'Prueba de Influenza (A+B) en Tira',brand:'QuidelOrtho',sku:'20183IN',cat:'pruebas-rapidas',sub:'Respiratorias',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'20183IN.jpg',specs:{'Formato':'Tira'},desc:'Prueba de Influenza (A+B) en Tira',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'20242',name:'Kit de Pruebas de RSV FIA Cada Kit Contiene: Pruebas de Virus Sincital Respiratorio por Fluorescencia en Cassette…',brand:'QuidelOrtho',sku:'20242',cat:'pruebas-rapidas',sub:'Respiratorias',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'20242.jpg',specs:{'Formato':'Cassette'},desc:'Kit de Pruebas de RSV FIA Cada Kit Contiene: Pruebas de Virus Sincital Respiratorio por Fluorescencia en Cassette (25) Torundas Nasales Esteriles (25), Goteros calibrados de volumen fijo (25) Viales con soluciones liofilizada (25), Viales con solucion diluyente (25) Instructivo en CD e Impreso, Control Negativo (1), Control Positivo (1) Codigo de Barras de Control de Calidad (1), Rollo de Papel para Impresora (1)',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'20254',name:'Prueba Sofia de Influenza (A+B) en Cassette',brand:'QuidelOrtho',sku:'20254',cat:'pruebas-rapidas',sub:'Respiratorias',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'20254.jpg',specs:{'Formato':'Cassette'},desc:'Prueba Sofia de Influenza (A+B) en Cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'20276',name:'STREP A + FIA Cada Kit Contiene: Pruebas de Estreptococos A por Fluorescencia en Cassette (25) Torundas Nasales…',brand:'QuidelOrtho',sku:'20276',cat:'pruebas-rapidas',sub:'Respiratorias',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'20276.jpg',specs:{'Formato':'Cassette'},desc:'STREP A + FIA Cada Kit Contiene: Pruebas de Estreptococos A por Fluorescencia en Cassette (25) Torundas Nasales Esteriles (25), Goteros calibrados de volumen fijo (25) Viales con soluciones liofilizada (25), Viales con solucion diluyente (25) Instructivo en CD e Impreso, Control Negativo (1), Control Positivo (1) Codigo de Barras de Control de Calidad (1), Rollo de Papel para Impresora (1)',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'20374',name:'Prueba Sofia para detección de Antígeno de SARS-COV-2 por Inmunofluorescencia',brand:'QuidelOrtho',sku:'20374',cat:'pruebas-rapidas',sub:'Respiratorias',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'20374.jpg',desc:'Prueba Sofia para detección de Antígeno de SARS-COV-2 por Inmunofluorescencia',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'20377',name:'Prueba Sofia 2 para detección de Influenza + Antígeno de SARS-COV-2 por Inmunofluorescencia',brand:'QuidelOrtho',sku:'20377',cat:'pruebas-rapidas',sub:'Respiratorias',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'20377.jpg',desc:'Prueba Sofia 2 para detección de Influenza + Antígeno de SARS-COV-2 por Inmunofluorescencia',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'CDM-402',name:'Prueba para detección de dímero d (DD) en cassette',brand:'CERTUM',sku:'CDM-402',cat:'pruebas-rapidas',sub:'Salud general',art:'cassette',pres:'Caja con 10 pruebas',unit:'caja',img:'CDM-402.jpg',specs:{'Formato':'Cassette'},desc:'Prueba para detección de dímero d (DD) en cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'ITE-402',name:'Prueba rápida en cassette para detección cualitativa de anticuerpos a la toxina del Tétanos',brand:'CERTUM',sku:'ITE-402',cat:'pruebas-rapidas',sub:'Salud general',art:'cassette',pres:'Caja con 40 pruebas',unit:'caja',img:'ITE-402.jpg',specs:{'Formato':'Cassette'},desc:'Prueba rápida en cassette para detección cualitativa de anticuerpos a la toxina del Tétanos',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'OFE-402',name:'Prueba rapida en cassette para la determinacion cualitativa de Ferritina',brand:'CERTUM',sku:'OFE-402',cat:'pruebas-rapidas',sub:'Salud general',art:'cassette',pres:'Caja con 10 pruebas',unit:'caja',img:'OFE-402.jpg',specs:{'Formato':'Cassette'},desc:'Prueba rapida en cassette para la determinacion cualitativa de Ferritina',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'OHA-402',name:'Prueba para deteccion de Hemoglobina Glicosilada- Hba1c en cassette',brand:'CERTUM',sku:'OHA-402',cat:'pruebas-rapidas',sub:'Salud general',art:'cassette',pres:'Caja con 10 pruebas',unit:'caja',img:'OHA-402.jpg',specs:{'Formato':'Cassette'},desc:'Prueba para deteccion de Hemoglobina Glicosilada- Hba1c en cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'OVD-402',name:'Prueba Rapida Vitamina D',brand:'CERTUM',sku:'OVD-402',cat:'pruebas-rapidas',sub:'Salud general',art:'cassette',pres:'Caja con 10 pruebas',unit:'caja',img:'OVD-402.jpg',desc:'Prueba Rapida Vitamina D',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'K-15R11',name:'Prueba de diagnóstico rápido in vitro Resist-5 para la detección de carbapenemasas tipo OXA-48, KPC, NDM, VIM e…',brand:'Coris',sku:'K-15R11',cat:'pruebas-rapidas',sub:'Salud general',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'K-15R11.jpg',desc:'Prueba de diagnóstico rápido in vitro Resist-5 para la detección de carbapenemasas tipo OXA-48, KPC, NDM, VIM e IMP en cultivo bacteriano',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'K-15R5',name:'Prueba de diagnóstico rápido in vitro Resist-3 en Cassette para la detección de carbapenemasas tipo OXA-48, KPC y…',brand:'Coris',sku:'K-15R5',cat:'pruebas-rapidas',sub:'Salud general',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'K-15R5.jpg',specs:{'Formato':'Cassette'},desc:'Prueba de diagnóstico rápido in vitro Resist-3 en Cassette para la detección de carbapenemasas tipo OXA-48, KPC y NDM en cultivo bacteriano',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'VR001',name:'Prueba Rapida para deteccion de mononucleosis infecciosa',brand:'Vircell',sku:'VR001',cat:'pruebas-rapidas',sub:'Salud general',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'VR001.jpg',desc:'Prueba Rapida para deteccion de mononucleosis infecciosa',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'ICH-502',name:'Prueba para detección del antígeno de Clamidia en cassette',brand:'CERTUM',sku:'ICH-502',cat:'pruebas-rapidas',sub:'Transmisión sexual',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'ICH-502.jpg',specs:{'Formato':'Cassette'},desc:'Prueba para detección del antígeno de Clamidia en cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'IGO-502',name:'Prueba para detección del antígeno de Gonorrea en cassette',brand:'CERTUM',sku:'IGO-502',cat:'pruebas-rapidas',sub:'Transmisión sexual',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'IGO-502.jpg',specs:{'Formato':'Cassette'},desc:'Prueba para detección del antígeno de Gonorrea en cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'IHIBG-425',name:'Prueba para detección de anticuerpos de VIH (1, 2) y antígeno (p24) de cuarta generación en cassette',brand:'CERTUM',sku:'IHIBG-425',cat:'pruebas-rapidas',sub:'Transmisión sexual',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'IHIBG-425.jpg',specs:{'Formato':'Cassette'},desc:'Prueba para detección de anticuerpos de VIH (1, 2) y antígeno (p24) de cuarta generación en cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'IISC-425',name:'Prueba para detección de anticuerpos de Sífilis (IgG e IgM) y VIH (1, 2 y O) combo en cassette',brand:'CERTUM',sku:'IISC-425',cat:'pruebas-rapidas',sub:'Transmisión sexual',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'IISC-425.jpg',specs:{'Formato':'Cassette'},desc:'Prueba para detección de anticuerpos de Sífilis (IgG e IgM) y VIH (1, 2 y O) combo en cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'IMO-402',name:'Prueba para la detección de Mononucleosis en cassette (Detección cualitativa de anticuerpos heterofilos de…',brand:'CERTUM',sku:'IMO-402',cat:'pruebas-rapidas',sub:'Transmisión sexual',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'IMO-402.jpg',specs:{'Formato':'Cassette'},desc:'Prueba para la detección de Mononucleosis en cassette (Detección cualitativa de anticuerpos heterofilos de mononucleosis)',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'ISY-401',name:'Prueba para detección de Sífilis en tira (Contenido: 50 Tiras reactivas 50 Goteros 1 Buffer 1 Inserto)',brand:'CERTUM',sku:'ISY-401',cat:'pruebas-rapidas',sub:'Transmisión sexual',art:'cassette',pres:'Caja con 50 pruebas',unit:'caja',img:'ISY-401.jpg',specs:{'Formato':'Tira'},desc:'Prueba para detección de Sífilis en tira (Contenido: 50 Tiras reactivas 50 Goteros 1 Buffer 1 Inserto)',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'ISY-402',name:'Prueba para detección de sífilis en cassette (Contenido: 25 Casetes de Prueba 25 Goteros 1 Buffer 1 Inserto)',brand:'CERTUM',sku:'ISY-402',cat:'pruebas-rapidas',sub:'Transmisión sexual',art:'cassette',pres:'Caja con 50 pruebas',unit:'caja',img:'ISY-402.jpg',specs:{'Formato':'Cassette'},desc:'Prueba para detección de sífilis en cassette (Contenido: 25 Casetes de Prueba 25 Goteros 1 Buffer 1 Inserto)',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'ITOGM-485',name:'Prueba para detección de anticuerpos (IgG e IgM) de ToRCH en cassette',brand:'CERTUM',sku:'ITOGM-485',cat:'pruebas-rapidas',sub:'Transmisión sexual',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'ITOGM-485.jpg',specs:{'Formato':'Cassette'},desc:'Prueba para detección de anticuerpos (IgG e IgM) de ToRCH en cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'TR.0013TI020',name:'Prueba rápida Inmunocromatográfica para la detección cualitativa de anticuerpos contra HIV 1 y HIV 2',brand:'CERTUM',sku:'TR.0013TI020',cat:'pruebas-rapidas',sub:'Transmisión sexual',art:'cassette',pres:'Caja con 20 pruebas',unit:'caja',img:'TR.0013TI020.jpg',desc:'Prueba rápida Inmunocromatográfica para la detección cualitativa de anticuerpos contra HIV 1 y HIV 2',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'5-PG-VIH',name:'Prueba rápida en casete para detección del VIH 1/2 en sangre, suero o plasma',brand:'Provisión',sku:'5-PG-VIH',cat:'pruebas-rapidas',sub:'Transmisión sexual',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'5-PG-VIH.jpg',specs:{'Formato':'Cassette'},desc:'Prueba rápida en casete para detección del VIH 1/2 en sangre, suero o plasma',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'IBA-402',name:'Prueba rapida en cassette para la determinacion cualitativa de Brucella abortus',brand:'CERTUM',sku:'IBA-402',cat:'pruebas-rapidas',sub:'Vectoriales',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'IBA-402.jpg',specs:{'Formato':'Cassette'},desc:'Prueba rapida en cassette para la determinacion cualitativa de Brucella abortus',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'ICHA-402',name:'Prueba para detección de anticuerpos (IgG) de Chagas en cassette',brand:'CERTUM',sku:'ICHA-402',cat:'pruebas-rapidas',sub:'Vectoriales',art:'cassette',pres:'Caja con 40 pruebas',unit:'caja',img:'ICHA-402.jpg',specs:{'Formato':'Cassette'},desc:'Prueba para detección de anticuerpos (IgG) de Chagas en cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'ICHI-402',name:'Prueba para detección de anticuerpos (IgG/IgM) de Chikungunya en cassette',brand:'CERTUM',sku:'ICHI-402',cat:'pruebas-rapidas',sub:'Vectoriales',art:'cassette',pres:'Caja con 25 pruebas',unit:'caja',img:'ICHI-402.jpg',specs:{'Formato':'Cassette'},desc:'Prueba para detección de anticuerpos (IgG/IgM) de Chikungunya en cassette',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
+    P({id:'IZIG-402',name:'Prueba En Cassette Zika (NS1)',brand:'CERTUM',sku:'IZIG-402',cat:'pruebas-rapidas',sub:'Vectoriales',art:'cassette',pres:'Caja con 10 pruebas',unit:'caja',img:'IZIG-402.jpg',specs:{'Formato':'Cassette'},desc:'Prueba En Cassette Zika (NS1)',pending:['Ficha técnica del fabricante (muestra, tiempo de lectura, sensibilidad y almacenamiento)','Registro sanitario']}),
   ];
 
   /* Ilustraciones SVG de producto (placeholder mientras llegan fotos reales) */
@@ -907,7 +1031,9 @@
   /* ===== FOTOGRAFÍAS (Pexels, licencia libre) con respaldo SVG si la URL no carga ===== */
   var PHOTOS={hospital:10827916,lab:3938022,empresa:5989931,industria:2760241,cat_pr:7867251,cat_ad:8670147,cat_re:11703173,cat_eq:18471457,delivery:5025665,service:9574330,scientist:4031692};
   function px(id,w,h){return 'https://images.pexels.com/photos/'+id+'/pexels-photo-'+id+'.jpeg?auto=compress&cs=tinysrgb&w='+(w||1200)+(h?'&h='+h+'&fit=crop':'')}
-  function photo(id,alt,fallback,w,h){return '<img class="ph" src="'+px(id,w,h)+'" alt="'+alt.replace(/"/g,'&quot;')+'" loading="lazy" decoding="async"><div class="fb" style="display:none">'+(fallback||'')+'</div>'}
+  /* id numérico = foto de Pexels; cadena con "/" o "." = archivo propio (CFG.imgBase + archivo, o URL absoluta / mapa CFG.images en WordPress) */
+  function imgSrc(id,w,h){if(typeof id==='string'&&/[\/.]/.test(id)){if(/^(https?:|data:|\/)/.test(id))return id;return (CFG.images&&CFG.images[id])||(CFG.imgBase||'')+id}return px(id,w,h)}
+  function photo(id,alt,fallback,w,h){return '<img class="ph" src="'+imgSrc(id,w,h)+'" alt="'+alt.replace(/"/g,'&quot;')+'" loading="lazy" decoding="async"><div class="fb" style="display:none">'+(fallback||'')+'</div>'}
   function bindPhotos(scope){Array.prototype.slice.call((scope||document).querySelectorAll('img.ph')).forEach(function(im){if(im.__b)return;im.__b=1;im.addEventListener('error',function(){im.style.display='none';var f=im.nextElementSibling;if(f&&f.className==='fb')f.style.display='';im.parentNode&&im.parentNode.classList&&im.parentNode.classList.add('nophoto')})})}
 
 
@@ -939,7 +1065,7 @@
   /* ---- Logotipo ---- */
   function logoHTML(){
     if(CFG.logoUrl) return '<img src="'+esc(CFG.logoUrl)+'" alt="Loga Soluciones Científicas para Laboratorio">';
-    return '<div class="logo-fallback">'+LOGO_MARK+'<div><div class="wm">LOGA<span>TECH</span></div><small>SOLUCIONES CIENTÍFICAS PARA LABORATORIO</small></div></div>';
+    return '<div class="logo-fallback">'+LOGO_MARK+'<div><div class="wm">LOGA</div><small>Soluciones Científicas para Laboratorio</small></div></div>';
   }
   $$('[data-logo]').forEach(function(el){el.innerHTML=logoHTML()});
 
@@ -954,6 +1080,21 @@
   resolveLinks(root);
   var CURRENT=root.getAttribute('data-current')||'';
   $$('.mainnav a[data-page], .catnav a[data-page]').forEach(function(a){if(a.getAttribute('data-page')===CURRENT&&!a.getAttribute('data-params'))a.classList.add('cur')});
+
+  /* ---- Logotipos de marcas ---- */
+  function brandLogo(b){var f=(typeof BRAND_LOGOS!=='undefined')&&BRAND_LOGOS[b];if(!f)return '';return (CFG.logos&&CFG.logos[b])||(CFG.logoBase||'')+f}
+  var IMG_FB=' onerror="var s=document.createElement(\'span\');s.className=\'ini\';s.textContent=this.alt.split(/\\s/).map(function(w){return w[0]}).join(\'\').slice(0,2).toUpperCase();this.replaceWith(s)"';
+  function brandMark(b,cls){var u=brandLogo(b);return u?'<img class="'+(cls||'blogo')+'" src="'+esc(u)+'" alt="'+esc(b)+'" loading="lazy"'+IMG_FB+'>':'<span class="ini">'+esc(b.split(/\s/).map(function(w){return w[0]}).join('').slice(0,2).toUpperCase())+'</span>'}
+
+  /* ---- Mega menú "Productos" (categorías con subcategorías, estilo MCD LAB) ---- */
+  $$('[data-megamenu]').forEach(function(el){
+    el.innerHTML='<div class="mm-grid">'+CATEGORIES.map(function(c){return '<div class="mm-col"><a class="mm-h" href="'+pageUrl('catalogo',{cat:c.id})+'">'+esc(c.name)+'</a>'+c.subs.slice(0,6).map(function(s){return '<a href="'+pageUrl('catalogo',{cat:c.id,sub:s})+'">'+esc(s)+'</a>'}).join('')+(c.subs.length>6?'<a class="mm-more" href="'+pageUrl('catalogo',{cat:c.id})+'">Ver todo →</a>':'')+'</div>'}).join('')+'</div><div class="mm-foot"><a href="'+pageUrl('catalogo')+'">Ver catálogo completo →</a><a href="'+pageUrl('marcas')+'">Marcas →</a><a href="'+pageUrl('servicio')+'">Servicio técnico →</a></div>';
+  });
+  $$('[data-mm]').forEach(function(mm){var btn=$('.mm-btn',mm);
+    btn.addEventListener('click',function(e){if(window.matchMedia('(hover:none)').matches||e.detail===0){e.preventDefault();var o=mm.classList.toggle('open');btn.setAttribute('aria-expanded',o)}});
+    document.addEventListener('click',function(e){if(!mm.contains(e.target)){mm.classList.remove('open');btn.setAttribute('aria-expanded','false')}});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'){mm.classList.remove('open');btn.setAttribute('aria-expanded','false')}});
+  });
 
   /* ---- Navegación de categorías y listas del footer (generadas desde CATEGORIES) ---- */
   $$('[data-catnav]').forEach(function(el){el.innerHTML=CATEGORIES.map(function(c){return '<a href="'+pageUrl('catalogo',{cat:c.id})+'"'+(CURRENT==='catalogo'&&getParam('cat')===c.id?' class="cur"':'')+'>'+esc(c.name)+'</a>'}).join('')+'<a class="hl" href="'+pageUrl('servicio')+'">Servicio técnico</a>'});
@@ -1036,7 +1177,7 @@
       +(p.price?'<div class="pr">'+money(p.price)+'<small>+ IVA</small></div>':'<div class="pr q">Precio por cotización<small>Atención de lunes a viernes de 8:30 a 17:30 h</small></div>')
       +'<div class="ship"><div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>'+POL+'</span></div>'
       +(p.cold?'<div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Producto refrigerado: se embarca <b>lunes y miércoles</b> con hielera y geles.</span></div>':'')
-      +'<div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Crédito sujeto a aprobación (3 compras de contado, solicitud y documentación); plazos de 15 o 30 días según autorización.</span></div></div>'
+      +'<div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Facilidades de crédito según solicitud y documentación; plazos de hasta 30 días de crédito o más.</span></div></div>'
       +'<div class="stock">Consulta disponibilidad y fecha estimada de entrega al cotizar.</div>'
       +'<div class="qty">Cantidad <div><button type="button" data-q="-1" aria-label="Menos">−</button><input type="number" min="1" max="9999" step="1" inputmode="numeric" value="1" data-qty aria-label="Cantidad"><button type="button" data-q="1" aria-label="Más">+</button></div><span data-qunit>'+unitWord(p,1)+' · '+esc(presText(p))+'</span></div>'
       +'<button class="btn b1" type="button" data-madd>Agregar a cotización</button>'
@@ -1049,7 +1190,7 @@
     return '<div class="tabs"><nav><button type="button" class="on" data-tab="0">Descripción</button><button type="button" data-tab="1">Especificaciones</button><button type="button" data-tab="2">Envío, garantía y pagos</button></nav>'
       +'<div class="pane on"><p>'+esc(p.desc)+'</p><p>Las especificaciones completas (muestra, tiempo de lectura, presentación, almacenamiento y registro sanitario) están en la ficha técnica del fabricante, disponible a solicitud. Atendemos laboratorios clínicos, industriales, institucionales y de investigación en toda la República Mexicana.</p></div>'
       +'<div class="pane">'+specsGrid(p)+'<p class="specnote">Datos tomados del listado comercial y de la documentación del fabricante disponible. '+(p.pending&&p.pending.length?'Por confirmar: '+esc(p.pending.join('; '))+'.':'')+'</p></div>'
-      +'<div class="pane"><p><b>Pedido y envío:</b> '+POL+'</p><p><b>Entregas urgentes</b> sujetas a disponibilidad, ubicación y confirmación del asesor. Productos especiales de importación: 4 a 6 semanas.</p><p><b>Cadena de frío:</b> los productos refrigerados salen lunes y miércoles en hielera con geles; si un reactivo llega con problema, se realiza cambio físico.</p><p><b>Garantía:</b> 1 año del fabricante contra defectos de fabricación. En equipos de laboratorio se incluye instalación, capacitación y servicio de mantenimiento.</p><p><b>Crédito:</b> sujeto a aprobación después de 3 compras de contado, solicitud y documentación; plazos de 15 o 30 días según autorización.</p></div></div>';
+      +'<div class="pane"><p><b>Envíos:</b> '+POL+'</p><p><b>Entregas urgentes</b> sujetas a disponibilidad, ubicación y confirmación del asesor. Productos especiales de importación: 4 a 6 semanas.</p><p><b>Cadena de frío:</b> los productos refrigerados salen lunes y miércoles en hielera con geles; si un reactivo llega con problema, se realiza cambio físico.</p><p><b>Garantía:</b> 1 año del fabricante contra defectos de fabricación. En equipos de laboratorio se incluye instalación, capacitación y servicio de mantenimiento.</p><p><b>Crédito:</b> sujeto a aprobación después de 3 compras de contado, solicitud y documentación; plazos de 15 o 30 días según autorización.</p></div></div>';
   }
   function bindProductUI(scope,p){
     var qty=$('[data-qty]',scope);
