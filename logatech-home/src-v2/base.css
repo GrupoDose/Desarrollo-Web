@@ -1,7 +1,8 @@
 /* ---------- Variables de marca (cámbialas aquí y todo se actualiza) ---------- */
 #lg1, #lg1-modal, #lg1-quote{
   /* === COLORES DE MARCA LOGATECH (tomados del logotipo). Azul = principal · Verde = secundario (el naranja se retiró a petición del cliente). Cámbialos aquí === */
-  --brand-blue:#2F7FD3; --brand-blue-d:#1F5FBF; --brand-blue-l:#4A9EDA; --brand-orange:#5FA33A; --brand-orange-d:#3F8A31; /* alias históricos: ahora verdes */ --brand-green:#5FA33A; --brand-red:#C62A1E; --brand-ink:#12305E;
+  --loga-green:#5FA33A; --loga-green-d:#3F8A31; /* === VERDE DE MARCA: acento secundario único (sustituye al naranja en todo el sitio) === */
+  --brand-blue:#2F7FD3; --brand-blue-d:#1F5FBF; --brand-blue-l:#4A9EDA; --brand-orange:var(--loga-green); --brand-orange-d:var(--loga-green-d); /* alias históricos: ahora apuntan al verde */ --brand-green:var(--loga-green); --brand-red:#C62A1E; --brand-ink:#12305E;
   --brand-grad:linear-gradient(90deg,#1F5FBF 0%,#4A9EDA 60%,#5FA33A 100%);
   --navy:var(--brand-ink); --blue:var(--brand-blue-d); --blue-d:#174A99; --green:var(--brand-green); --green-d:#3F8A31; --lime:var(--brand-orange); --teal:var(--brand-blue); --grad:var(--brand-grad); --orange:var(--brand-orange); --orange-d:var(--brand-orange-d);
   --ink:#1B2430; --muted:#5F6B7A; --line:#E3E9EF; --bg:#F5F8FB; --white:#fff;
@@ -48,7 +49,7 @@
 #lg1 .search{display:flex;border:2px solid var(--blue);border-radius:8px;overflow:hidden;height:48px}
 #lg1 .search select{border:0;background:var(--bg);padding:0 12px;font:500 13px var(--font-b);color:var(--ink);border-right:1px solid var(--line);max-width:190px}
 #lg1 .search input{flex:1;border:0;padding:0 14px;font:400 14px var(--font-b);min-width:0;outline:none}
-#lg1 .search button{border:0;background:var(--blue);color:#fff;padding:0 18px;display:flex;align-items:center;gap:8px;font:600 14px var(--font-h)}
+#lg1 .search button{border:0;background:var(--loga-green-d);color:#fff;padding:0 18px;display:flex;align-items:center;gap:8px;font:600 14px var(--font-h)}
 #lg1 .search button svg{width:18px;height:18px;fill:#fff}
 #lg1 .hdr-actions{display:flex;align-items:center;gap:14px}
 #lg1 .quote-btn{position:relative;display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:8px;padding:8px 12px;background:#fff;font:600 13px var(--font-h);color:var(--navy)}
@@ -117,8 +118,8 @@
 #lg1 .slider:hover .dots button.on i{animation-play-state:paused}
 
 /* ---------- Trust strip ---------- */
-#lg1 .trust{padding:0 0 10px;background:var(--bg)}
-#lg1 .trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+#lg1 .trust{padding:26px 0 10px;background:var(--bg)}
+#lg1 .trust .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 #lg1 .trust .it{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;display:flex;gap:14px;align-items:center}
 #lg1 .trust .it svg{width:34px;height:34px;flex:none;fill:none;stroke:var(--blue);stroke-width:1.8}
 #lg1 .trust b{display:block;font:700 14px var(--font-h);color:var(--navy)}

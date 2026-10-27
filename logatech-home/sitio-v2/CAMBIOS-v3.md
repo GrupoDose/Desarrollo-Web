@@ -41,3 +41,24 @@ Fuente: documento "Correcciones HOME" de Felipe Pérez (Logatech), carpeta "Foto
 - `CFG.logoBase`, `CFG.imgBase` (archivos locales) y `CFG.logos` / `CFG.images` (URLs de Medios en WordPress). `photo()` acepta ahora archivos propios además de fotos de Pexels.
 - `deploy_wp.py` sube logotipos y fotos a Medios de WordPress, reconstruye `sitio-wp/` con esas URLs y publica las 8 páginas. Sigue pendiente de ejecutarse porque el dominio logatech.doseskill.com está bloqueado por la política de red de este entorno.
 - Pruebas (Chromium, escritorio 1366 px y móvil 390 px, sin enviar mensajes): 36 comprobaciones, 36 correctas. Cubren las 15 vistas (sin errores de consola, sin desbordes, sin tonos naranja, sin textos retirados, sin imágenes rotas), encabezado sin pleca y con mega menú, hero a todo lo ancho, filtro de marcas, 115 productos en pruebas rápidas con fotos, filtro por subcategoría, cotizador con "caja/cajas" y presentación, ficha IISC-425 y BioFire, página de marcas con BOULE, formulario y menú móvil.
+
+## Ajustes finales según el prompt "Cambios — Web LOGATECH (27-oct)"
+
+- **Token de color**: `--loga-green` (#5FA33A) y `--loga-green-d` (#3F8A31) definidos una sola vez en `src-v2/base.css`; todos los antiguos alias del naranja apuntan a ellos. El botón "Buscar" del encabezado también pasa a verde.
+- **Fila de garantías bajo el hero (6 tarjetas, 3 por fila)**: Envíos a toda la República Mexicana ("Consulta con tu asesor cómo llevarte el flete gratis. Entrega local sin costo."), Cadena seca y fría, Facilidades de crédito (hasta 30 días o más), Importaciones especiales (4 a 6 semanas; stock para recurrentes), Registro COFEPRIS y Servicio técnico propio. La tarjeta de pedido mínimo se eliminó.
+- **"Explora por categoría" rediseñada estilo MCD LAB**: 4 tarjetas con imagen grande, título sobre degradado, descripción, subcategorías y enlace. Los placeholders para las 4 imágenes del cliente están listos: carpeta `sitio-v2/img/categorias/` (ver LEEME.txt) y mapa `CAT_IMAGES` en `src-v2/data.js`; mientras llegan, se muestran fotos de banco. Además, el menú "Productos" despliega las categorías con sus subcategorías como en el menú de MCD LAB (es lo que marcaba la captura del documento del cliente).
+- **Catálogo**: la frase "Consulta nuestras políticas de envío gratis" aparece en el subtítulo del catálogo, en la ayuda del filtro y en la caja de cotización de cada ficha.
+- **Página de marcas**: la barra de búsqueda y el filtro alfabético (Todas / A / B / … / Y) quedan fijos (sticky) debajo del encabezado al hacer scroll; también se dejó el filtro de marcas del catálogo sin scroll interno. La ficha de **BOULE** está dada de alta en la letra B (sin logotipo hasta que el cliente lo envíe).
+- **Capturas antes/después** de cada bloque en `capturas-v3/` (encabezado y hero, garantías, categorías, compra con tranquilidad, banda final, menú de productos, catálogo, marcas con filtro fijo, cifras de Nosotros, políticas de envíos y móvil). "Antes" = versión publicada (commit 3a0246d); "después" = esta versión.
+
+### Checklist de aceptación
+- [x] Cero naranjas en todo el sitio (verde como acento; verificado automáticamente en 15 vistas).
+- [x] Pleca superior eliminada en todas las páginas.
+- [x] Logo más grande y dice "LOGA" con el tagline debajo.
+- [x] Hero central a ancho completo.
+- [x] Zona de categorías rediseñada estilo MCD LAB; placeholders de las 4 imágenes listos (faltan las fotos del cliente).
+- [x] "Cadena seca y fría", envíos nacionales, crédito e importaciones visibles en la fila de garantías.
+- [x] Ninguna mención de "pedido mínimo $5,000" (home, catálogo, nosotros, envíos, contacto, fichas ni cotizador).
+- [x] Mensajes de flete gratis / políticas de envío colocados (home, catálogo, fichas, envíos).
+- [x] Filtro de marcas sticky; ficha BOULE cargada (pendiente su logotipo y contenido).
+- [ ] Publicación en logatech.doseskill.com: pendiente de que se permita el dominio en la red de este entorno (`deploy_wp.py` ya está listo).

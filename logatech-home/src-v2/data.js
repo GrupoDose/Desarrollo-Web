@@ -25,6 +25,10 @@
     {id:'consumibles',name:'Consumibles y toma de muestra',short:'Tubos, contenedores, cajas Petri, portaobjetos e hisopos.',art:'tube',photo:'scientist',subs:['Tubos de toma de muestra','Contenedores de orina','Cajas Petri','Portaobjetos','Medios de transporte']}
   ];
   var CAT_HOME = ['pruebas-rapidas','antidoping','reactivos','equipos']; // las 4 destacadas en inicio
+  /* Imágenes propias para "Explora por categoría" (las entrega el cliente). Coloca los archivos en img/categorias/ y añade aquí
+     la ruta por categoría; mientras no exista entrada se usa la foto de banco de PHOTOS. Ejemplo:
+     {'pruebas-rapidas':'img/categorias/pruebas-rapidas.jpg','antidoping':'img/categorias/antidoping.jpg','reactivos':'img/categorias/reactivos.jpg','equipos':'img/categorias/equipos.jpg'} */
+  var CAT_IMAGES = {};
 
   /* ===================== MARCAS (cuestionario A5.1) ===================== */
   var BRANDS = ['MCD LAB','HYCEL','JALMEK','BD','FERMONT','COPAN','YAMATO','GH MEDICAL','Thermo Scientific','Eppendorf','VELAB','CERTUM','SD Biosensor','Instant View','ARTRON','Lifeloc','Dräger','Sentech','Mission','ELITech Group','BOULE','MNCHIP','Maglumi','Corning','Wiener Lab','Spinreact','Bio-Rad','Falcon','Licon','Leica','Simport','QuidelOrtho','Alfa','CerTest','Vircell','Dymind','Diagon','GeneProof','i-SENS','Immunostics','Response Biomedical','Sugentech','bioMérieux'];

@@ -337,3 +337,18 @@
 #lg1 .bcard .blogo{max-width:100%}
 #lg1-quote .qim img.ph,#lg1-modal .thumbs img.ph,#lg1-modal .main img.ph,#lg1 .pp .thumbs img.ph,#lg1 .pp .main img.ph{object-fit:contain;background:#fff}
 #lg1 .pager{flex-wrap:wrap;justify-content:center;gap:6px}
+
+/* ---------- v3b: tarjetas de categoría con imagen (estilo MCD LAB), filtro de marcas sticky ---------- */
+#lg1 .ccard{padding:0}
+#lg1 .ccard::after{display:none}
+#lg1 .ccard .pic{margin:0;height:210px;position:relative;z-index:1}
+#lg1 .ccard .pic::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,48,94,0) 35%,rgba(18,48,94,.88) 100%);z-index:2}
+#lg1 .ccard .pic .ov{position:absolute;left:0;right:0;bottom:0;padding:14px 18px;color:#fff;z-index:3}
+#lg1 .ccard .pic .ov .k{display:inline-flex;align-items:center;gap:6px;font:700 10.5px var(--font-h);letter-spacing:.12em;text-transform:uppercase;color:#CFF0BD;margin-bottom:4px}
+#lg1 .ccard .pic .ov .k svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.8}
+#lg1 .ccard .pic .ov h3{color:#fff;font:800 19px var(--font-h);line-height:1.15}
+#lg1 .ccard .pic.nophoto .ov h3,#lg1 .ccard .pic.nophoto .ov .k{color:var(--navy)}
+#lg1 .ccard .pic .fb{background:var(--bg)}
+#lg1 .ccard .body{padding:14px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+#lg1 .ccard:hover .pic img.ph{transform:scale(1.05)}
+#lg1 .bsearch{position:sticky;top:var(--hdr,100px);z-index:20;background:var(--bg);padding:12px 0;margin:-12px 0 22px}

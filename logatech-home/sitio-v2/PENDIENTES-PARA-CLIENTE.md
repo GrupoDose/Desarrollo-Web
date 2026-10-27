@@ -61,7 +61,10 @@ Para cada producto también necesitamos saber en qué unidad se vende (pieza, ca
 - Fotos de los 29 productos del listado original que no están en el Excel: 9 antidoping (DOA164, DOA154, A04-17-140-A, HDOA-334, A04-15-140-A, DTH-101, DCO-101, DME-101, DAM-101), prueba influenza SD 166561, 3 tubos BD, 7 consumibles (GH MEDICAL, caja Petri, Corning, COPAN), 2 medios MCD LAB, 7 reactivos HYCEL/JALMEK y el BioFire.
 - Fotos específicas de las 24 pruebas de Alergias (hoy comparten una imagen genérica) y de los 8 controles CerTest (comparten otra).
 - Logotipos de Dräger, BOULE, Seratec, Provisión y Coris (no venían en la carpeta).
-- Las 4 imágenes para "Explora por categoría" que menciona el documento de correcciones (hoy se usan fotos de banco).
+- Las 4 imágenes para "Explora por categoría" (pruebas rápidas, antidoping, reactivos, equipos; JPG 1200×800). Hoy se usan fotos de banco; los placeholders ya están listos.
+- Logotipo y contenido de la marca BOULE (la ficha ya existe en la letra B).
+- Links de las marcas de Loga (Loga los enviará por separado) para enlazar cada tarjeta de marca.
+- Archivo de productos con SKU del resto de categorías (ya se recibió el de pruebas rápidas) para cargar presentaciones y fotos.
 
 Necesitamos una imagen real por producto (33 en total). Opciones: foto propia de Logatech o imagen del fabricante con permiso de uso. Requisitos: producto solo, fondo neutro, buena resolución (mínimo 1200 px de ancho), archivo nombrado con la clave (por ejemplo `DOA164.jpg`). No se usará la foto de un producto para ilustrar otro.
 

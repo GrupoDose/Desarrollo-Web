@@ -18,7 +18,8 @@
 /* ---------- Variables de marca (cámbialas aquí y todo se actualiza) ---------- */
 #lg1, #lg1-modal, #lg1-quote{
   /* === COLORES DE MARCA LOGATECH (tomados del logotipo). Azul = principal · Verde = secundario (el naranja se retiró a petición del cliente). Cámbialos aquí === */
-  --brand-blue:#2F7FD3; --brand-blue-d:#1F5FBF; --brand-blue-l:#4A9EDA; --brand-orange:#5FA33A; --brand-orange-d:#3F8A31; /* alias históricos: ahora verdes */ --brand-green:#5FA33A; --brand-red:#C62A1E; --brand-ink:#12305E;
+  --loga-green:#5FA33A; --loga-green-d:#3F8A31; /* === VERDE DE MARCA: acento secundario único (sustituye al naranja en todo el sitio) === */
+  --brand-blue:#2F7FD3; --brand-blue-d:#1F5FBF; --brand-blue-l:#4A9EDA; --brand-orange:var(--loga-green); --brand-orange-d:var(--loga-green-d); /* alias históricos: ahora apuntan al verde */ --brand-green:var(--loga-green); --brand-red:#C62A1E; --brand-ink:#12305E;
   --brand-grad:linear-gradient(90deg,#1F5FBF 0%,#4A9EDA 60%,#5FA33A 100%);
   --navy:var(--brand-ink); --blue:var(--brand-blue-d); --blue-d:#174A99; --green:var(--brand-green); --green-d:#3F8A31; --lime:var(--brand-orange); --teal:var(--brand-blue); --grad:var(--brand-grad); --orange:var(--brand-orange); --orange-d:var(--brand-orange-d);
   --ink:#1B2430; --muted:#5F6B7A; --line:#E3E9EF; --bg:#F5F8FB; --white:#fff;
@@ -65,7 +66,7 @@
 #lg1 .search{display:flex;border:2px solid var(--blue);border-radius:8px;overflow:hidden;height:48px}
 #lg1 .search select{border:0;background:var(--bg);padding:0 12px;font:500 13px var(--font-b);color:var(--ink);border-right:1px solid var(--line);max-width:190px}
 #lg1 .search input{flex:1;border:0;padding:0 14px;font:400 14px var(--font-b);min-width:0;outline:none}
-#lg1 .search button{border:0;background:var(--blue);color:#fff;padding:0 18px;display:flex;align-items:center;gap:8px;font:600 14px var(--font-h)}
+#lg1 .search button{border:0;background:var(--loga-green-d);color:#fff;padding:0 18px;display:flex;align-items:center;gap:8px;font:600 14px var(--font-h)}
 #lg1 .search button svg{width:18px;height:18px;fill:#fff}
 #lg1 .hdr-actions{display:flex;align-items:center;gap:14px}
 #lg1 .quote-btn{position:relative;display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:8px;padding:8px 12px;background:#fff;font:600 13px var(--font-h);color:var(--navy)}
@@ -134,8 +135,8 @@
 #lg1 .slider:hover .dots button.on i{animation-play-state:paused}
 
 /* ---------- Trust strip ---------- */
-#lg1 .trust{padding:0 0 10px;background:var(--bg)}
-#lg1 .trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+#lg1 .trust{padding:26px 0 10px;background:var(--bg)}
+#lg1 .trust .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 #lg1 .trust .it{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;display:flex;gap:14px;align-items:center}
 #lg1 .trust .it svg{width:34px;height:34px;flex:none;fill:none;stroke:var(--blue);stroke-width:1.8}
 #lg1 .trust b{display:block;font:700 14px var(--font-h);color:var(--navy)}
@@ -701,6 +702,21 @@
 #lg1 .bcard .blogo{max-width:100%}
 #lg1-quote .qim img.ph,#lg1-modal .thumbs img.ph,#lg1-modal .main img.ph,#lg1 .pp .thumbs img.ph,#lg1 .pp .main img.ph{object-fit:contain;background:#fff}
 #lg1 .pager{flex-wrap:wrap;justify-content:center;gap:6px}
+
+/* ---------- v3b: tarjetas de categoría con imagen (estilo MCD LAB), filtro de marcas sticky ---------- */
+#lg1 .ccard{padding:0}
+#lg1 .ccard::after{display:none}
+#lg1 .ccard .pic{margin:0;height:210px;position:relative;z-index:1}
+#lg1 .ccard .pic::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,48,94,0) 35%,rgba(18,48,94,.88) 100%);z-index:2}
+#lg1 .ccard .pic .ov{position:absolute;left:0;right:0;bottom:0;padding:14px 18px;color:#fff;z-index:3}
+#lg1 .ccard .pic .ov .k{display:inline-flex;align-items:center;gap:6px;font:700 10.5px var(--font-h);letter-spacing:.12em;text-transform:uppercase;color:#CFF0BD;margin-bottom:4px}
+#lg1 .ccard .pic .ov .k svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.8}
+#lg1 .ccard .pic .ov h3{color:#fff;font:800 19px var(--font-h);line-height:1.15}
+#lg1 .ccard .pic.nophoto .ov h3,#lg1 .ccard .pic.nophoto .ov .k{color:var(--navy)}
+#lg1 .ccard .pic .fb{background:var(--bg)}
+#lg1 .ccard .body{padding:14px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+#lg1 .ccard:hover .pic img.ph{transform:scale(1.05)}
+#lg1 .bsearch{position:sticky;top:var(--hdr,100px);z-index:20;background:var(--bg);padding:12px 0;margin:-12px 0 22px}
 </style>
 
 <div id="lg1" data-current="contacto">
@@ -841,6 +857,10 @@
     {id:'consumibles',name:'Consumibles y toma de muestra',short:'Tubos, contenedores, cajas Petri, portaobjetos e hisopos.',art:'tube',photo:'scientist',subs:['Tubos de toma de muestra','Contenedores de orina','Cajas Petri','Portaobjetos','Medios de transporte']}
   ];
   var CAT_HOME = ['pruebas-rapidas','antidoping','reactivos','equipos']; // las 4 destacadas en inicio
+  /* Imágenes propias para "Explora por categoría" (las entrega el cliente). Coloca los archivos en img/categorias/ y añade aquí
+     la ruta por categoría; mientras no exista entrada se usa la foto de banco de PHOTOS. Ejemplo:
+     {'pruebas-rapidas':'img/categorias/pruebas-rapidas.jpg','antidoping':'img/categorias/antidoping.jpg','reactivos':'img/categorias/reactivos.jpg','equipos':'img/categorias/equipos.jpg'} */
+  var CAT_IMAGES = {};
 
   /* ===================== MARCAS (cuestionario A5.1) ===================== */
   var BRANDS = ['MCD LAB','HYCEL','JALMEK','BD','FERMONT','COPAN','YAMATO','GH MEDICAL','Thermo Scientific','Eppendorf','VELAB','CERTUM','SD Biosensor','Instant View','ARTRON','Lifeloc','Dräger','Sentech','Mission','ELITech Group','BOULE','MNCHIP','Maglumi','Corning','Wiener Lab','Spinreact','Bio-Rad','Falcon','Licon','Leica','Simport','QuidelOrtho','Alfa','CerTest','Vircell','Dymind','Diagon','GeneProof','i-SENS','Immunostics','Response Biomedical','Sugentech','bioMérieux'];
@@ -1193,6 +1213,8 @@
     $$('[data-qwa],[data-qmail]',drawer).forEach(function(a){a.addEventListener('click',function(e){if(a.classList.contains('dis')||!quote.length){e.preventDefault();toast('Agrega productos antes de enviar.');return}syncLinks();toast(a.hasAttribute('data-qwa')?'Se abre WhatsApp con tu solicitud; revísala y envíala.':'Se abre tu correo con la solicitud; revísala y envíala.')})});
   }
   paintCount();renderDrawer();
+  /* altura del encabezado fijo, para elementos sticky (filtro de marcas) */
+  (function(){var h=$('.header');function m(){if(h)root.style.setProperty('--hdr',h.offsetHeight+'px')}m();window.addEventListener('resize',m)})();
 
   var tt;function toast(m){var t=$('[data-toast]',modal);t.textContent=m;modal.style.display='block';t.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('show');if(!modal.classList.contains('open'))modal.style.display=''},2200)}
 
@@ -1205,7 +1227,7 @@
   function buyBoxHTML(p){
     return '<aside class="buy">'
       +(p.price?'<div class="pr">'+money(p.price)+'<small>+ IVA</small></div>':'<div class="pr q">Precio por cotización<small>Atención de lunes a viernes de 8:30 a 17:30 h</small></div>')
-      +'<div class="ship"><div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>'+POL+'</span></div>'
+      +'<div class="ship"><div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>'+POL+' Consulta nuestras políticas de envío gratis.</span></div>'
       +(p.cold?'<div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Producto refrigerado: se embarca <b>lunes y miércoles</b> con hielera y geles.</span></div>':'')
       +'<div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Facilidades de crédito según solicitud y documentación; plazos de hasta 30 días de crédito o más.</span></div></div>'
       +'<div class="stock">Consulta disponibilidad y fecha estimada de entrega al cotizar.</div>'

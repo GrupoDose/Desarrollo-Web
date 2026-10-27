@@ -123,6 +123,8 @@
     $$('[data-qwa],[data-qmail]',drawer).forEach(function(a){a.addEventListener('click',function(e){if(a.classList.contains('dis')||!quote.length){e.preventDefault();toast('Agrega productos antes de enviar.');return}syncLinks();toast(a.hasAttribute('data-qwa')?'Se abre WhatsApp con tu solicitud; revísala y envíala.':'Se abre tu correo con la solicitud; revísala y envíala.')})});
   }
   paintCount();renderDrawer();
+  /* altura del encabezado fijo, para elementos sticky (filtro de marcas) */
+  (function(){var h=$('.header');function m(){if(h)root.style.setProperty('--hdr',h.offsetHeight+'px')}m();window.addEventListener('resize',m)})();
 
   var tt;function toast(m){var t=$('[data-toast]',modal);t.textContent=m;modal.style.display='block';t.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('show');if(!modal.classList.contains('open'))modal.style.display=''},2200)}
 
@@ -135,7 +137,7 @@
   function buyBoxHTML(p){
     return '<aside class="buy">'
       +(p.price?'<div class="pr">'+money(p.price)+'<small>+ IVA</small></div>':'<div class="pr q">Precio por cotización<small>Atención de lunes a viernes de 8:30 a 17:30 h</small></div>')
-      +'<div class="ship"><div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>'+POL+'</span></div>'
+      +'<div class="ship"><div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>'+POL+' Consulta nuestras políticas de envío gratis.</span></div>'
       +(p.cold?'<div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Producto refrigerado: se embarca <b>lunes y miércoles</b> con hielera y geles.</span></div>':'')
       +'<div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Facilidades de crédito según solicitud y documentación; plazos de hasta 30 días de crédito o más.</span></div></div>'
       +'<div class="stock">Consulta disponibilidad y fecha estimada de entrega al cotizar.</div>'

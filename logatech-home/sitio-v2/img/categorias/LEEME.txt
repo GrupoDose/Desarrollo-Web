@@ -1,0 +1,5 @@
+Imágenes para "Explora por categoría" (4, las entrega el cliente). Archivos sugeridos (JPG, 1200×800 px, proporción 3:2):
+  pruebas-rapidas.jpg · antidoping.jpg · reactivos.jpg · equipos.jpg
+Para activarlas: en src-v2/data.js llena CAT_IMAGES, por ejemplo
+  var CAT_IMAGES = {'pruebas-rapidas':'img/categorias/pruebas-rapidas.jpg','antidoping':'img/categorias/antidoping.jpg','reactivos':'img/categorias/reactivos.jpg','equipos':'img/categorias/equipos.jpg'};
+y vuelve a construir (python3 build.py src-v2 sitio-v2). Mientras tanto se muestran fotos de banco.

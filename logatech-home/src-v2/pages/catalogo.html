@@ -4,7 +4,7 @@
     <div class="wrap">
       <div class="crumbs"><a href="#" data-page="inicio">Inicio</a> › Catálogo</div>
       <h1 data-cattitle>Catálogo <em>completo</em></h1>
-      <p data-catsub>Pruebas rápidas, antidoping, reactivos, microbiología, consumibles y equipos de diagnóstico. Precios por cotización. Consulta disponibilidad y fecha estimada de entrega al cotizar.</p>
+      <p data-catsub>Pruebas rápidas, antidoping, reactivos, microbiología, consumibles y equipos de diagnóstico. Precios por cotización. Consulta nuestras políticas de envío gratis y la disponibilidad al cotizar.</p>
     </div>
   </section>
   <section class="sec alt" style="padding-top:28px">
@@ -15,7 +15,7 @@
           <button class="fclose" type="button" aria-label="Cerrar filtros" data-fclose>×</button>
           <div class="fbox"><h4>Categorías <button type="button" data-clear="cat">Limpiar</button></h4><div class="fc" data-fcats></div></div>
           <div class="fbox"><h4>Marcas <button type="button" data-clear="marca">Limpiar</button></h4><div class="fc brands" data-fbrands></div></div>
-          <div class="help"><b>¿No encuentras un producto?</b><p>Manejamos más de 40 marcas y productos especiales de importación (4 a 6 semanas). Pídelo por WhatsApp.</p><a class="btn btn-green btn-sm" href="https://wa.me/528113638885?text=Hola%20Loga%2C%20busco%20un%20producto%20que%20no%20veo%20en%20el%20cat%C3%A1logo" target="_blank" rel="noopener">Pedir por WhatsApp</a></div>
+          <div class="help"><b>¿No encuentras un producto?</b><p>Manejamos más de 40 marcas y productos especiales de importación (4 a 6 semanas). Pídelo por WhatsApp y consulta nuestras políticas de envío gratis.</p><a class="btn btn-green btn-sm" href="https://wa.me/528113638885?text=Hola%20Loga%2C%20busco%20un%20producto%20que%20no%20veo%20en%20el%20cat%C3%A1logo" target="_blank" rel="noopener">Pedir por WhatsApp</a></div>
         </aside>
         <div>
           <div class="toolbar">
@@ -58,7 +58,7 @@
       var slice=list.slice((state.page-1)*PER,state.page*PER);
       var c=state.cat?catById(state.cat):null;
       $('[data-cattitle]').innerHTML=c?esc(c.name)+(state.sub?' <em>· '+esc(state.sub)+'</em>':''):(state.marca?'Marca <em>'+esc(state.marca)+'</em>':(state.q?'Resultados para <em>“'+esc(state.q)+'”</em>':'Catálogo <em>completo</em>'));
-      $('[data-catsub]').textContent=c?c.short+' Precios por cotización. Consulta disponibilidad y fecha estimada de entrega al cotizar.':'Pruebas rápidas, antidoping, reactivos, microbiología, consumibles y equipos de diagnóstico. Precios por cotización. Consulta disponibilidad y fecha estimada de entrega al cotizar.';
+      $('[data-catsub]').textContent=c?c.short+' Precios por cotización. Consulta nuestras políticas de envío gratis y la disponibilidad al cotizar.':'Pruebas rápidas, antidoping, reactivos, microbiología, consumibles y equipos de diagnóstico. Precios por cotización. Consulta nuestras políticas de envío gratis y la disponibilidad al cotizar.';
       document.title=(c?c.name:'Catálogo')+' · Loga Soluciones Científicas';
       if(c){banner.style.display='';banner.innerHTML='<div class="ic">'+ART[c.art]()+'</div><div><h2>'+esc(c.name)+'</h2><p>'+esc(c.short)+'</p><div class="subs">'+c.subs.map(function(s){var n=PRODUCTS.filter(function(p){return p.cat===c.id&&p.sub===s}).length;return '<a href="#" data-sub="'+esc(s)+'" class="'+(state.sub===s?'on':'')+'">'+esc(s)+(n?' ('+n+')':'')+'</a>'}).join('')+'</div></div>'}else banner.style.display='none';
       res.innerHTML='<b>'+list.length+'</b> producto'+(list.length===1?'':'s')+(pages>1?' · página '+state.page+' de '+pages:'');
